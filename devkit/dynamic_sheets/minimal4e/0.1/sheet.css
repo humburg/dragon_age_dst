@@ -3,65 +3,154 @@
 * Copy and paste this directly into the CSS textarea on obsidianportal.com
 *****************************/
 
+.ds_minimal4e .section {
+  margin-top: 20px;
+  max-width: 400px;
+  border: 1px solid #810207;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
 
+.ds_minimal4e .section div:nth-of-type(odd){
+  background-color: #e0beb1;
+}
+
+.ds_minimal4e span.section_title {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #810207;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.ds_minimal4e .section div.sub_header {
+  background-color: black;
+  color: white; 
+}
 /****************************
 * Basic Info
 *****************************/
-.ds_minimal4e .level {
+.ds_minimal4e .dsf_xp:before {
+  content: "("
 }
 
+.ds_minimal4e .dsf_xp:after {
+  content: " xp)"
+}
 /****************************
 * Ability Scores
 *****************************/
-.ds_minimal4e .ability_scores {
-  margin-top: 30px;
-}
 
 .ds_minimal4e .ability_score {
   clear: left;
+  text-align: center;
+  overflow: hidden;
 }
 
+.ds_minimal4e .ability_score_header {
+  overflow: hidden;
+}
 .ds_minimal4e .ability_score_header span {
   display: block;
   float: left;
   width: 120px;
   font-weight: bold;
+  text-align: center;
 }
+
+.ds_minimal4e span.ability_primary_header {
+  width: 70px;
+}
+
+.ds_minimal4e span.ability_rating_header {
+  width: 60px;
+}
+
+.ds_minimal4e span.ability_focuses_header {
+  width: 150px;
+}
+
 
 .ds_minimal4e .ability_score_name {
   display: block;
   float: left;
   width: 120px;
   font-weight: bold;
+  text-align: left;
 }
 
-.ds_minimal4e .ability_score_score {
+.ds_minimal4e .ability_score_primary {
   display: block;
   float: left;
-  width: 120px;
+  width: 60px;
 }
 
-.ds_minimal4e .ability_score_modifier {
+.ds_minimal4e .ability_score_rating {
   display: block;
   float: left;
-  width: 120px;
+  width: 60px;
 }
 
-.ds_minimal4e .ability_score_modifier_plus_half_level {
+.ds_minimal4e .ability_score_focuses {
   display: block;
   float: left;
-  width: 120px;
+  width: 160px;
 }
 
 /****************************
-* Ability Scores
+* Combat Stats
 *****************************/
-
-.ds_minimal4e .trained_skills {
-  margin-top: 30px;
-  clear: both;
+.ds_minimal4e .combat_stats {
+  display: block;
+  width: 400px;
+  overflow: hidden;
 }
 
-.ds_minimal4e .trained_skills ul {
-  list-style-type: none;
+.ds_minimal4e .combat_stats_header {
+  height: 1em;
 }
+
+.ds_minimal4e .combat_stats_header span {
+  display: block;
+  float: left;
+  width: 100px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ds_minimal4e .combat_stats_values span {
+  display: block;
+  float: left;
+  width: 100px;
+  text-align: center;
+}
+
+/****************************
+* Armor
+*****************************/
+.ds_minimal4e .armor {
+  overflow: hidden;
+}
+
+.ds_minimal4e .dsf_armor_type {
+  display: block;
+  width: 400px;
+  text-align: center;
+}
+.ds_minimal4e .armor_stats {
+  display: block;
+  float: left;
+  width: 100px;
+  text-align: left;
+}
+
+.ds_minimal4e .armor_stats_label {
+  display: block;
+  width: 95px;
+  text-align: right;
+  padding-right: 5px; 
+}
+
