@@ -5,19 +5,19 @@
   <script type="text/javascript" src="javascripts/jquery-1.3.2.min.js"></script>
   <script type="text/javascript" src="javascripts/jquery.jeditable-1.7.1.js"></script>
   <script type="text/javascript" src="javascripts/namespace.js"></script>
-  
+
   <!-- This is where we do our magic. Take a look to get a better understanding of how to write javascript for your DST. -->
   <script type="text/javascript" src="http://www.obsidianportal.com/javascripts/characters.js"></script>
-  
+
   <!-- Load the example data. Modify this file to make sample data for your chosen system. -->
   <script type="text/javascript" src="example_data.js"></script>
-  
+
   <!-- Load the CSS for the DST, replace with your own! -->
-  <link href="dynamic_sheets/minimal4e/0.1/sheet.css" media="screen" rel="stylesheet" type="text/css" />
-  
+  <link href="dynamic_sheets/dragonage/0.1/sheet.css" media="screen" rel="stylesheet" type="text/css" />
+
   <!-- Load the JS for the DST, replace with your own! -->
-  <script type="text/javascript" src="dynamic_sheets/minimal4e/0.1/sheet.js"></script>
-  
+  <script type="text/javascript" src="dynamic_sheets/dragonage/0.1/sheet.js"></script>
+
 </head>
 <body>
   <p>
@@ -26,14 +26,14 @@
   <p>
     If you want to make your own, make sure to <a href="http://help.obsidianportal.com/faqs/advanced/creating-a-dynamic-character-sheet-template-dst">read the tutorial</a> first. Then, just start editing the HTML in this file. Edit the sample data in <em>example_data.js</em> in order to create data that works with your chosen game system.
   </p>
-  
+
   <div class="dynamic_sheet_container">
-  
-    <!-- Every dynamic sheet will be surrounded by a div that has the class of "ds_DST_SLUG". In this example, the slug for my DST is 'minimal4e' -->
-    <div id="dynamic_sheet_999" class="dynamic_sheet ds_minimal4e editable">
+
+    <!-- Every dynamic sheet will be surrounded by a div that has the class of "ds_DST_SLUG". In this example, the slug for my DST is 'dragonage' -->
+    <div id="dynamic_sheet_999" class="dynamic_sheet ds_dragonage editable">
       <!-- This is inserted automatically. Ignore it... -->
-      <span style="display:none;" class="dst_slug">minimal4e</span>
-      <!-- 
+      <span style="display:none;" class="dst_slug">dragonage</span>
+      <!--
       Below is your HTML template.
       Copy ONLY this section into the HTML Template textarea on Obsidian Portal. Do not copy any of the
       surrounding HTML!
@@ -147,7 +147,7 @@
             <span class="dsf ability_score_rating dsf_willpower"></span>
         </div>
       </div>
-      
+
       <!-- Combat stats -->
       <div class="combat_stats section">
         <span class="section_title">Combat Stats</span>
@@ -176,13 +176,13 @@
           <span class="dsf dsf_armor_penalty armor_stats"></span>
         </div>
       </div>
-    
+
 
       <!-- End HTML Template - Don't copy anything below here into the template! -->
-    </div> <!-- ds_minimal4e -->
+    </div> <!-- ds_dragonage -->
   </div> <!-- dynamic_sheet_container -->
   <br/><br/>
-  
+
   <button id="character-save-button">Save</button>
   <br/>
   <p>

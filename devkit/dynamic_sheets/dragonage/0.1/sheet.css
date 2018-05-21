@@ -3,7 +3,7 @@
 * Copy and paste this directly into the CSS textarea on obsidianportal.com
 *****************************/
 
-.ds_minimal4e .section {
+.ds_dragonage .section {
   margin-top: 20px;
   max-width: 400px;
   border: 1px solid #810207;
@@ -11,11 +11,11 @@
   border-top-right-radius: 11px;
 }
 
-.ds_minimal4e .section div:nth-of-type(odd){
+.ds_dragonage .section div:nth-of-type(odd){
   background-color: #e0beb1;
 }
 
-.ds_minimal4e span.section_title {
+.ds_dragonage span.section_title {
   display: block;
   width: 100%;
   font-weight: bold;
@@ -26,34 +26,34 @@
   border-top-right-radius: 10px;
 }
 
-.ds_minimal4e .section div.sub_header {
+.ds_dragonage .section div.sub_header {
   background-color: black;
-  color: white; 
+  color: white;
 }
 /****************************
 * Basic Info
 *****************************/
-.ds_minimal4e .dsf_xp:before {
+.ds_dragonage .dsf_xp:before {
   content: "("
 }
 
-.ds_minimal4e .dsf_xp:after {
+.ds_dragonage .dsf_xp:after {
   content: " xp)"
 }
 /****************************
 * Ability Scores
 *****************************/
 
-.ds_minimal4e .ability_score {
+.ds_dragonage .ability_score {
   clear: left;
   text-align: center;
   overflow: hidden;
 }
 
-.ds_minimal4e .ability_score_header {
+.ds_dragonage .ability_score_header {
   overflow: hidden;
 }
-.ds_minimal4e .ability_score_header span {
+.ds_dragonage .ability_score_header span {
   display: block;
   float: left;
   width: 120px;
@@ -61,20 +61,20 @@
   text-align: center;
 }
 
-.ds_minimal4e span.ability_primary_header {
+.ds_dragonage span.ability_primary_header {
   width: 70px;
 }
 
-.ds_minimal4e span.ability_rating_header {
+.ds_dragonage span.ability_rating_header {
   width: 60px;
 }
 
-.ds_minimal4e span.ability_focuses_header {
+.ds_dragonage span.ability_focuses_header {
   width: 150px;
 }
 
 
-.ds_minimal4e .ability_score_name {
+.ds_dragonage .ability_score_name {
   display: block;
   float: left;
   width: 120px;
@@ -82,19 +82,19 @@
   text-align: left;
 }
 
-.ds_minimal4e .ability_score_primary {
+.ds_dragonage .ability_score_primary {
   display: block;
   float: left;
   width: 60px;
 }
 
-.ds_minimal4e .ability_score_rating {
+.ds_dragonage .ability_score_rating {
   display: block;
   float: left;
   width: 60px;
 }
 
-.ds_minimal4e .ability_score_focuses {
+.ds_dragonage .ability_score_focuses {
   display: block;
   float: left;
   width: 160px;
@@ -103,17 +103,17 @@
 /****************************
 * Combat Stats
 *****************************/
-.ds_minimal4e .combat_stats {
+.ds_dragonage .combat_stats {
   display: block;
   width: 400px;
   overflow: hidden;
 }
 
-.ds_minimal4e .combat_stats_header {
+.ds_dragonage .combat_stats_header {
   height: 1em;
 }
 
-.ds_minimal4e .combat_stats_header span {
+.ds_dragonage .combat_stats_header span {
   display: block;
   float: left;
   width: 100px;
@@ -121,7 +121,7 @@
   text-align: center;
 }
 
-.ds_minimal4e .combat_stats_values span {
+.ds_dragonage .combat_stats_values span {
   display: block;
   float: left;
   width: 100px;
@@ -131,26 +131,26 @@
 /****************************
 * Armor
 *****************************/
-.ds_minimal4e .armor {
+.ds_dragonage .armor {
   overflow: hidden;
 }
 
-.ds_minimal4e .dsf_armor_type {
+.ds_dragonage .dsf_armor_type {
   display: block;
   width: 400px;
   text-align: center;
 }
-.ds_minimal4e .armor_stats {
+.ds_dragonage .armor_stats {
   display: block;
   float: left;
   width: 100px;
   text-align: left;
 }
 
-.ds_minimal4e .armor_stats_label {
+.ds_dragonage .armor_stats_label {
   display: block;
   width: 95px;
   text-align: right;
-  padding-right: 5px; 
+  padding-right: 5px;
 }
 
