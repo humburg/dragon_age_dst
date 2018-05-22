@@ -12,7 +12,7 @@
 
 .ds_dragonage .da_right {
   margin-left: 410px;
-  padding-left: 10px;  
+  padding-left: 10px;
 }
 
 .ds_dragonage .da_clear {
@@ -54,6 +54,47 @@
   font-weight: normal;
   text-align: center;
 }
+
+.ds_dragonage .da_extend_button button {
+  border: none;
+  padding: 0;
+  border-width: 0;
+  background-color: white;
+  float: right;
+  outline: none;
+}
+
+.ds_dragonage .da_remove_button button {
+  border: none;
+  padding: 0;
+  border-width: 0;
+  background-color: transparent;
+  outline: none;
+  float: right;
+}
+
+.ds_dragonage .da_remove_button button > img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.2;
+}
+
+.ds_dragonage .da_remove_button button > img:hover {
+  opacity: 1;
+}
+
+
+.ds_dragonage .da_extend_button button > img{
+  width: 25px;
+  height: 25px;
+  background-image: url(https://png.icons8.com/ios/25/000000/plus-2-math-filled.png);
+  box-sizing: border-box;
+}
+
+.ds_dragonage .da_extend_button button > img:active {
+  background-image: url(https://png.icons8.com/ios/25/000000/plus-2-math.png);
+}
+
 /****************************
 * Basic Info
 *****************************/
@@ -220,4 +261,59 @@
 
 .ds_dragonage .movement_values_sq span:after {
   content: " squares"
+}
+
+/****************************
+* Melee Weapons
+*****************************/
+
+.ds_dragonage .melee_weapons {
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.ds_dragonage .melee_header {
+  overflow: hidden;
+}
+
+.ds_dragonage .melee_header span {
+  display: block;
+  float: left;
+  width: 120px;
+}
+
+.ds_dragonage .melee_header span.da_extend_button {
+  float: right;
+  width: 25px;
+}
+
+
+.ds_dragonage .melee_weapon_values {
+  overflow: hidden;
+}
+
+.ds_dragonage .melee_weapon_values span {
+  display: block;
+  float: left;
+  text-align: center;
+  width: 120px;
+}
+
+.ds_dragonage .melee_weapon_values span.da_remove_button {
+  width: 20px;
+  float: right;
+}
+
+.ds_dragonage .da_extend_button {
+  display: block;
+  overflow: hidden;
+}
+
+.ds_dragonage .section .da_content div.weapon_groups {
+  padding-top: 5px;
+  background-color: lightgray;
+}
+
+.ds_dragonage .weapon_groups span {
+  width: 100%;
 }

@@ -117,83 +117,84 @@
             <span class="dsf ability_score_rating dsf_willpower"></span>
           </div>
         </div>
-      </div>  
+      </div>
     </div> <!-- end left column -->
 
-      <div class="da_right">
-        <!-- Basic character info -->
-        <div class="basic_info section">
-          <span class="section_title">Basic Info</span>
-          <div class="da_content">
-            <div class="name">
-              <span>Name:</span>
-              <span class="dsf dsf_name"></span>
-            </div>
-            <div class="race">
-                <span>Race:</span>
-                <span class="dsf dsf_race"></span>
-            </div>
-            <div class="class">
-              <span>Class:</span>
-              <span class="dsf dsf_class"></span>
-            </div>
-            <div class="background">
-              <span>Background:</span>
-              <span class="dsf dsf_background"></span>
-            </div>
-            <div class="level">
-              <span>Level:</span>
-              <span class="dsf dsf_level"></span>
-              <span class="dsf dsf_xp"></span>
-            </div>
+    <!-- Start right column -->
+    <div class="da_right">
+      <!-- Basic character info -->
+      <div class="basic_info section">
+        <span class="section_title">Basic Info</span>
+        <div class="da_content">
+          <div class="name">
+            <span>Name:</span>
+            <span class="dsf dsf_name"></span>
+          </div>
+          <div class="race">
+              <span>Race:</span>
+              <span class="dsf dsf_race"></span>
+          </div>
+          <div class="class">
+            <span>Class:</span>
+            <span class="dsf dsf_class"></span>
+          </div>
+          <div class="background">
+            <span>Background:</span>
+            <span class="dsf dsf_background"></span>
+          </div>
+          <div class="level">
+            <span>Level:</span>
+            <span class="dsf dsf_level"></span>
+            <span class="dsf dsf_xp"></span>
           </div>
         </div>
-  
-        <!-- Player and campaign for this character  -->
-        <div class="player_info section">
-          <span class="section_title">Player Info</span>
-          <div class="da_content">
-            <div class="player">
-              <span>Player:</span>
-              <span class="dsf dsf_player"></span>
-            </div>
-            <div class="campaign">
-              <span>Campaign:</span>
-              <span class="dsf dsf_campaign"></span>
-            </div>
-          </div>
-        </div>
+      </div>
 
-        <!-- Combat stats -->
-        <div class="combat_stats section">
-          <span class="section_title">Combat Stats</span>
-          <div class="combat_stats_header sub_header">
-            <span>Speed</span>
-            <span>Defense</span>
-            <span>Health</span>
-            <span>Mana</span>
+      <!-- Player and campaign for this character  -->
+      <div class="player_info section">
+        <span class="section_title">Player Info</span>
+        <div class="da_content">
+          <div class="player">
+            <span>Player:</span>
+            <span class="dsf dsf_player"></span>
           </div>
-          <div class="combat_stats_values">
-            <span class="dsf dsf_speed"></span>
-            <span class="dsf dsf_defense"></span>
-            <span class="dsf dsf_health"></span>
-            <span class="dsf dsf_mana"></span>
+          <div class="campaign">
+            <span>Campaign:</span>
+            <span class="dsf dsf_campaign"></span>
           </div>
         </div>
+      </div>
 
-        <!-- Armor -->
-        <div class="armor section">
-          <span class="section_title">Armor</span>
-          <div class="da_content">
-            <div><span class="dsf dsf_armor_type"></span></div>
-            <div>
-              <span class="armor_stats armor_stats_label">AP:</span>
-              <span class="dsf dsf_armor_ap armor_stats"></span>
-              <span class="armor_stats armor_stats_label">Penalty:</span>
-              <span class="dsf dsf_armor_penalty armor_stats"></span>
-            </div>
+      <!-- Combat stats -->
+      <div class="combat_stats section">
+        <span class="section_title">Combat Stats</span>
+        <div class="combat_stats_header sub_header">
+          <span>Speed</span>
+          <span>Defense</span>
+          <span>Health</span>
+          <span>Mana</span>
+        </div>
+        <div class="combat_stats_values">
+          <span class="dsf dsf_speed"></span>
+          <span class="dsf dsf_defense"></span>
+          <span class="dsf dsf_health"></span>
+          <span class="dsf dsf_mana"></span>
+        </div>
+      </div>
+
+      <!-- Armor -->
+      <div class="armor section">
+        <span class="section_title">Armor</span>
+        <div class="da_content">
+          <div><span class="dsf dsf_armor_type"></span></div>
+          <div>
+            <span class="armor_stats armor_stats_label">AP:</span>
+            <span class="dsf dsf_armor_ap armor_stats"></span>
+            <span class="armor_stats armor_stats_label">Penalty:</span>
+            <span class="dsf dsf_armor_penalty armor_stats"></span>
           </div>
         </div>
+      </div>
 
       <div class="movement section">
         <span class="section_title">Movement Ranges</span>
@@ -215,7 +216,31 @@
           </div>
         </div>
       </div>
-    </div>
+      <div class="melee_weapons section">
+          <span class="section_title">Melee Weapons</span>
+          <div class="melee_header sub_header">
+            <span>Weapon</span>
+            <span>Attack</span>
+            <span>Damage</span>
+            <span class="da_extend_button">
+              <button onclick="dragonage_add_melee_weapon()"><img></button>
+            </span>
+          </div>
+          <div class="da_content">
+            <div class="melee_weapon_values">
+              <span class="dsf dsf_melee_weapon_name_1 melee_weapon_name"></span>
+              <span class="dsf dsf_melee_weapon_attack_1 melee_weapon_attack"></span>
+              <span class="dsf dsf_melee_weapon_damage_1 melee_weapon_damage"></span>
+            </div>
+            <div class="weapon_groups">
+              <span>Weapon Groups: </span>
+              <span class="dsf dsf_weapon_groups">
+            </div>
+          </div>
+      </div>
+    </div> <!-- End right column -->
+
+
       <!-- End HTML Template - Don't copy anything below here into the template! -->
     </div> <!-- ds_dragonage -->
   </div> <!-- dynamic_sheet_container -->
