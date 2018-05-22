@@ -19,7 +19,7 @@ var dynamic_sheet_attrs = {
   "perception" : "1",
   "strength" : "0",
   "willpower" : "3",
-  "speed" : "10",
+ // "speed" : "10",
   "defense" : "10",
   "armor_type" : "None",
   "armor_ap" : "0",

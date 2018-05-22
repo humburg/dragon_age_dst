@@ -10,36 +10,33 @@
  */
 
 
-function minimal4e_dataPreLoad(options) {
+function dragonage_dataPreLoad(options) {
   // Called just before the data is loaded.
   // alert("dataPreLoad");
 }
 
-function minimal4e_dataPostLoad(options) {
+function dragonage_dataPostLoad(options) {
   // Called just after the data is loaded.
-  // alert("dataPostLoad");
+  if(!jQuery('.dsf_speed').html()){
+    jQuery('.dsf_speed').html(dragonage_speed());
+    dragonage_speed_update();
+  }
 }
 
-function minimal4e_dataChange(options) {
+function dragonage_dataChange(options) {
   // Called immediately after a data value is changed.
   // alert("dataChange. " + options['fieldName'] + " = " + options['fieldValue']);
   
-  // Here, we use it to help with calculating the ability modifiers if the level or
-  // base ability score changes.
   var field = options['fieldName'];
   var val = options['fieldValue'];
   
-  // If level changes, we recalculate everything
-  if(field == 'level') {
-    minimal4e_recalculateAllAbilityBonuses();
+  if(field == 'dexterity') {
+    dragonage_dexterity_update();
+  }
+  if(field == 'speed') {
+    dragonage_speed_update();
   }
   
-  // Otherwise, if it's one of the base scores, we just update its modifiers
-  for(var i = 0; i < minimal4e_abilities.length; i++) {
-    if(field == minimal4e_abilities[i]) {
-      minimal4e_recalculateAbilityBonus(field);
-    }
-  }
 }
 
 function minimal4e_dataPreSave(options) {
@@ -47,33 +44,71 @@ function minimal4e_dataPreSave(options) {
   // alert("dataPreSave");
 }
 
-// You can define your own variables...just make sure to namespace them!
-var minimal4e_abilities = [
-  "str",
-  "dex"
-];
+function dragonage_dexterity_update() {
+  jQuery('.dsf_speed').html(dragonage_speed());
+  dragonage_speed_update();
+}
 
-function minimal4e_recalculateAllAbilityBonuses() {
-  for(var i = 0; i < minimal4e_abilities.length; i++) {
-    minimal4e_recalculateAbilityBonus(minimal4e_abilities[i]);
+function dragonage_speed_update() {
+  jQuery('.dsf_move_yrd').html(dragonage_move_distance());
+  jQuery('.dsf_charge_yrd').html(dragonage_charge_distance());
+  jQuery('.dsf_run_yrd').html(dragonage_run_distance());
+  jQuery('.dsf_move_sq').html(dragonage_move_squares());
+  jQuery('.dsf_charge_sq').html(dragonage_charge_squares());
+  jQuery('.dsf_run_sq').html(dragonage_run_squares());
+}
+
+
+
+/* Speed and movement distance calculations. */
+
+function dragonage_speed() {
+  var base_speed = 10;
+  var dex = parseInt(jQuery('.dsf_dexterity').html());
+  var penalty = parseInt(jQuery('.dsf_armor_penalty').html());
+  
+  /* The armor penalty is never positive but this is ambiguous in the book.
+     Some people may prefer to specify a positive number so we flip the sign if necessary.
+  */
+  if(penalty > 0){
+    penalty = -1 * penalty;
   }
+  var race = jQuery('.dsf_race').html();
+  if(race.toLowerCase() == 'dwarf'){
+    base_speed = 8;
+  } 
+  else if(race.toLowerCase() == 'elf') {
+    base_speed = 12;
+  }
+  return base_speed + dex + penalty;
 }
 
-function minimal4e_recalculateAbilityBonus(ability) {
-  var score = jQuery('.dsf_' + ability).html();
-  
-  var mod = minimal4e_abilityMod(score);
-  jQuery('.dsf_' + ability + '_modifier').html(mod);
-  
-  var modPlusHalf = minimal4e_modPlusHalfLevel(mod);
-  jQuery('.dsf_' + ability + '_modifier_plus_half_level').html(modPlusHalf);
+function dragonage_move_distance() {
+  var speed = parseInt(jQuery('.dsf_speed').html());
+  return speed;
 }
 
-function minimal4e_abilityMod(score) {
-  return Math.floor((parseInt(score) - 10) / 2.0);
+function dragonage_charge_distance() {
+  var speed = parseInt(jQuery('.dsf_speed').html());
+  return Math.floor(speed/2.0);
 }
 
-function minimal4e_modPlusHalfLevel(mod) {
-  var level = parseInt(jQuery('.dsf_level').html());
-  return mod + Math.floor(level / 2.0);
+function dragonage_run_distance() {
+  var speed = parseInt(jQuery('.dsf_speed').html());
+  return speed*2;
+}
+
+function dragonage_move_squares() {
+  var dist = parseInt(jQuery('.dsf_move_yrd').html());
+  return Math.floor(dist/2.0);
+}
+
+function dragonage_charge_squares() {
+  var dist = parseInt(jQuery('.dsf_charge_yrd').html());
+  return Math.floor(dist/2.0);
+}
+
+function dragonage_run_squares() {
+  var dist = parseInt(jQuery('.dsf_run_yrd').html());
+  return Math.floor(dist/2.0);
 }

@@ -11,7 +11,7 @@
   border-top-right-radius: 11px;
 }
 
-.ds_dragonage .section div:nth-of-type(odd){
+.ds_dragonage .section .da_content div:nth-of-type(even){
   background-color: #e0beb1;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .ds_dragonage .combat_stats_header {
-  height: 1em;
+  overflow: hidden;
 }
 
 .ds_dragonage .combat_stats_header span {
@@ -154,3 +154,52 @@
   padding-right: 5px;
 }
 
+/****************************
+* Movement
+*****************************/
+.ds_dragonage .movement {
+  display: block;
+  width: 400px;
+  overflow: hidden;
+}
+
+.ds_dragonage .movement_header {
+  overflow: hidden;
+}
+
+.ds_dragonage .movement_header span {
+  display: block;
+  float: left;
+  width: 130px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ds_dragonage .movement_values_yrd {
+  overflow: hidden;
+}
+
+.ds_dragonage .movement_values_yrd span {
+  display: block;
+  float: left;
+  width: 130px;
+  text-align: center;
+}
+
+.ds_dragonage .movement_values_yrd span:after {
+  content: " yrd"
+}
+.ds_dragonage .movement_values_sq {
+  overflow: hidden;
+}
+
+.ds_dragonage .movement_values_sq span {
+  display: block;
+  float: left;
+  width: 130px;
+  text-align: center;
+}
+
+.ds_dragonage .movement_values_sq span:after {
+  content: " squares"
+}
