@@ -5,12 +5,25 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cinzel');
 
+.ds_dragonage .da_left {
+  width: 410px;
+  float: left;
+}
+
+.ds_dragonage .da_right {
+  margin-left: 410px;
+  padding-left: 10px;  
+}
+
+.ds_dragonage .da_clear {
+  clear: both;
+}
 .ds_dragonage span {
   font-family: 'IM Fell English SC', serif;
 }
 
 .ds_dragonage .section {
-  margin-top: 20px;
+  margin-bottom: 10px;
   max-width: 400px;
   border: 1px solid #810207;
   border-top-left-radius: 11px;

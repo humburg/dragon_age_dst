@@ -39,7 +39,7 @@ function dragonage_dataChange(options) {
   
 }
 
-function minimal4e_dataPreSave(options) {
+function dragonage_dataPreSave(options) {
   // Called just before the data is saved to the server.
   // alert("dataPreSave");
 }
