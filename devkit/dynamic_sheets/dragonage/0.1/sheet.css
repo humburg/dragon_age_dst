@@ -2,6 +2,12 @@
 * This is the CSS for the DST.
 * Copy and paste this directly into the CSS textarea on obsidianportal.com
 *****************************/
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cinzel');
+
+.ds_dragonage span {
+  font-family: 'IM Fell English SC', serif;
+}
 
 .ds_dragonage .section {
   margin-top: 20px;
@@ -20,6 +26,8 @@
   width: 100%;
   font-weight: bold;
   text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: larger;
   color: white;
   background-color: #810207;
   border-top-left-radius: 10px;
@@ -29,6 +37,9 @@
 .ds_dragonage .section div.sub_header {
   background-color: black;
   color: white;
+  font-size: large;
+  font-weight: normal;
+  text-align: center;
 }
 /****************************
 * Basic Info
@@ -57,8 +68,6 @@
   display: block;
   float: left;
   width: 120px;
-  font-weight: bold;
-  text-align: center;
 }
 
 .ds_dragonage span.ability_primary_header {
@@ -78,7 +87,7 @@
   display: block;
   float: left;
   width: 120px;
-  font-weight: bold;
+  font-weight: normal;
   text-align: left;
 }
 
@@ -117,8 +126,6 @@
   display: block;
   float: left;
   width: 100px;
-  font-weight: bold;
-  text-align: center;
 }
 
 .ds_dragonage .combat_stats_values span {
@@ -171,8 +178,6 @@
   display: block;
   float: left;
   width: 130px;
-  font-weight: bold;
-  text-align: center;
 }
 
 .ds_dragonage .movement_values_yrd {
