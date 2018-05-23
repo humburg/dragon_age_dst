@@ -5,6 +5,7 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cinzel');
 
+/* Two column layout */
 .ds_dragonage .da_left {
   width: 410px;
   float: left;
@@ -18,6 +19,8 @@
 .ds_dragonage .da_clear {
   clear: both;
 }
+
+/* Common CSS classes */
 .ds_dragonage span {
   font-family: 'IM Fell English SC', serif;
 }
@@ -55,6 +58,7 @@
   text-align: center;
 }
 
+/* Buttons to extend lists */
 .ds_dragonage .da_extend_button {
   display: block;
   overflow: hidden;
@@ -98,6 +102,29 @@
 
 .ds_dragonage .da_extend_button button > img:active {
   background-image: url(https://png.icons8.com/ios/25/000000/plus-2-math.png);
+}
+
+/* Styling checkboxes */
+input[type=checkbox] {
+  display: block;
+  width: 13px;
+  height: 13px;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type=checkbox]:not(:checked) {
+  background-image: url(https://png.icons8.com/material/13/000000/unchecked-checkbox.png);
+}
+
+input[type=checkbox]:checked {
+  background-image: url(https://png.icons8.com/material/13/000000/checked-2.png);
 }
 
 /****************************
