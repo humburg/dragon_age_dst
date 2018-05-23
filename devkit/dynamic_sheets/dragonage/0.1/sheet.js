@@ -104,6 +104,20 @@ function dragonage_add_melee_weapon() {
   chars.bindDynamicAttributes(container_id, 'dragonage');
 }
 
+/* Add Ranged weapon entry */
+function dragonage_add_ranged_weapon() {
+  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content');
+  next_id = dragonage_get_entry_counter(container, 'ranged_weapon_values');
+  new_entry = "<div class='ranged_weapon_values'><span class='dsf dsf_ranged_weapon_name_" + next_id +
+              " ranged_weapon_name'></span><span class='dsf dsf_ranged_weapon_attack_" + next_id +
+              " ranged_weapon_attack'></span><span class='dsf dsf_ranged_weapon_damage_" + next_id +
+              " ranged_weapon_damage'></span><span class='dsf dsf_ranged_weapon_short_" + next_id +
+              " ranged_weapon_short'></span><span class='dsf dsf_ranged_weapon_long_" + next_id +
+              " ranged_weapon_long'></span><span class='dsf dsf_ranged_weapon_reload_" + next_id +
+              " ranged_weapon_reload'></span><span class='da_remove_button'><button onclick='dragonage_remove_entry()'><img src='https://png.icons8.com/material/20/000000/trash.png'></button></span></div>"
+  container.append(new_entry);
+  chars.bindDynamicAttributes(container_id, 'dragonage');
+}
 
 
 /* Speed and movement distance calculations. */
