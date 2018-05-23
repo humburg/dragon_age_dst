@@ -25,5 +25,7 @@ var dynamic_sheet_attrs = {
   "armor_ap" : "0",
   "armor_penalty" : "0",
   "health" : "23",
-  "mana" : "17"
+  "mana" : "17",
+  "shield_type": "None",
+  "shield_bonus" : "0",
 };

@@ -195,30 +195,57 @@
 }
 
 /****************************
-* Armor
+* Armor & Shield
 *****************************/
 .ds_dragonage .armor {
   overflow: hidden;
 }
 
-.ds_dragonage .dsf_armor_type {
-  display: block;
-  width: 400px;
-  text-align: center;
+.ds_dragonage .shield_header, .ds_dragonage .armor_header {
+  overflow: hidden;
 }
-.ds_dragonage .armor_stats {
+.ds_dragonage .armor_header span {
   display: block;
   float: left;
-  width: 100px;
-  text-align: left;
+  width: 110px;
 }
 
-.ds_dragonage .armor_stats_label {
+.ds_dragonage .shield_header span {
   display: block;
-  width: 95px;
-  text-align: right;
-  padding-right: 5px;
+  float: left;
+  width: 150px;
 }
+
+.ds_dragonage .shield_header span.da_trained, 
+.ds_dragonage .armor_header span.da_trained {
+  float: right;
+  width: 65px;
+}
+
+.ds_dragonage .shield_values,
+.ds_dragonage .armor_values {
+  overflow: hidden;
+}
+
+.ds_dragonage .armor_values span{
+  display: block;
+  width: 110px;
+  float: left;
+  text-align: center;
+}
+
+.ds_dragonage .shield_values span{
+  display: block;
+  width: 150px;
+  float: left;
+  text-align: center;
+}
+
+.ds_dragonage .shield_values span.checkbox,
+.ds_dragonage .armor_values span.checkbox {
+  width: 65px;
+  float: right;
+ }
 
 /****************************
 * Movement
