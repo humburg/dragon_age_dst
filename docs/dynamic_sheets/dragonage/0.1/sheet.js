@@ -9,12 +9,10 @@
  * Copy and paste this directly into the javascript textarea on obsidianportal.com
  */
 
-var container_id;
-var chars = aisleten.characters;
-
 function dragonage_dataPreLoad(options) {
   // Called just before the data is loaded.
-   container_id = "#" + options['containerId'];
+   window.container_id = "#" + options['containerId'];
+   window.chars = aisleten.characters;
 }
 
 function dragonage_dataPostLoad(options) {
@@ -101,7 +99,7 @@ function dragonage_add_melee_weapon() {
               " melee_weapon_attack'></span><span class='dsf dsf_melee_weapon_damage_" + next_id +
               " melee_weapon_damage'></span><span class='da_remove_button'><button onclick='dragonage_remove_entry()'><img src='https://png.icons8.com/material/20/000000/trash.png'></button></span></div>"
   $(new_entry).insertBefore(container.find('.weapon_groups'));
-  chars.bindDynamicAttributes(container_id, 'dragonage');
+  window.chars.bindDynamicAttributes(window.container_id, 'dragonage');
 }
 
 /* Add Ranged weapon entry */
@@ -116,7 +114,7 @@ function dragonage_add_ranged_weapon() {
               " ranged_weapon_long'></span><span class='dsf dsf_ranged_weapon_reload_" + next_id +
               " ranged_weapon_reload'></span><span class='da_remove_button'><button onclick='dragonage_remove_entry()'><img src='https://png.icons8.com/material/20/000000/trash.png'></button></span></div>"
   container.append(new_entry);
-  chars.bindDynamicAttributes(container_id, 'dragonage');
+  window.chars.bindDynamicAttributes(window.container_id, 'dragonage');
 }
 
 
