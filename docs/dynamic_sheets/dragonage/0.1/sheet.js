@@ -20,6 +20,10 @@ function dragonage_dataPreLoad(options) {
 
 function dragonage_dataPostLoad(options) {
   // Called just after the data is loaded.
+  if(jQuery('.dsf_dexterity').html()){
+    dragonage_apply_armor_penalty();
+  }
+
   if(!jQuery('.dsf_speed').html()){
     jQuery('.dsf_speed').html(dragonage_speed());
     dragonage_speed_update();
@@ -38,6 +42,22 @@ function dragonage_dataChange(options) {
   }
   if(field == 'speed') {
     dragonage_speed_update();
+  }
+
+  if(field == 'armor_penalty') {
+    dragonage_dexterity_update();
+  }
+
+  if(field == 'armor_trained') {
+    dragonage_dexterity_update();
+  }
+
+  if(field == 'shield_bonus') {
+    jQuery('.dsf_defense').html(dragonage_defense())
+  }
+
+  if(field == 'shield_trained'){
+    jQuery('.dsf_defense').html(dragonage_defense())
   }
 
 }
@@ -68,19 +88,6 @@ function dragonage_dataPreSave(options) {
   // alert("dataPreSave");
 }
 
-function dragonage_dexterity_update() {
-  jQuery('.dsf_speed').html(dragonage_speed());
-  dragonage_speed_update();
-}
-
-function dragonage_speed_update() {
-  jQuery('.dsf_move_yrd').html(dragonage_move_distance());
-  jQuery('.dsf_charge_yrd').html(dragonage_charge_distance());
-  jQuery('.dsf_run_yrd').html(dragonage_run_distance());
-  jQuery('.dsf_move_sq').html(dragonage_move_squares());
-  jQuery('.dsf_charge_sq').html(dragonage_charge_squares());
-  jQuery('.dsf_run_sq').html(dragonage_run_squares());
-}
 
 /* Function to allow adding of new entries to lists.
    Entries will be assigned dsf classes with automatic numbering.
@@ -142,19 +149,80 @@ function dragonage_add_ranged_weapon() {
 }
 
 
-/* Speed and movement distance calculations. */
+/* Computing derived stats */
+function dragonage_dexterity_update() {
+  dragonage_apply_armor_penalty();
+  jQuery('.dsf_speed').html(dragonage_speed());
+  dragonage_speed_update();
+  jQuery('.dsf_defense').html(dragonage_defense())
+}
 
-function dragonage_speed() {
-  var base_speed = 10;
-  var dex = parseInt(jQuery('.dsf_dexterity').html());
-  var penalty = parseInt(jQuery('.dsf_armor_penalty').html());
+function dragonage_speed_update() {
+  jQuery('.dsf_move_yrd').html(dragonage_move_distance());
+  jQuery('.dsf_charge_yrd').html(dragonage_charge_distance());
+  jQuery('.dsf_run_yrd').html(dragonage_run_distance());
+  jQuery('.dsf_move_sq').html(dragonage_move_squares());
+  jQuery('.dsf_charge_sq').html(dragonage_charge_squares());
+  jQuery('.dsf_run_sq').html(dragonage_run_squares());
+}
 
-  /* The armor penalty is never positive but this is ambiguous in the book.
+ /* The armor penalty is never positive but this is ambiguous in the book.
      Some people may prefer to specify a positive number so we flip the sign if necessary.
   */
+function dragonage_armor_penalty(penalty_type){
+  var penalty = 0;
+
+  // Armor penalty applies to Dex if untrained but only speed if trained.
+  // Check here to avoid applying the penalty to speed twice in the untrained case.
+  if(penalty_type == 'speed' && jQuery('.dsf_armor_trained input').val == "0" ||
+     penalty_type == 'dex' && jQuery('.dsf_armor_trained input').val == "1"){
+    return 0;
+  }
+
+  if(jQuery('.dsf_armor_penalty').html()){
+    penalty = parseInt(jQuery('.dsf_armor_penalty').html());
+  }
   if(penalty > 0){
     penalty = -1 * penalty;
   }
+  return penalty;
+}
+
+function dragonage_apply_armor_penalty(){
+  var dex = jQuery('.dsf_dexterity').html();
+    if(dex){
+      dex = parseInt(dex);
+      var penalty = dragonage_armor_penalty('dex');
+      if(penalty != 0 && jQuery('.dsf_armor_trained input').val() == "0"){
+        dex = dex + penalty;
+      }
+      jQuery('span.dexterity_actual').html(dex);
+    }
+}
+
+/* Compute Defense value */
+function dragonage_shield_bonus(){
+  var bonus = jQuery('.dsf_shield_bonus').html();
+  if(bonus){
+    bonus = parseInt(bonus);
+    if(bonus > 0 && jQuery('.dsf_shield_trained input').val() == "0"){
+      bonus = 1;
+    }
+  }
+  return bonus;
+}
+
+function dragonage_defense(){
+  var dex = parseInt(jQuery('span.dexterity_actual').html());
+  return 10 + dex + dragonage_shield_bonus();
+}
+
+/* Speed and movement distance calculations. */
+function dragonage_speed() {
+  var base_speed = 10;
+  var dex = parseInt(jQuery('.dexterity_actual').html());
+  var penalty = dragonage_armor_penalty('speed');
+
   var race = jQuery('.dsf_race').html();
   if(race.toLowerCase() == 'dwarf'){
     base_speed = 8;
@@ -181,16 +249,13 @@ function dragonage_run_distance() {
 }
 
 function dragonage_move_squares() {
-  var dist = parseInt(jQuery('.dsf_move_yrd').html());
-  return Math.floor(dist/2.0);
+  return Math.floor(dragonage_move_distance()/2.0);
 }
 
 function dragonage_charge_squares() {
-  var dist = parseInt(jQuery('.dsf_charge_yrd').html());
-  return Math.floor(dist/2.0);
+  return Math.floor(dragonage_charge_distance()/2.0);
 }
 
 function dragonage_run_squares() {
-  var dist = parseInt(jQuery('.dsf_run_yrd').html());
-  return Math.floor(dist/2.0);
+  return Math.floor(dragonage_run_distance()/2.0);
 }
