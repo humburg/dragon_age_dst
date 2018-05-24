@@ -13,6 +13,9 @@ function dragonage_dataPreLoad(options) {
   // Called just before the data is loaded.
    window.container_id = "#" + options['containerId'];
    window.chars = aisleten.characters;
+
+   // display main tab
+   document.getElementsByClassName('da_tab_main')[0].style.display = "block";
 }
 
 function dragonage_dataPostLoad(options) {
@@ -37,6 +40,27 @@ function dragonage_dataChange(options) {
     dragonage_speed_update();
   }
 
+}
+
+/* Tabbed navigation */
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+
+  // Hide all tabs
+  tabcontent = document.getElementsByClassName("da_tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="da_tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("da_tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementsByClassName('da_tab_' + tabName)[0].style.display = "block";
+  evt.currentTarget.className += " active";
 }
 
 function dragonage_dataPreSave(options) {

@@ -130,6 +130,47 @@ input[type=checkbox]:checked {
 }
 
 /****************************
+* Tabbed interface
+*****************************/
+.ds_dragonage .da_tabs {
+  overflow: hidden;
+  background-color: black;
+  width: 820px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.ds_dragonage .da_tabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 16px;
+  transition: 0.3s;
+  color: white;
+  font-family: 'IM Fell English SC', serif;
+  font-size: large;
+}
+
+/* Change background color of buttons on hover */
+.ds_dragonage .da_tabs button:hover {
+  background-color: #e0beb1;
+  color: black;
+}
+
+/* Create an active/current tablink class */
+.ds_dragonage .da_tabs button.active {
+  background-color: #810207;
+  color: white;
+}
+
+.ds_dragonage .da_tabcontent {
+  padding-top: 10px;
+  display: none;
+}
+
+
+/****************************
 * Basic Info
 *****************************/
 .ds_dragonage .dsf_xp:before {
