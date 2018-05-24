@@ -1,9 +1,9 @@
 // This is some example data to use.
 // Feel free to modify this to make sense with the game system you're using.
 var dynamic_sheet_attrs = {
-  "name" : "Tordek",
-  "player" : "Peter",
-  "campaign" : "Into the Gathering Dark",
+  "name" : "Gunther Oakheart",
+  "player" : "<a href='https://www.obsidianportal.com/profile/Pytheas'>Pytheas</a>",
+  "campaign" : "<a href='https://intothegatheringdark.obsidianportal.com/'>Into the Gathering Dark</a>",
   "level" : "1",
   "race" : "Human",
   "class" : "Mage",
