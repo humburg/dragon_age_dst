@@ -38,25 +38,44 @@
       Copy ONLY this section into the HTML Template textarea on Obsidian Portal. Do not copy any of the
       surrounding HTML!
       -->
-      <div class="da_left">
-        <div class="appearance section">
-            <span class="section_title">Appearance</span>
-            <div class="da_portrait"><span class="dsf dsf_avatar_image"></span></div>
-            <div class="da_content">
-              <div class="height">
-                <span>Height:</span>
-                <span class="dsf dsf_height"></span>
-              </div>
-              <div class="weight">
-                  <span>Weight:</span>
-                  <span class="dsf dsf_weight"></span>
-              </div>
-              <div class="features">
-                  <span>Distinguishing Features:</span>
-                  <span class="dsf dsf_features"></span>
+      <div class='da_head'>
+        <div class='da_header_text'>
+          <div class="name">
+              <span class="dsf dsf_name"></span>
+          </div>
+          <div class='player_campaign'>
+            <span>Played by </span><span class="dsf dsf_player"></span>
+            <span> in </span><span class="dsf dsf_campaign"></span>
+          </div>
+        </div>
+      </div>
+      <div class="da_tabs">
+        <button class="da_tablinks active" onclick="openTab(event, 'main')">Main</button>
+        <button class="da_tablinks" onclick="openTab(event, 'talents')">Powers &amp; Talents</button>
+        <button class="da_tablinks" onclick="openTab(event, 'spells')">Spells</button>
+        <button class="da_tablinks" onclick="openTab(event, 'background')">Background</button>
+      </div>
+
+      <div class="da_tabcontent da_tab_main">
+        <div class="da_left">
+          <div class="appearance section">
+              <span class="section_title">Appearance</span>
+              <div class="da_portrait"><span class="dsf dsf_avatar_image"></span></div>
+              <div class="da_content">
+                <div class="height">
+                  <span>Height:</span>
+                  <span class="dsf dsf_height"></span>
+                </div>
+                <div class="weight">
+                    <span>Weight:</span>
+                    <span class="dsf dsf_weight"></span>
+                </div>
+                <div class="features">
+                    <span>Distinguishing Features:</span>
+                    <span class="dsf dsf_features"></span>
+                </div>
               </div>
             </div>
-          </div>
 
         <!-- Ability scores and focuses -->
         <div class="ability_scores section">
@@ -126,10 +145,7 @@
         <div class="basic_info section">
           <span class="section_title">Basic Info</span>
           <div class="da_content">
-            <div class="name">
-              <span>Name:</span>
-              <span class="dsf dsf_name"></span>
-            </div>
+            
             <div class="race">
                 <span>Race:</span>
                 <span class="dsf dsf_race"></span>
@@ -146,21 +162,6 @@
               <span>Level:</span>
               <span class="dsf dsf_level"></span>
               <span class="dsf dsf_xp"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Player and campaign for this character  -->
-        <div class="player_info section">
-          <span class="section_title">Player Info</span>
-          <div class="da_content">
-            <div class="player">
-              <span>Player:</span>
-              <span class="dsf dsf_player"></span>
-            </div>
-            <div class="campaign">
-              <span>Campaign:</span>
-              <span class="dsf dsf_campaign"></span>
             </div>
           </div>
         </div>

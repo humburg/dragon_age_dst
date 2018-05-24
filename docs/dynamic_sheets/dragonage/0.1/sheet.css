@@ -169,6 +169,31 @@ input[type=checkbox]:checked {
   display: none;
 }
 
+/****************************
+* Header
+*****************************/
+.ds_dragonage div.da_head {
+  width: 820px;
+  height: 180px;
+  background-image: url(../../../img/dragon-age-logo.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: white;
+  position: relative;
+}
+
+.ds_dragonage .da_head .da_header_text {
+  position: absolute;
+  bottom: 20px;
+}
+
+.ds_dragonage .da_head .name {
+  font-size: x-large;
+}
+
+.ds_dragonage .dsf_campaign {
+  font-style: italic;
+}
 
 /****************************
 * Basic Info
