@@ -113,7 +113,7 @@
 }
 
 /* Styling checkboxes */
-input[type=checkbox] {
+.ds_dragonage input[type=checkbox] {
   display: block;
   width: 13px;
   height: 13px;
@@ -129,26 +129,26 @@ input[type=checkbox] {
   margin-right: auto;
 }
 
-input[type=checkbox]:not(:checked) {
+.ds_dragonage input[type=checkbox]:not(:checked) {
   background-image: url(https://png.icons8.com/material/13/000000/unchecked-checkbox.png);
 }
 
-input[type=checkbox]:checked {
+.ds_dragonage input[type=checkbox]:checked {
   background-image: url(https://png.icons8.com/material/13/000000/checked-2.png);
 }
 
 
 /* links */
-a {
+.ds_dragonage a {
   color: black;
   text-decoration: none;
 }
 
-a:hover {
+.ds_dragonage a:hover {
   text-decoration: underline;
 }
 
-a:active {
+.ds_dragonage a:active {
   color: #810207; 
 }
 
