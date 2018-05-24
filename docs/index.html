@@ -146,7 +146,7 @@
         <div class="basic_info section">
           <span class="section_title">Basic Info</span>
           <div class="da_content">
-            
+
             <div class="race">
                 <span>Race:</span>
                 <span class="dsf dsf_race"></span>
@@ -288,7 +288,48 @@
       </div>
     </div>
   </div>
-  <div class="da_tabcontent da_tab_talents"></div>
+  <div class="da_tabcontent da_tab_talents">
+    <div class="specialization section">
+      <span class="section_title">Specializations</span>
+      <div class="specialization_header sub_header">
+        <span>Name</span>
+        <span class="da_narrow">J</span>
+        <span class="da_narrow">M</span>
+        <span class="da_wide">Description</span>
+        <span class="da_extend_button">
+          <button onclick="dragonage_add_talent('specialization')"><img></button>
+        </span>
+      </div>
+      <div class="da_content">
+          <div class="specialization_values">
+          <span class="dsf dsf_specialization_name_1 specialization_name"></span>
+          <span class="dsf dsf_specialization_journeyman_1 specialization_journeyman checkbox"></span>
+          <span class="dsf dsf_specialization_master_1 specialization_master checkbox"></span>
+          <span class="dsf dsf_specialization_description_1 specialization_description da_wide"></span>
+        </div>
+      </div>
+    </div>
+    <div class="talent section">
+        <span class="section_title">talents</span>
+        <div class="talent_header sub_header">
+          <span>Name</span>
+          <span class="da_narrow">J</span>
+          <span class="da_narrow">M</span>
+          <span class="da_wide">Description</span>
+          <span class="da_extend_button">
+            <button onclick="dragonage_add_talent('talent')"><img></button>
+          </span>
+        </div>
+        <div class="da_content">
+            <div class="talent_values">
+            <span class="dsf dsf_talent_name_1 talent_name"></span>
+            <span class="dsf dsf_talent_journeyman_1 talent_journeyman checkbox"></span>
+            <span class="dsf dsf_talent_master_1 talent_master checkbox"></span>
+            <span class="dsf dsf_talent_description_1 talent_description da_wide"></span>
+          </div>
+        </div>
+      </div>
+  </div>
   <div class="da_tabcontent da_tab_spells"></div>
   <div class="da_tabcontent da_tab_background"></div>
 

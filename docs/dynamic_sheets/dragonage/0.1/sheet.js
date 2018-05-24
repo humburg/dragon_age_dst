@@ -148,6 +148,18 @@ function dragonage_add_ranged_weapon() {
   window.chars.bindDynamicAttributes(window.container_id, 'dragonage');
 }
 
+/* Add Specialization entry */
+function dragonage_add_talent(type) {
+  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content');
+  next_id = dragonage_get_entry_counter(container, type + '_values');
+  new_entry = "<div class='" + type + "_values'><span class='dsf dsf_" + type + "_name_" + next_id +
+              " " + type + "_name'></span><span class='dsf dsf_" + type + "_journeyman_" + next_id +
+              " " + type + "_journeyman checkbox'></span><span class='dsf dsf_" + type + "_master_" + next_id +
+              " " + type + "_master checkbox'></span><span class='dsf dsf_" + type + "_description_" + next_id +
+              " " + type + "_description da_wide'></span><span class='da_remove_button'><button onclick='dragonage_remove_entry()'><img src='https://png.icons8.com/material/20/000000/trash.png'></button></span></div>"
+  container.append(new_entry);
+  window.chars.bindDynamicAttributes(window.container_id, 'dragonage');
+}
 
 /* Computing derived stats */
 function dragonage_dexterity_update() {

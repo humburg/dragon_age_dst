@@ -5,6 +5,7 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cinzel');
 
+/* Common CSS classes */
 .ds_dragonage .hidden {
   display: none;
 }
@@ -32,7 +33,6 @@
   clear: both;
 }
 
-/* Common CSS classes */
 .ds_dragonage span {
   font-family: 'IM Fell English SC', serif;
 }
@@ -43,6 +43,7 @@
   border: 1px solid #810207;
   border-top-left-radius: 11px;
   border-top-right-radius: 11px;
+  overflow: hidden;
 }
 
 .ds_dragonage .section .da_content div:nth-of-type(even){
@@ -68,6 +69,7 @@
   font-size: large;
   font-weight: normal;
   text-align: center;
+  overflow: hidden;
 }
 
 /* Buttons to extend lists */
@@ -153,7 +155,7 @@
 }
 
 .ds_dragonage a:active {
-  color: #810207; 
+  color: #810207;
 }
 
 /****************************
@@ -296,11 +298,6 @@
 .ds_dragonage .combat_stats {
   display: block;
   width: 400px;
-  overflow: hidden;
-}
-
-.ds_dragonage .combat_stats_header {
-  overflow: hidden;
 }
 
 .ds_dragonage .combat_stats_header span {
@@ -323,9 +320,6 @@
   overflow: hidden;
 }
 
-.ds_dragonage .shield_header, .ds_dragonage .armor_header {
-  overflow: hidden;
-}
 .ds_dragonage .armor_header span {
   display: block;
   float: left;
@@ -338,7 +332,7 @@
   width: 150px;
 }
 
-.ds_dragonage .shield_header span.da_trained, 
+.ds_dragonage .shield_header span.da_trained,
 .ds_dragonage .armor_header span.da_trained {
   float: right;
   width: 65px;
@@ -375,11 +369,6 @@
 .ds_dragonage .movement {
   display: block;
   width: 400px;
-  overflow: hidden;
-}
-
-.ds_dragonage .movement_header {
-  overflow: hidden;
 }
 
 .ds_dragonage .movement_header span {
@@ -420,15 +409,6 @@
 /****************************
 * Melee Weapons
 *****************************/
-
-.ds_dragonage .melee_weapons {
-  max-width: 400px;
-  overflow: hidden;
-}
-
-.ds_dragonage .melee_header {
-  overflow: hidden;
-}
 
 .ds_dragonage .melee_header span {
   display: block;
@@ -472,11 +452,6 @@
 *****************************/
 .ds_dragonage .ranged_weapons {
   max-width: 820px;
-  overflow: hidden;
-}
-
-.ds_dragonage .ranged_header {
-  overflow: hidden;
 }
 
 .ds_dragonage .ranged_header span {
@@ -505,4 +480,58 @@
 .ds_dragonage .ranged_weapon_values span.da_remove_button {
   width: 20px;
   float: right;
+}
+
+/****************************
+* Specializations & Talents
+*****************************/
+.ds_dragonage .specialization,
+.ds_dragonage .talent {
+  max-width: 820px;
+}
+
+.ds_dragonage .specialization span.section_title,
+.ds_dragonage .talent span.section_title {
+  width: 820px;
+}
+
+.ds_dragonage .specialization_header span,
+.ds_dragonage .specialization_values span,
+.ds_dragonage .talent_header span,
+.ds_dragonage .talent_values span {
+  display: block;
+  float: left;
+  text-align: center;
+  width: 200px;
+}
+
+.ds_dragonage .specialization_header span.da_narrow,
+.ds_dragonage .specialization_values span.checkbox,
+.ds_dragonage .talent_header span.da_narrow,
+.ds_dragonage .talent_values span.checkbox {
+  width: 20px;
+}
+
+.ds_dragonage .specialization_header span.da_wide,
+.ds_dragonage .specialization_values span.da_wide,
+.ds_dragonage .talent_header span.da_wide,
+.ds_dragonage .talent_values span.da_wide {
+  width: 515px;
+}
+
+.ds_dragonage .specialization_header span.da_extend_button,
+.ds_dragonage .talent_header span.da_extend_button {
+  float: right;
+  width: 25px;
+}
+
+.ds_dragonage .specialization_values,
+.ds_dragonage .talent_values {
+  overflow: hidden;
+}
+
+.ds_dragonage .specialization_values span.da_remove_button,
+.ds_dragonage .talent_values span.da_remove_button {
+  float:right;
+  width: 25px;
 }
