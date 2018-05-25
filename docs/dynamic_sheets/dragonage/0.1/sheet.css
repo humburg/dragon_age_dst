@@ -239,6 +239,23 @@
 }
 
 /****************************
+* Appearance
+*****************************/
+.ds_dragonage .da_portrait {
+  display: table;
+  margin: 0 auto;
+}
+
+.ds_dragonage .appearance .da_content span,
+.ds_dragonage .appearance .sub_header span {
+  width: 100px;
+}
+
+.ds_dragonage .appearance span.appearance_features {
+  width: 200px;
+}
+
+/****************************
 * Basic Info
 *****************************/
 .ds_dragonage .basic_info .da_content span,
