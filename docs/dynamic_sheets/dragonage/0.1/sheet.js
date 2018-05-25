@@ -236,8 +236,8 @@ function dragonage_armor_penalty(penalty_type){
 
   // Armor penalty applies to Dex if untrained but only speed if trained.
   // Check here to avoid applying the penalty to speed twice in the untrained case.
-  if(penalty_type == 'speed' && jQuery('.dsf_armor_trained input').val == "0" ||
-     penalty_type == 'dex' && jQuery('.dsf_armor_trained input').val == "1"){
+  if(penalty_type == 'speed' && jQuery('.dsf_armor_trained input').val() == "0" ||
+     penalty_type == 'dex' && jQuery('.dsf_armor_trained input').val() == "1"){
     return 0;
   }
 
