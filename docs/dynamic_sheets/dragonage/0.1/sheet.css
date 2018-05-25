@@ -6,6 +6,10 @@
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cinzel');
 
 /* Common CSS classes */
+div.ds_dragonage {
+  width: 820px;
+}
+
 .ds_dragonage .hidden {
   display: none!important;
 }
@@ -26,7 +30,7 @@
 
 .ds_dragonage .da_right {
   margin-left: 410px;
-  padding-left: 10px;
+  padding-left: 8px;
 }
 
 .ds_dragonage .da_clear {
@@ -490,7 +494,6 @@
 .ds_dragonage .ranged_weapons {
   max-width: 820px;
   width: 820px;
-  display: inline-block;
 }
 
 .ds_dragonage .ranged_header span {
