@@ -1,6 +1,7 @@
 // This is some example data to use.
 // Feel free to modify this to make sense with the game system you're using.
 var dynamic_sheet_attrs = {
+  "avatar_image": "<img src='https://github.com/humburg/dragon_age_dst/blob/master/docs/img/placeholder.png?raw=true'>",
   "name" : "Gunther Oakheart",
   "player" : "<a href='https://www.obsidianportal.com/profile/Pytheas'>Pytheas</a>",
   "campaign" : "<a href='https://intothegatheringdark.obsidianportal.com/'>Into the Gathering Dark</a>",
