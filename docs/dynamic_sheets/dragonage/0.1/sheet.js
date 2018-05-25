@@ -16,10 +16,44 @@ function dragonage_dataPreLoad(options) {
 
    // display main tab
    document.getElementsByClassName('da_tab_main')[0].style.display = "block";
+
+   // prepare storage for extensible fields
+   var ext, target_name, classes;
+   var extensibles = jQuery('.extensible');
+   var container = jQuery('div.extension_storage');
+   for(i = 0; i < extensibles.length; i++) {
+    ext = extensibles[i];
+    classes = ext.classList;
+    for(j=0; j < classes.length; j++){
+      if(classes[j].startsWith('extend_')){
+        target_name = classes[j].replace('extend_', '');
+        storage = document.createElement('span');
+        storage.className = "dsf dsf_" + target_name + "_storage";
+        container.append(storage);
+      }
+    }
+  }
 }
 
 function dragonage_dataPostLoad(options) {
   // Called just after the data is loaded.
+
+  // Populate extensible fields
+  var target_name, classes, ext, dom;
+  var storage = jQuery('.extension_storage').children();
+  var parser = new DOMParser();
+  for(i = 0; i < storage.length; i++){
+    classes = storage[i].classList;
+    for(j=0; j < classes.length; j++){
+      if(classes[j].startsWith('dsf_') && classes[j].endsWith('_storage')){
+        target_name = classes[j].replace('dsf_', 'extend_').replace('_storage', '');
+        if($(storage[i]).text()){
+          dom = parser.parseFromString($(storage[i]).text(), 'application/xml');
+          jQuery('.' + target_name).replaceWith(dom.children[0]);
+        }
+      }
+    }
+  }
 
   // Ensure Dex based calculations are up to date
   if(jQuery('.dsf_dexterity').html()){
@@ -32,6 +66,25 @@ function dragonage_dataPostLoad(options) {
     dragonage_speed_update();
   }
 }
+
+function dragonage_dataPreSave(options) {
+  // Called just before the data is saved to the server.
+  // Collect data from extensible elements and store it in a single field for saving.
+  var ext, target_name, classes;
+  var extensibles = jQuery('.extensible');
+  var serial = new XMLSerializer();
+  for(i = 0; i < extensibles.length; i++) {
+    ext = extensibles[i];
+    classes = ext.classList;
+    for(j=0; j < classes.length; j++){
+      if(classes[j].startsWith('extend_')){
+        target_name = classes[j].replace('extend_', '');
+        jQuery('span.dsf.dsf_'+target_name+'_storage').text(serial.serializeToString(ext))
+      }
+    }
+  }
+}
+
 
 function dragonage_dataChange(options) {
   // Called immediately after a data value is changed.
@@ -86,12 +139,6 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-function dragonage_dataPreSave(options) {
-  // Called just before the data is saved to the server.
-  // alert("dataPreSave");
-}
-
-
 /* Function to allow adding of new entries to lists.
    Entries will be assigned dsf classes with automatic numbering.
    This function identifies the last ID used and returns the next
@@ -126,19 +173,19 @@ function dragonage_remove_entry() {
 
 /* Add Melee weapon entry */
 function dragonage_add_melee_weapon() {
-  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content');
+  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content').children('.extensible');
   next_id = dragonage_get_entry_counter(container, 'melee_weapon_values');
   new_entry = "<div class='melee_weapon_values'><span class='dsf dsf_melee_weapon_name_" + next_id +
               " melee_weapon_name'></span><span class='dsf dsf_melee_weapon_attack_" + next_id +
               " melee_weapon_attack'></span><span class='dsf dsf_melee_weapon_damage_" + next_id +
               " melee_weapon_damage'></span><span class='da_remove_button'><button onclick='dragonage_remove_entry()'><img src='https://png.icons8.com/material/20/000000/trash.png'></button></span></div>"
-  $(new_entry).insertBefore(container.find('.weapon_groups'));
+  container.append(new_entry);
   window.chars.bindDynamicAttributes(window.container_id, 'dragonage');
 }
 
 /* Add Ranged weapon entry */
 function dragonage_add_ranged_weapon() {
-  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content');
+  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content').children('.extensible');
   next_id = dragonage_get_entry_counter(container, 'ranged_weapon_values');
   new_entry = "<div class='ranged_weapon_values'><span class='dsf dsf_ranged_weapon_name_" + next_id +
               " ranged_weapon_name'></span><span class='dsf dsf_ranged_weapon_attack_" + next_id +
@@ -153,7 +200,7 @@ function dragonage_add_ranged_weapon() {
 
 /* Add Specialization entry */
 function dragonage_add_talent(type) {
-  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content');
+  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content').children('.extensible');
   next_id = dragonage_get_entry_counter(container, type + '_values');
   new_entry = "<div class='" + type + "_values'><span class='dsf dsf_" + type + "_name_" + next_id +
               " " + type + "_name'></span><span class='dsf dsf_" + type + "_journeyman_" + next_id +

@@ -476,6 +476,8 @@
 .ds_dragonage .section .da_content div.weapon_groups {
   padding-top: 5px;
   background-color: lightgray;
+  display: inline-block;
+  width: 400px;
 }
 
 .ds_dragonage .weapon_groups span {

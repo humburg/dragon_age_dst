@@ -29,4 +29,5 @@ var dynamic_sheet_attrs = {
   "mana" : "17",
   "shield_type": "None",
   "shield_bonus" : "0",
+  "melee_weapon_storage": "&lt;div xmlns='http://www.w3.org/1999/xhtml' class='extensible extend_melee_weapon'&gt;&lt;div class='melee_weapon_values'&gt;&lt;span class='dsf dsf_melee_weapon_name_1 melee_weapon_name'&gt;Staff&lt;/span&gt;&lt;span class='dsf dsf_melee_weapon_attack_1 melee_weapon_attack'&gt;3d6+1&lt;/span&gt;&lt;span class='dsf dsf_melee_weapon_damage_1 melee_weapon_damage'&gt;1d6&lt;/span&gt;&lt;/div&gt;&lt;div class='melee_weapon_values'&gt;&lt;span class='dsf dsf_melee_weapon_name_2 melee_weapon_name'&gt;Sword&lt;/span&gt;&lt;span class='dsf dsf_melee_weapon_attack_2 melee_weapon_attack'&gt;3d6+2&lt;/span&gt;&lt;span class='dsf dsf_melee_weapon_damage_2 melee_weapon_damage'&gt;2d6+2&lt;/span&gt;&lt;span class='da_remove_button'&gt;&lt;button onclick='dragonage_remove_entry()'&gt;&lt;img src='https://png.icons8.com/material/20/000000/trash.png' /&gt;&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;",
 };

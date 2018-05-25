@@ -238,10 +238,12 @@
               </span>
             </div>
             <div class="da_content">
-              <div class="melee_weapon_values">
-                <span class="dsf dsf_melee_weapon_name_1 melee_weapon_name"></span>
-                <span class="dsf dsf_melee_weapon_attack_1 melee_weapon_attack"></span>
-                <span class="dsf dsf_melee_weapon_damage_1 melee_weapon_damage"></span>
+              <div class="extensible extend_melee_weapon">
+                <div class="melee_weapon_values">
+                  <span class="dsf dsf_melee_weapon_name_1 melee_weapon_name"></span>
+                  <span class="dsf dsf_melee_weapon_attack_1 melee_weapon_attack"></span>
+                  <span class="dsf dsf_melee_weapon_damage_1 melee_weapon_damage"></span>
+                </div>
               </div>
               <div class="weapon_groups">
                 <span>Weapon Groups: </span>
@@ -266,13 +268,15 @@
         </span>
       </div>
       <div class="da_content">
-        <div class="ranged_weapon_values">
-            <span class="dsf dsf_ranged_weapon_name_1 ranged_weapon_name"></span>
-            <span class="dsf dsf_ranged_weapon_attack_1 ranged_weapon_attack"></span>
-            <span class="dsf dsf_ranged_weapon_damage_1 ranged_weapon_damage"></span>
-            <span class="dsf dsf_ranged_weapon_short_1 ranged_weapon_short"></span>
-            <span class="dsf dsf_ranged_weapon_long_1 ranged_weapon_long"></span>
-            <span class="dsf dsf_ranged_weapon_reload_1 ranged_weapon_reload"></span>
+        <div class="extensible extend_ranged_weapon">
+          <div class="ranged_weapon_values">
+              <span class="dsf dsf_ranged_weapon_name_1 ranged_weapon_name"></span>
+              <span class="dsf dsf_ranged_weapon_attack_1 ranged_weapon_attack"></span>
+              <span class="dsf dsf_ranged_weapon_damage_1 ranged_weapon_damage"></span>
+              <span class="dsf dsf_ranged_weapon_short_1 ranged_weapon_short"></span>
+              <span class="dsf dsf_ranged_weapon_long_1 ranged_weapon_long"></span>
+              <span class="dsf dsf_ranged_weapon_reload_1 ranged_weapon_reload"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -290,11 +294,13 @@
         </span>
       </div>
       <div class="da_content">
+        <div class="extensible extend_specialization">
           <div class="specialization_values">
-          <span class="dsf dsf_specialization_name_1 specialization_name"></span>
-          <span class="dsf dsf_specialization_journeyman_1 specialization_journeyman checkbox"></span>
-          <span class="dsf dsf_specialization_master_1 specialization_master checkbox"></span>
-          <span class="dsf dsf_specialization_description_1 specialization_description da_wide"></span>
+            <span class="dsf dsf_specialization_name_1 specialization_name"></span>
+            <span class="dsf dsf_specialization_journeyman_1 specialization_journeyman checkbox"></span>
+            <span class="dsf dsf_specialization_master_1 specialization_master checkbox"></span>
+            <span class="dsf dsf_specialization_description_1 specialization_description da_wide"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -310,11 +316,13 @@
           </span>
         </div>
         <div class="da_content">
+          <div class="extensible extend_talent">
             <div class="talent_values">
-            <span class="dsf dsf_talent_name_1 talent_name"></span>
-            <span class="dsf dsf_talent_journeyman_1 talent_journeyman checkbox"></span>
-            <span class="dsf dsf_talent_master_1 talent_master checkbox"></span>
-            <span class="dsf dsf_talent_description_1 talent_description da_wide"></span>
+              <span class="dsf dsf_talent_name_1 talent_name"></span>
+              <span class="dsf dsf_talent_journeyman_1 talent_journeyman checkbox"></span>
+              <span class="dsf dsf_talent_master_1 talent_master checkbox"></span>
+              <span class="dsf dsf_talent_description_1 talent_description da_wide"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -322,6 +330,7 @@
   <div class="da_tabcontent da_tab_spells"></div>
   <div class="da_tabcontent da_tab_background"></div>
 
+  <div class="extension_storage hidden"></div>
       <!-- End HTML Template - Don't copy anything below here into the template! -->
     </div> <!-- ds_dragonage -->
   </div> <!-- dynamic_sheet_container -->
