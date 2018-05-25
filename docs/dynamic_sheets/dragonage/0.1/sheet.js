@@ -20,10 +20,13 @@ function dragonage_dataPreLoad(options) {
 
 function dragonage_dataPostLoad(options) {
   // Called just after the data is loaded.
+
+  // Ensure Dex based calculations are up to date
   if(jQuery('.dsf_dexterity').html()){
     dragonage_apply_armor_penalty();
   }
 
+  // Ensure Speed based calculations are up to date
   if(!jQuery('.dsf_speed').html()){
     jQuery('.dsf_speed').html(dragonage_speed());
     dragonage_speed_update();
