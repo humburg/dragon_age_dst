@@ -7,7 +7,7 @@
 
 /* Common CSS classes */
 .ds_dragonage .hidden {
-  display: none;
+  display: none!important;
 }
 
 .ds_dragonage span.dsf {
@@ -44,6 +44,20 @@
   border-top-left-radius: 11px;
   border-top-right-radius: 11px;
   overflow: hidden;
+}
+
+.ds_dragonage .section .da_content div {
+  overflow: hidden;
+  font-weight: normal;
+  font-size: medium;
+}
+
+.ds_dragonage .section .da_content span,
+.ds_dragonage .section .sub_header span
+{
+  display: block;
+  float: left;
+  text-align: center;
 }
 
 .ds_dragonage .section .da_content div:nth-of-type(even){
@@ -227,22 +241,36 @@
 /****************************
 * Basic Info
 *****************************/
+.ds_dragonage .basic_info .da_content span,
+.ds_dragonage .basic_info .sub_header span
+{
+  width: 100px;
+}
+
+.ds_dragonage .basic_info .da_content span.dsf_xp
+{
+  display: inline-block;
+  float: none;
+  width: auto;
+}
+
+.ds_dragonage .basic_info .da_content span.dsf_level {
+  display: inline-block;
+  float: none;
+  width: auto;
+  padding-right: 3px;
+}
 .ds_dragonage .dsf_xp:before {
-  content: "("
+  content: " ("
 }
 
 .ds_dragonage .dsf_xp:after {
   content: " xp)"
 }
+
 /****************************
 * Ability Scores
 *****************************/
-
-.ds_dragonage .ability_score {
-  clear: left;
-  text-align: center;
-  overflow: hidden;
-}
 
 .ds_dragonage .ability_score_header {
   overflow: hidden;
@@ -266,29 +294,19 @@
 }
 
 
-.ds_dragonage .ability_score_name {
-  display: block;
-  float: left;
-  width: 120px;
+.ds_dragonage .da_content span.ability_score_name {
+  width: 118px;
+  padding-left: 2px;
   font-weight: normal;
   text-align: left;
 }
 
-.ds_dragonage .ability_score_primary {
-  display: block;
-  float: left;
+.ds_dragonage .da_content span.ability_score_primary,
+.ds_dragonage .da_content span.ability_score_rating {
   width: 60px;
 }
 
-.ds_dragonage .ability_score_rating {
-  display: block;
-  float: left;
-  width: 60px;
-}
-
-.ds_dragonage .ability_score_focuses {
-  display: block;
-  float: left;
+.ds_dragonage .da_content span.ability_score_focuses {
   width: 160px;
 }
 
