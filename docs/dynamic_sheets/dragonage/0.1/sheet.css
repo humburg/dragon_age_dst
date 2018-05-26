@@ -18,7 +18,8 @@ div.ds_dragonage {
   cursor: pointer;
 }
 
-.ds_dragonage span.dsf.dsf_name {
+.ds_dragonage span.dsf.dsf_name,
+.ds_dragonage span.dsf.dsf_avatar_image {
   cursor: auto;
 }
 
@@ -31,10 +32,6 @@ div.ds_dragonage {
 .ds_dragonage .da_right {
   margin-left: 410px;
   padding-left: 8px;
-}
-
-.ds_dragonage .da_clear {
-  clear: both;
 }
 
 .ds_dragonage span {
