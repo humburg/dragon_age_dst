@@ -171,43 +171,63 @@ function dragonage_remove_entry() {
   event.target.parentNode.parentNode.parentNode.remove();
 }
 
-/* Add Melee weapon entry */
-function dragonage_add_melee_weapon() {
-  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content').children('.extensible');
-  next_id = dragonage_get_entry_counter(container, 'melee_weapon_values');
-  new_entry = "<div class='melee_weapon_values'><span class='dsf dsf_melee_weapon_name_" + next_id +
-              " melee_weapon_name'></span><span class='dsf dsf_melee_weapon_attack_" + next_id +
-              " melee_weapon_attack'></span><span class='dsf dsf_melee_weapon_damage_" + next_id +
-              " melee_weapon_damage'></span><span class='da_remove_button'><button onclick='dragonage_remove_entry()'><img src='https://png.icons8.com/material/20/000000/trash.png'></button></span></div>"
-  container.append(new_entry);
-  window.chars.bindDynamicAttributes(window.container_id, 'dragonage');
+/* Obtain template for new entry in an extendable list from the first element.
+   All user editable data is removed and a dele button added. */
+function dragonage_get_template(container){
+  var template = $(container.children()[0]).clone();
+  var entries = template.children('span.dsf');
+  var button = "<span class='da_remove_button'><button onclick='dragonage_remove_entry()'><img src='https://png.icons8.com/material/20/000000/trash.png'></button></span>";
+  for(var i = 0; i < entries.length; i++){
+    $(entries).text("");
+  }
+  template.append(button);
+  return template;
 }
 
-/* Add Ranged weapon entry */
-function dragonage_add_ranged_weapon() {
-  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content').children('.extensible');
-  next_id = dragonage_get_entry_counter(container, 'ranged_weapon_values');
-  new_entry = "<div class='ranged_weapon_values'><span class='dsf dsf_ranged_weapon_name_" + next_id +
-              " ranged_weapon_name'></span><span class='dsf dsf_ranged_weapon_attack_" + next_id +
-              " ranged_weapon_attack'></span><span class='dsf dsf_ranged_weapon_damage_" + next_id +
-              " ranged_weapon_damage'></span><span class='dsf dsf_ranged_weapon_short_" + next_id +
-              " ranged_weapon_short'></span><span class='dsf dsf_ranged_weapon_long_" + next_id +
-              " ranged_weapon_long'></span><span class='dsf dsf_ranged_weapon_reload_" + next_id +
-              " ranged_weapon_reload'></span><span class='da_remove_button'><button onclick='dragonage_remove_entry()'><img src='https://png.icons8.com/material/20/000000/trash.png'></button></span></div>"
-  container.append(new_entry);
-  window.chars.bindDynamicAttributes(window.container_id, 'dragonage');
+/* Replace name of dsf field with new value.
+   entry: A user editable element.
+   base: Base of field names for this section. Field names are expected to be of the form
+         dsf_<base>_<counter>.
+   new_suffix: Value to use as replacement for <counter>.
+*/
+function dragonage_update_entry_name(entry, base, new_suffix){
+  var new_class, old_class;
+  var target_class = '^dsf_' + base + '_.+_\\d+$';
+  var classes = entry.classList;
+  for(var i = 0; i < classes.length; i++){
+    if(classes[i].match(target_class)){
+      old_class = classes[i];
+      new_class = old_class.replace(/_\d+$/, '_' + new_suffix);
+      entry = $(entry).toggleClass(old_class);
+      entry = entry.toggleClass(new_class);
+    }
+  }
+  return entry;
 }
 
-/* Add Specialization entry */
-function dragonage_add_talent(type) {
+/* Create (and register) new user editable fields on demand.
+   Required structure for extensible containers:
+   <div.da_content>
+     <div.extensible>
+      <div.[section_name]_values>          |
+        <span.dsf.dsf_[field_name 1]_1>    |  This function will add another div
+        <span.dsf.dsf_[field_name 2]_1>    |   of the same shape.
+        ...                                |
+      </div>                               |
+    </div>
+  </div>
+
+  target_name is used for [section_name] in the above example.
+*/
+function dragonage_add_entry(target_name) {
   var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content').children('.extensible');
-  next_id = dragonage_get_entry_counter(container, type + '_values');
-  new_entry = "<div class='" + type + "_values'><span class='dsf dsf_" + type + "_name_" + next_id +
-              " " + type + "_name'></span><span class='dsf dsf_" + type + "_journeyman_" + next_id +
-              " " + type + "_journeyman checkbox'></span><span class='dsf dsf_" + type + "_master_" + next_id +
-              " " + type + "_master checkbox'></span><span class='dsf dsf_" + type + "_description_" + next_id +
-              " " + type + "_description da_wide'></span><span class='da_remove_button'><button onclick='dragonage_remove_entry()'><img src='https://png.icons8.com/material/20/000000/trash.png'></button></span></div>"
-  container.append(new_entry);
+  var next_id = dragonage_get_entry_counter(container, target_name + '_values');
+  var template = dragonage_get_template(container);
+  var entries = template.children();
+  for(var i = 0; i < entries.length; i++){
+    entries[i] = dragonage_update_entry_name(entries[i], target_name, next_id);
+  }
+  container.append(template);
   window.chars.bindDynamicAttributes(window.container_id, 'dragonage');
 }
 
