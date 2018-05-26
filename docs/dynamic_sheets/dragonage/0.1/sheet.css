@@ -23,6 +23,7 @@ div.ds_dragonage {
   cursor: auto;
 }
 
+
 /* Two column layout */
 .ds_dragonage .da_left {
   width: 410px;
@@ -68,6 +69,7 @@ div.ds_dragonage {
 .ds_dragonage span.section_title {
   display: block;
   width: 100%;
+  height: 26px;
   font-weight: bold;
   text-align: center;
   font-family: 'Cinzel', serif;
