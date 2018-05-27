@@ -121,6 +121,7 @@ div.ds_dragonage {
   width: 20px;
   height: 20px;
   opacity: 0.2;
+  cursor: pointer;
 }
 
 .ds_dragonage .da_remove_button button > img:hover {
@@ -131,11 +132,18 @@ div.ds_dragonage {
   width: 25px!important;
 }
 
-.ds_dragonage .da_extend_button button > img{
+.ds_dragonage .da_extend_button button > div{
   width: 25px;
   height: 25px;
   box-sizing: border-box;
+  background-image: url(https://png.icons8.com/ios/25/000000/plus-2-math-filled.png);
+  cursor: pointer;
 }
+
+.ds_dragonage .da_extend_button button > div:active{
+  background-image: url(https://png.icons8.com/ios/25/000000/plus-2-math.png);
+}
+
 
 /* Styling checkboxes */
 .ds_dragonage input[type=checkbox] {
@@ -152,6 +160,7 @@ div.ds_dragonage {
   background-size: contain;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 
 .ds_dragonage input[type=checkbox]:not(:checked) {
