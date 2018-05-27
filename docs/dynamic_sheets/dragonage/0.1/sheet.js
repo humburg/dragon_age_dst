@@ -11,18 +11,18 @@
 
 function dragonage_dataPreLoad(options) {
   // Called just before the data is loaded.
-   window.container_id = "#" + options['containerId'];
-   window.chars = aisleten.characters;
+  options['context'] = '#' + options['containerId'];
+  window.chars = aisleten.characters;
 
    // display main tab
    document.getElementsByClassName('da_tab_main')[0].style.display = "block";
 
-   // prepare storage for extensible fields
+   // prepare storage for extendable fields
    var ext, target_name, classes;
-   var extensibles = jQuery('.extensible');
-   var container = jQuery('div.extension_storage');
-   for(i = 0; i < extensibles.length; i++) {
-    ext = extensibles[i];
+   var extendable = jQuery(options['context'] + ' .extendable');
+   var container = jQuery(options['context'] + ' div.extension_storage');
+   for(i = 0; i < extendable.length; i++) {
+    ext = extendable[i];
     classes = ext.classList;
     for(j=0; j < classes.length; j++){
       if(classes[j].startsWith('extend_')){
@@ -37,46 +37,49 @@ function dragonage_dataPreLoad(options) {
 
 function dragonage_dataPostLoad(options) {
   // Called just after the data is loaded.
+  options['context'] = '#' + options['containerId'];
 
-  // Populate extensible fields
+  // Populate extendable fields
   var target_name, classes, ext, dom;
-  var storage = jQuery('.extension_storage').children();
+  var storage = jQuery(options['context'] + ' .extension_storage').children();
   var parser = new DOMParser();
-  for(i = 0; i < storage.length; i++){
+  for(var i = 0; i < storage.length; i++){
     classes = storage[i].classList;
-    for(j=0; j < classes.length; j++){
+    for(var j=0; j < classes.length; j++){
       if(classes[j].startsWith('dsf_') && classes[j].endsWith('_storage')){
         target_name = classes[j].replace('dsf_', 'extend_').replace('_storage', '');
         if($(storage[i]).text()){
           dom = parser.parseFromString($(storage[i]).text(), 'application/xml');
-          jQuery('.' + target_name).replaceWith(dom.children[0]);
+          jQuery(options['context'] + ' .' + target_name).replaceWith(dom.children[0]);
         }
       }
     }
   }
 
   // Ensure Dex based calculations are up to date
-  if(jQuery('.dsf_dexterity').html()){
-    dragonage_apply_armor_penalty();
+  if(jQuery(options['context'] + ' .dsf_dexterity').html()){
+    dragonage_apply_armor_penalty(options);
   }
 
   // Ensure Speed based calculations are up to date
-  if(!jQuery('.dsf_speed').html()){
-    jQuery('.dsf_speed').html(dragonage_speed());
-    dragonage_speed_update();
+  if(!jQuery(options['context'] + ' .dsf_speed').html()){
+    jQuery(options['context'] + ' .dsf_speed').html(dragonage_speed(options));
+    dragonage_speed_update(options);
   }
 }
 
 function dragonage_dataPreSave(options) {
   // Called just before the data is saved to the server.
-  // Collect data from extensible elements and store it in a single field for saving.
+  options['context'] = '#' + options['containerId'];
+
+  // Collect data from extendable elements and store it in a single field for saving.
   var ext, target_name, classes;
-  var extensibles = jQuery('.extensible');
+  var extendables = jQuery('.extendable');
   var serial = new XMLSerializer();
-  for(i = 0; i < extensibles.length; i++) {
-    ext = extensibles[i];
+  for(var i = 0; i < extendables.length; i++) {
+    ext = extendables[i];
     classes = ext.classList;
-    for(j=0; j < classes.length; j++){
+    for(var j=0; j < classes.length; j++){
       if(classes[j].startsWith('extend_')){
         target_name = classes[j].replace('extend_', '');
         jQuery('span.dsf.dsf_'+target_name+'_storage').text(serial.serializeToString(ext))
@@ -88,32 +91,32 @@ function dragonage_dataPreSave(options) {
 
 function dragonage_dataChange(options) {
   // Called immediately after a data value is changed.
-  // alert("dataChange. " + options['fieldName'] + " = " + options['fieldValue']);
+  options['context'] = '#' + options['containerId'];
 
   var field = options['fieldName'];
   var val = options['fieldValue'];
 
   if(field == 'dexterity') {
-    dragonage_dexterity_update();
+    dragonage_dexterity_update(options);
   }
   if(field == 'speed') {
-    dragonage_speed_update();
+    dragonage_speed_update(options);
   }
 
   if(field == 'armor_penalty') {
-    dragonage_dexterity_update();
+    dragonage_dexterity_update(options);
   }
 
   if(field == 'armor_trained') {
-    dragonage_dexterity_update();
+    dragonage_dexterity_update(options);
   }
 
   if(field == 'shield_bonus') {
-    jQuery('.dsf_defense').html(dragonage_defense())
+    jQuery('.dsf_defense').html(dragonage_defense(options))
   }
 
   if(field == 'shield_trained'){
-    jQuery('.dsf_defense').html(dragonage_defense())
+    jQuery('.dsf_defense').html(dragonage_defense(options))
   }
 
 }
@@ -121,21 +124,21 @@ function dragonage_dataChange(options) {
 /* Tabbed navigation */
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
-
+  var context = $(evt.currentTarget).parents('div.dynamic_sheet.ds_dragonage')[0];
   // Hide all tabs
-  tabcontent = document.getElementsByClassName("da_tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
+  tabcontent = context.getElementsByClassName("da_tabcontent");
+  for (var i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
   }
 
   // Get all elements with class="da_tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("da_tablinks");
-  for (i = 0; i < tablinks.length; i++) {
+  tablinks = context.getElementsByClassName("da_tablinks");
+  for (var i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementsByClassName('da_tab_' + tabName)[0].style.display = "block";
+  context.getElementsByClassName('da_tab_' + tabName)[0].style.display = "block";
   evt.currentTarget.className += " active";
 }
 
@@ -152,7 +155,7 @@ function dragonage_get_entry_counter(container, item_class) {
   var dsf_entry = $(prev_entry).find('.dsf')[0];
   var classes = $(dsf_entry).attr('class').split(' ');
   var dsf_id = '';
-  for(i=0; i < classes.length; i++){
+  for(var i=0; i < classes.length; i++){
     prev_id = classes[i].match(/^dsf_\S+_\d+$/);
     if(prev_id){
       components = prev_id[0].split('_')
@@ -206,9 +209,9 @@ function dragonage_update_entry_name(entry, base, new_suffix){
 }
 
 /* Create (and register) new user editable fields on demand.
-   Required structure for extensible containers:
+   Required structure for extendable containers:
    <div.da_content>
-     <div.extensible>
+     <div.extendable>
       <div.[section_name]_values>          |
         <span.dsf.dsf_[field_name 1]_1>    |  This function will add another div
         <span.dsf.dsf_[field_name 2]_1>    |   of the same shape.
@@ -220,7 +223,7 @@ function dragonage_update_entry_name(entry, base, new_suffix){
   target_name is used for [section_name] in the above example.
 */
 function dragonage_add_entry(target_name) {
-  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content').children('.extensible');
+  var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content').children('.extendable');
   var next_id = dragonage_get_entry_counter(container, target_name + '_values');
   var template = dragonage_get_template(container);
   var entries = template.children();
@@ -232,20 +235,23 @@ function dragonage_add_entry(target_name) {
 }
 
 /* Computing derived stats */
-function dragonage_dexterity_update() {
-  dragonage_apply_armor_penalty();
-  jQuery('.dsf_speed').html(dragonage_speed());
-  dragonage_speed_update();
-  jQuery('.dsf_defense').html(dragonage_defense())
+function dragonage_dexterity_update(options) {
+  dragonage_apply_armor_penalty(options);
+  jQuery(options['context'] + ' .dsf_speed').html(dragonage_speed(options));
+  dragonage_speed_update(options);
+  jQuery(options['context'] + ' .dsf_defense').html(dragonage_defense(options))
 }
 
-function dragonage_speed_update() {
-  jQuery('.dsf_move_yrd').html(dragonage_move_distance());
-  jQuery('.dsf_charge_yrd').html(dragonage_charge_distance());
-  jQuery('.dsf_run_yrd').html(dragonage_run_distance());
-  jQuery('.dsf_move_sq').html(dragonage_move_squares());
-  jQuery('.dsf_charge_sq').html(dragonage_charge_squares());
-  jQuery('.dsf_run_sq').html(dragonage_run_squares());
+function dragonage_speed_update(options) {
+  var context = options['context'];
+  jQuery(context + ' .dsf_move_yrd').html(dragonage_move_distance(context));
+  jQuery(context + ' .dsf_charge_yrd').html(dragonage_charge_distance(context));
+  jQuery(context + ' .dsf_run_yrd').html(dragonage_run_distance(context));
+  jQuery(context + ' .dsf_move_sq').html(dragonage_move_squares(context));
+  jQuery(context + ' .dsf_charge_sq').html(dragonage_charge_squares(context));
+  jQuery(context + ' .dsf_run_sq').html(dragonage_run_squares(context));
+}
+
 }
 
  /* The armor penalty is never positive but this is ambiguous in the book.
@@ -270,42 +276,47 @@ function dragonage_armor_penalty(penalty_type){
   return penalty;
 }
 
-function dragonage_apply_armor_penalty(){
-  var dex = jQuery('.dsf_dexterity').html();
+function dragonage_apply_armor_penalty(options){
+  var context = options['context'];
+  var dex = jQuery(context + ' .dsf_dexterity').html();
     if(dex){
       dex = parseInt(dex);
       var penalty = dragonage_armor_penalty('dex');
-      if(penalty != 0 && jQuery('.dsf_armor_trained input').val() == "0"){
+      if(penalty != 0 && jQuery(context + ' .dsf_armor_trained input').val() == "0"){
         dex = dex + penalty;
       }
-      jQuery('span.dexterity_actual').html(dex);
+      jQuery(context + ' span.dexterity_actual').html(dex);
     }
 }
 
 /* Compute Defense value */
-function dragonage_shield_bonus(){
-  var bonus = jQuery('.dsf_shield_bonus').html();
+function dragonage_shield_bonus(options){
+  var context = options['context'];
+  var bonus = jQuery(context + ' .dsf_shield_bonus').html();
   if(bonus){
     bonus = parseInt(bonus);
-    if(bonus > 0 && jQuery('.dsf_shield_trained input').val() == "0"){
+    if(bonus > 0 && jQuery(context + ' .dsf_shield_trained input').val() == "0"){
       bonus = 1;
     }
   }
   return bonus;
 }
 
-function dragonage_defense(){
-  var dex = parseInt(jQuery('span.dexterity_actual').html());
-  return 10 + dex + dragonage_shield_bonus();
+function dragonage_defense(options){
+  var context = options['context'];
+  var dex = parseInt(jQuery(context + ' span.dexterity_actual').html());
+  return 10 + dex + dragonage_shield_bonus(options);
 }
 
 /* Speed and movement distance calculations. */
-function dragonage_speed() {
+function dragonage_speed(options) {
+  var context = options['context'];
+
   var base_speed = 10;
-  var dex = parseInt(jQuery('.dexterity_actual').html());
+  var dex = parseInt(jQuery(context + ' .dexterity_actual').html());
   var penalty = dragonage_armor_penalty('speed');
 
-  var race = jQuery('.dsf_race').html();
+  var race = jQuery(context + ' .dsf_race').html();
   if(race.toLowerCase() == 'dwarf'){
     base_speed = 8;
   }
@@ -315,29 +326,29 @@ function dragonage_speed() {
   return base_speed + dex + penalty;
 }
 
-function dragonage_move_distance() {
-  var speed = parseInt(jQuery('.dsf_speed').html());
+function dragonage_move_distance(context) {
+  var speed = parseInt(jQuery(context + ' .dsf_speed').html());
   return speed;
 }
 
-function dragonage_charge_distance() {
-  var speed = parseInt(jQuery('.dsf_speed').html());
+function dragonage_charge_distance(context) {
+  var speed = parseInt(jQuery(context + ' .dsf_speed').html());
   return Math.floor(speed/2.0);
 }
 
-function dragonage_run_distance() {
-  var speed = parseInt(jQuery('.dsf_speed').html());
+function dragonage_run_distance(context) {
+  var speed = parseInt(jQuery(context + ' .dsf_speed').html());
   return speed*2;
 }
 
-function dragonage_move_squares() {
-  return Math.floor(dragonage_move_distance()/2.0);
+function dragonage_move_squares(context) {
+  return Math.floor(dragonage_move_distance(context)/2.0);
 }
 
-function dragonage_charge_squares() {
-  return Math.floor(dragonage_charge_distance()/2.0);
+function dragonage_charge_squares(context) {
+  return Math.floor(dragonage_charge_distance(context)/2.0);
 }
 
-function dragonage_run_squares() {
-  return Math.floor(dragonage_run_distance()/2.0);
+function dragonage_run_squares(context) {
+  return Math.floor(dragonage_run_distance(context)/2.0);
 }
