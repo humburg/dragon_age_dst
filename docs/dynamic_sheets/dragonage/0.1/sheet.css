@@ -90,8 +90,9 @@ div.ds_dragonage {
 }
 
 /* Buttons to extend lists */
-.ds_dragonage .da_extend_button {
+.ds_dragonage span.da_extend_button {
   display: block;
+  float: right!important;
   overflow: hidden;
 }
 
