@@ -66,6 +66,12 @@ function dragonage_dataPostLoad(options) {
     jQuery(options['context'] + ' .dsf_speed').html(dragonage_speed(options));
     dragonage_speed_update(options);
   }
+
+  // Ensure magic calculations are up to date
+  if(jQuery(options['context'] + ' .dsf_magic').html()){
+    dragonage_update_magic(options);
+  }
+
 }
 
 function dragonage_dataPreSave(options) {
@@ -99,6 +105,11 @@ function dragonage_dataChange(options) {
   if(field == 'dexterity') {
     dragonage_dexterity_update(options);
   }
+
+  if(field == 'magic' || field.endsWith('_magic_focus') || field.endsWith('_magic_extra')){
+    dragonage_update_magic(options);
+  }
+
   if(field == 'speed') {
     dragonage_speed_update(options);
   }
@@ -252,6 +263,18 @@ function dragonage_speed_update(options) {
   jQuery(context + ' .dsf_run_sq').html(dragonage_run_squares(context));
 }
 
+function dragonage_update_magic(options){
+  var spell_power = jQuery(options['context'] + ' .spell_power_display');
+  for(var i = 0; i < spell_power.length; i++){
+    dragonage_update_spell_power(spell_power[i], options);
+  }
+}
+
+function dragonage_update_spell_power(container, options){
+  var magic = parseInt(jQuery(options['context'] + ' .dsf_magic').html());
+  var focus = parseInt($(container).find('.spell_power_focus input').val()) * 2 +
+              parseInt($(container).find('.spell_power_extra input').val());
+  $(container).find('span.spell_power_value').html(10 + magic + focus);
 }
 
  /* The armor penalty is never positive but this is ambiguous in the book.
