@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
 <head>
   <title>DST Dev Kit</title>
   <script type="text/javascript" src="javascripts/jquery-1.3.2.min.js"></script>
@@ -13,7 +13,7 @@
   <script type="text/javascript" src="example_data.js"></script>
 
   <!-- Load the CSS for the DST, replace with your own! -->
-  <link href="dynamic_sheets/dragonage/0.1/sheet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="dynamic_sheets/dragonage/0.1/sheet.css" media="screen" rel="stylesheet" type="text/css">
 
   <!-- Load the JS for the DST, replace with your own! -->
   <script type="text/javascript" src="dynamic_sheets/dragonage/0.1/sheet.js"></script>
@@ -53,7 +53,9 @@
         <button class="da_tablinks active" onclick="openTab(event, 'main')">Main</button>
         <button class="da_tablinks" onclick="openTab(event, 'talents')">Powers &amp; Talents</button>
         <button class="da_tablinks" onclick="openTab(event, 'spells')">Spells</button>
+        <button class="da_tablinks" onclick="openTab(event, 'equipment')">Equipment</button>
         <button class="da_tablinks" onclick="openTab(event, 'background')">Background</button>
+        <button class="da_tablinks" onclick="openTab(event, 'credits')">Credits</button>
       </div>
 
       <div class="da_tabcontent da_tab_main">
@@ -234,7 +236,7 @@
               <span>Attack</span>
               <span>Damage</span>
               <span class="da_extend_button">
-                <button onclick="dragonage_add_entry('melee_weapon')"><img></button>
+                <button onclick="dragonage_add_entry('melee_weapon')"><img src='https://png.icons8.com/ios/25/000000/plus-2-math-filled.png' alt=''></button>
               </span>
             </div>
             <div class="da_content">
@@ -247,7 +249,7 @@
               </div>
               <div class="weapon_groups">
                 <span>Weapon Groups: </span>
-                <span class="dsf dsf_weapon_groups">
+                <span class="dsf dsf_weapon_groups"></span>
               </div>
             </div>
         </div>
@@ -264,7 +266,7 @@
         <span>Long Range</span>
         <span>Reload Time</span>
         <span class="da_extend_button">
-          <button onclick="dragonage_add_entry('ranged_weapon')"><img></button>
+          <button onclick="dragonage_add_entry('ranged_weapon')"><img src='https://png.icons8.com/ios/25/000000/plus-2-math-filled.png' alt=''></button>
         </span>
       </div>
       <div class="da_content">
@@ -290,7 +292,7 @@
         <span class="da_narrow">M</span>
         <span class="da_wide">Description</span>
         <span class="da_extend_button">
-          <button onclick="dragonage_add_entry('specialization')"><img></button>
+          <button onclick="dragonage_add_entry('specialization')"><img src='https://png.icons8.com/ios/25/000000/plus-2-math-filled.png' alt=''></button>
         </span>
       </div>
       <div class="da_content">
@@ -312,7 +314,7 @@
           <span class="da_narrow">M</span>
           <span class="da_wide">Description</span>
           <span class="da_extend_button">
-            <button onclick="dragonage_add_entry('talent')"><img></button>
+            <button onclick="dragonage_add_entry('talent')"><img src='https://png.icons8.com/ios/25/000000/plus-2-math-filled.png' alt=''></button>
           </span>
         </div>
         <div class="da_content">
@@ -332,7 +334,7 @@
           <span>Name</span>
           <span class="da_wide">Description</span>
           <span class="da_extend_button">
-            <button onclick="dragonage_add_entry('power')"><img></button>
+            <button onclick="dragonage_add_entry('power')"><img src='https://png.icons8.com/ios/25/000000/plus-2-math-filled.png' alt=''></button>
           </span>
         </div>
         <div class="da_content">
@@ -349,7 +351,7 @@
     <div class="spell_wrapper">
       <div class="spell_power_display">
         <div class="spell_power_value">
-          <span class="spell_power_value">10</span>
+          <span class="spell_power_value"></span>
         </div>
         <div class="spell_power_control spell_power_control_label">
           <span class="spell_focus_label">Focus</span>
@@ -369,7 +371,7 @@
           <span class="da_narrow">TN</span>
           <span>Test</span>
           <span class="da_extend_button">
-              <button onclick="dragonage_add_entry('blood_magic')"><img></button>
+              <button onclick="dragonage_add_entry('blood_magic')"><img src='https://png.icons8.com/ios/25/000000/plus-2-math-filled.png' alt=''></button>
           </span>
         </div>
         <div class="da_content">
@@ -386,17 +388,183 @@
         </div>
       </div>
     </div>
+
+    <div class="spell_wrapper">
+      <div class="spell_power_display">
+        <div class="spell_power_value">
+          <span class="spell_power_value"></span>
+        </div>
+        <div class="spell_power_control spell_power_control_label">
+          <span class="spell_focus_label">Focus</span>
+        </div>
+        <div class="spell_power_control spell_power_control_values">
+          <span class="dsf dsf_creation_magic_focus spell_power_focus checkbox"></span>
+          <span class="dsf dsf_creation_magic_extra spell_power_extra checkbox"></span>
+        </div>
+      </div>
+      <div class="creation_magic section">
+        <span class="section_title">Creation Magic Spells</span>
+        <div class="creation_magic_header sub_header">
+          <span>Name</span>
+          <span>Type</span>
+          <span class="da_narrow">Cost</span>
+          <span>Cast Time</span>
+          <span class="da_narrow">TN</span>
+          <span>Test</span>
+          <span class="da_extend_button">
+              <button onclick="dragonage_add_entry('creation_magic')"><img src='https://png.icons8.com/ios/25/000000/plus-2-math-filled.png' alt=''></button>
+          </span>
+        </div>
+        <div class="da_content">
+          <div class="extendable">
+            <div class="creation_magic_values">
+              <span class="dsf dsf_creation_magic_name_1 creation_magic_name"></span>
+              <span class="dsf dsf_creation_magic_type_1 creation_magic_type"></span>
+              <span class="dsf dsf_creation_magic_cost_1 creation_magic_cost da_narrow"></span>
+              <span class="dsf dsf_creation_magic_time_1 creation_magic_time"></span>
+              <span class="dsf dsf_creation_magic_tn_1 creation_magic_tn da_narrow"></span>
+              <span class="dsf dsf_creation_magic_test_1 creation_magic_test"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spell_wrapper">
+      <div class="spell_power_display">
+        <div class="spell_power_value">
+          <span class="spell_power_value"></span>
+        </div>
+        <div class="spell_power_control spell_power_control_label">
+          <span class="spell_focus_label">Focus</span>
+        </div>
+        <div class="spell_power_control spell_power_control_values">
+          <span class="dsf dsf_entropy_magic_focus spell_power_focus checkbox"></span>
+          <span class="dsf dsf_entropy_magic_extra spell_power_extra checkbox"></span>
+        </div>
+      </div>
+      <div class="entropy_magic section">
+        <span class="section_title">Entropy Magic Spells</span>
+        <div class="entropy_magic_header sub_header">
+          <span>Name</span>
+          <span>Type</span>
+          <span class="da_narrow">Cost</span>
+          <span>Cast Time</span>
+          <span class="da_narrow">TN</span>
+          <span>Test</span>
+          <span class="da_extend_button">
+              <button onclick="dragonage_add_entry('entropy_magic')"><img src='https://png.icons8.com/ios/25/000000/plus-2-math-filled.png' alt=''></button>
+          </span>
+        </div>
+        <div class="da_content">
+          <div class="extendable">
+            <div class="entropy_magic_values">
+              <span class="dsf dsf_entropy_magic_name_1 entropy_magic_name"></span>
+              <span class="dsf dsf_entropy_magic_type_1 entropy_magic_type"></span>
+              <span class="dsf dsf_entropy_magic_cost_1 entropy_magic_cost da_narrow"></span>
+              <span class="dsf dsf_entropy_magic_time_1 entropy_magic_time"></span>
+              <span class="dsf dsf_entropy_magic_tn_1 entropy_magic_tn da_narrow"></span>
+              <span class="dsf dsf_entropy_magic_test_1 entropy_magic_test"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spell_wrapper">
+        <div class="spell_power_display">
+          <div class="spell_power_value">
+            <span class="spell_power_value"></span>
+          </div>
+          <div class="spell_power_control spell_power_control_label">
+            <span class="spell_focus_label">Focus</span>
+          </div>
+          <div class="spell_power_control spell_power_control_values">
+            <span class="dsf dsf_primal_magic_focus spell_power_focus checkbox"></span>
+            <span class="dsf dsf_primal_magic_extra spell_power_extra checkbox"></span>
+          </div>
+        </div>
+        <div class="primal_magic section">
+          <span class="section_title">Primal Magic Spells</span>
+          <div class="primal_magic_header sub_header">
+            <span>Name</span>
+            <span>Type</span>
+            <span class="da_narrow">Cost</span>
+            <span>Cast Time</span>
+            <span class="da_narrow">TN</span>
+            <span>Test</span>
+            <span class="da_extend_button">
+                <button onclick="dragonage_add_entry('primal_magic')"><img src='https://png.icons8.com/ios/25/000000/plus-2-math-filled.png' alt=''></button>
+            </span>
+          </div>
+          <div class="da_content">
+            <div class="extendable">
+              <div class="primal_magic_values">
+                <span class="dsf dsf_primal_magic_name_1 primal_magic_name"></span>
+                <span class="dsf dsf_primal_magic_type_1 primal_magic_type"></span>
+                <span class="dsf dsf_primal_magic_cost_1 primal_magic_cost da_narrow"></span>
+                <span class="dsf dsf_primal_magic_time_1 primal_magic_time"></span>
+                <span class="dsf dsf_primal_magic_tn_1 primal_magic_tn da_narrow"></span>
+                <span class="dsf dsf_primal_magic_test_1 primal_magic_test"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spell_wrapper">
+          <div class="spell_power_display">
+            <div class="spell_power_value">
+              <span class="spell_power_value"></span>
+            </div>
+            <div class="spell_power_control spell_power_control_label">
+              <span class="spell_focus_label">Focus</span>
+            </div>
+            <div class="spell_power_control spell_power_control_values">
+              <span class="dsf dsf_spirit_magic_focus spell_power_focus checkbox"></span>
+              <span class="dsf dsf_spirit_magic_extra spell_power_extra checkbox"></span>
+            </div>
+          </div>
+          <div class="spirit_magic section">
+            <span class="section_title">Spirit Magic Spells</span>
+            <div class="spirit_magic_header sub_header">
+              <span>Name</span>
+              <span>Type</span>
+              <span class="da_narrow">Cost</span>
+              <span>Cast Time</span>
+              <span class="da_narrow">TN</span>
+              <span>Test</span>
+              <span class="da_extend_button">
+                  <button onclick="dragonage_add_entry('spirit_magic')"><img src='https://png.icons8.com/ios/25/000000/plus-2-math-filled.png' alt=''></button>
+              </span>
+            </div>
+            <div class="da_content">
+              <div class="extendable">
+                <div class="spirit_magic_values">
+                  <span class="dsf dsf_spirit_magic_name_1 spirit_magic_name"></span>
+                  <span class="dsf dsf_spirit_magic_type_1 spirit_magic_type"></span>
+                  <span class="dsf dsf_spirit_magic_cost_1 spirit_magic_cost da_narrow"></span>
+                  <span class="dsf dsf_spirit_magic_time_1 spirit_magic_time"></span>
+                  <span class="dsf dsf_spirit_magic_tn_1 spirit_magic_tn da_narrow"></span>
+                  <span class="dsf dsf_spirit_magic_test_1 spirit_magic_test"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
   </div>
+  <div class="da_tabcontent da_tab_equipment"></div>
   <div class="da_tabcontent da_tab_background"></div>
+  <div class="da_tabcontent da_tab_credits"></div>
 
   <div class="extension_storage hidden"></div>
       <!-- End HTML Template - Don't copy anything below here into the template! -->
     </div> <!-- ds_dragonage -->
   </div> <!-- dynamic_sheet_container -->
-  <br/><br/>
+  <br><br>
 
   <button id="character-save-button">Save</button>
-  <br/>
+  <br>
   <p>
     Right here is a hidden &lt;div&gt; that holds the data values that will be saved to the server. Click the save button and then examine the DOM (using Firebug) to see what will be sent.
   </p>

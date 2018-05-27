@@ -134,12 +134,7 @@ div.ds_dragonage {
 .ds_dragonage .da_extend_button button > img{
   width: 25px;
   height: 25px;
-  background-image: url(https://png.icons8.com/ios/25/000000/plus-2-math-filled.png);
   box-sizing: border-box;
-}
-
-.ds_dragonage .da_extend_button button > img:active {
-  background-image: url(https://png.icons8.com/ios/25/000000/plus-2-math.png);
 }
 
 /* Styling checkboxes */
