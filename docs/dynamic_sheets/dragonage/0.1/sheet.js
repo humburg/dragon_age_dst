@@ -33,6 +33,29 @@ function dragonage_dataPreLoad(options) {
       }
     }
   }
+
+  // prepare text areas
+  var texts = jQuery(options['context'] + '.ds_dragonage .user_text textarea');
+  var id, parent_class;
+  for(var i=0; i < texts.length; i++){
+    id = options['containerId'];
+    parent_class = texts[i].parentNode.classList;
+    for(var j = 0; j < parent_class.length; j++){
+      if(parent_class[j].endsWith('_textarea')){
+        id = id + '_' + parent_class[j].replace('_textarea', '');
+        break;
+      }
+    }
+    if(id == options['containerId']){
+      console.error("Failed to construct text area ID");
+    }
+    texts[i].id = id;
+  }
+  nicEditors.allTextAreas();
+  if(!options['isEditable']){
+    jQuery('.nicEdit-main').attr('contenteditable','false');
+    jQuery('.nicEdit-panel').hide();
+  }
 }
 
 function dragonage_dataPostLoad(options) {
@@ -55,6 +78,23 @@ function dragonage_dataPostLoad(options) {
       }
     }
   }
+
+  // Populate text areas
+  var text_list = jQuery(options['context'] + '.ds_dragonage .user_text_storage span.dsf');
+  text_list.each(function(idx){
+    if(this.innerHTML != window.chars.jeditablePlaceholder && this.innerHTML != ''){
+      var classes = this.classList;
+      var id;
+      for(var i = 0; i < classes.length; i++){
+        id = options['containerId'];
+        if(classes[i].startsWith('dsf_')){
+          id = id + '_' + classes[i].replace('dsf_', '');
+          break;
+        }
+      }
+      nicEditors.findEditor(id).setContent(this.innerHTML);
+    }
+  })
 
   // Ensure Dex based calculations are up to date
   if(jQuery(options['context'] + ' .dsf_dexterity').html()){
@@ -92,6 +132,21 @@ function dragonage_dataPreSave(options) {
       }
     }
   }
+
+  // copy text area content
+  var text_list = jQuery(options['context'] + '.ds_dragonage .user_text_storage span.dsf');
+  text_list.each(function(idx){
+    var classes = this.classList;
+    var id;
+    for(var i = 0; i < classes.length; i++){
+      id = options['containerId'];
+      if(classes[i].startsWith('dsf_')){
+        id = id + '_' + classes[i].replace('dsf_', '');
+        break;
+      }
+    }
+    this.innerHTML = nicEditors.findEditor(id).getContent();
+  })
 }
 
 

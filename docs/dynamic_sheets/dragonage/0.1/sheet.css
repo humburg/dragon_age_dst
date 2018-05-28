@@ -3,7 +3,7 @@
 * Copy and paste this directly into the CSS textarea on obsidianportal.com
 *****************************/
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cinzel');
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cinzel|Crimson+Text');
 
 /* Common CSS classes */
 div.ds_dragonage {
@@ -170,6 +170,25 @@ div.ds_dragonage {
 
 .ds_dragonage input[type=checkbox]:checked {
   background-image: url(https://png.icons8.com/material/13/000000/checked-2.png);
+}
+
+/* text areas */
+.ds_dragonage .user_text textarea {
+  width: 396px;
+  height: 20em;
+}
+
+.ds_dragonage .nicEdit-main {
+  font-family: 'Crimson Text', serif;
+}
+
+.ds_dragonage .nicEdit-main h1,
+.ds_dragonage .nicEdit-main h2,
+.ds_dragonage .nicEdit-main h3,
+.ds_dragonage .nicEdit-main h4,
+.ds_dragonage .nicEdit-main h5,
+.ds_dragonage .nicEdit-main h6 {
+  font-family: Cinzel, serif;
 }
 
 
