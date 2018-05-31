@@ -288,7 +288,7 @@ function dragonage_update_entry_name(entry, base, new_suffix){
 
   target_name is used for [section_name] in the above example.
 */
-function dragonage_add_entry(target_name) {
+function dragonage_add_entry(event, target_name) {
   var context = $(event.target).parents('div.dynamic_sheet.ds_dragonage')[0].id;
   var container = $(event.target.parentNode.parentNode.parentNode).siblings('.da_content').children('.extendable');
   var next_id = dragonage_get_entry_counter(container, target_name + '_values');
