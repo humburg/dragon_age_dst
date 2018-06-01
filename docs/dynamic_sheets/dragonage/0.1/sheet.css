@@ -481,7 +481,7 @@ div.ds_dragonage {
   overflow: hidden;
 }
 
-.ds_dragonage .melee_weapon_values span {
+.ds_dragonage .melee_weapon_values div.dsf {
   display: block;
   float: left;
   text-align: center;
@@ -500,7 +500,7 @@ div.ds_dragonage {
   width: 400px;
 }
 
-.ds_dragonage .weapon_groups span {
+.ds_dragonage .weapon_groups div.dsf {
   width: 100%;
 }
 

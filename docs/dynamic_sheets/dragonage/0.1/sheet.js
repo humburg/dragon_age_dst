@@ -47,7 +47,7 @@ function dragonage_dataPreLoad(options) {
       if(classes[j].startsWith('extend_')){
         target_name = classes[j].replace('extend_', '');
         storage = document.createElement('span');
-        storage.className = "dsf dsf_" + target_name + "_storage";
+        storage.className = "dsf dsf_" + target_name + "_storage readonly";
         container.append(storage);
       }
     }
@@ -59,15 +59,6 @@ function dragonage_dataPostLoad(options) {
   options['context'] = '#' + options['containerId'];
   csx_opts['defaultContext'] = document.getElementById(options.containerId);
   csx_opts['isEditable'] = options.isEditable;
-
-  var includes = document.createElement('script');
-  includes.type = 'text/javascript';
-  includes.src = 'https://chainsawxiv.github.io/DST/common/js/csx_edit.js';
-  includes.onload = function(){
-    // Callback to use what you just loaded
-    csx_opts.setupCallback();
-  };
-  document.body.appendChild(includes);
 
   // Populate extendable fields
   var target_name, classes, ext, dom;
@@ -102,6 +93,15 @@ function dragonage_dataPostLoad(options) {
     dragonage_update_magic(options);
   }
 
+  
+  var includes = document.createElement('script');
+  includes.type = 'text/javascript';
+  includes.src = 'https://chainsawxiv.github.io/DST/common/js/csx_edit.js';
+  includes.onload = function(){
+    // Callback to use what you just loaded
+    csx_opts.setupCallback();
+  };
+  document.body.appendChild(includes);
 }
 
 function dragonage_dataPreSave(options) {
@@ -286,7 +286,7 @@ function dragonage_add_entry(event, target_name) {
     entries[i] = dragonage_update_entry_name(entries[i], target_name, next_id);
   }
   container.append(template);
-  window.chars.bindDynamicAttributes(context, 'dragonage');
+  csx_edit(template[0]);
 }
 
 /* Computing derived stats */
