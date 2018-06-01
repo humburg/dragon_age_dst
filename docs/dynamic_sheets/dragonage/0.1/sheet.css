@@ -5,6 +5,9 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cinzel|Crimson+Text');
 
+/* Chainsaw's modules */
+@import url('https://chainsawxiv.github.io/DST/common/css/csx_edit.css');
+
 /* Common CSS classes */
 div.ds_dragonage {
   width: 820px;
