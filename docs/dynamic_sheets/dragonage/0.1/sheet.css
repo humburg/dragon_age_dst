@@ -549,12 +549,19 @@ div.ds_dragonage {
   width: 820px;
 }
 
+.ds_dragonage .da_tab_talents .sub_header {
+  display: inline-block;
+  float: none;
+  text-align: left;
+  width: 100%;
+}
+
 .ds_dragonage .da_tab_talents .sub_header span,
-.ds_dragonage .da_tab_talents .da_content span {
-  display: block;
-  float: left;
+.ds_dragonage .da_tab_talents .da_content div.dsf {
+  display: inline-block;
+  float: none;
   text-align: center;
-  width: 200px;
+  width: 206px;
 }
 
 .ds_dragonage .specialization_header span.da_narrow,
@@ -565,10 +572,10 @@ div.ds_dragonage {
 }
 
 .ds_dragonage .specialization_header span.da_wide,
-.ds_dragonage .specialization_values span.da_wide,
+.ds_dragonage .specialization_values div.dsf.da_wide,
 .ds_dragonage .talent_header span.da_wide,
-.ds_dragonage .talent_values span.da_wide {
-  width: 515px;
+.ds_dragonage .talent_values div.dsf.da_wide {
+  width: 535px;
 }
 
 .ds_dragonage .specialization_header span.da_extend_button,
@@ -591,8 +598,9 @@ div.ds_dragonage {
 /****************************
 * Powers
 *****************************/
-.ds_dragonage .power span.da_wide {
-  width: 595px;
+.ds_dragonage .power span.da_wide,
+.ds_dragonage .power div.dsf.da_wide {
+  width: 584px;
 }
 
 /****************************
