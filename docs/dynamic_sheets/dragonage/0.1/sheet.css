@@ -397,14 +397,14 @@ div.ds_dragonage {
   overflow: hidden;
 }
 
-.ds_dragonage .armor_values span{
+.ds_dragonage .armor_values div.dsf{
   display: block;
   width: 110px;
   float: left;
   text-align: center;
 }
 
-.ds_dragonage .shield_values span{
+.ds_dragonage .shield_values div.dsf{
   display: block;
   width: 150px;
   float: left;
@@ -415,6 +415,7 @@ div.ds_dragonage {
 .ds_dragonage .armor_values span.checkbox {
   width: 65px;
   float: right;
+  text-align: center;
  }
 
 /****************************
