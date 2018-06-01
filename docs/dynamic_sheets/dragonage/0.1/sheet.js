@@ -232,7 +232,7 @@ function dragonage_remove_entry() {
    All user editable data is removed and a dele button added. */
 function dragonage_get_template(container){
   var template = $(container.children()[0]).clone();
-  var entries = template.children('span.dsf');
+  var entries = template.children('div.dsf');
   var button = "<span class='da_remove_button'><button onclick='dragonage_remove_entry()'><img src='https://png.icons8.com/material/20/000000/trash.png'></button></span>";
   for(var i = 0; i < entries.length; i++){
     $(entries).text("");
