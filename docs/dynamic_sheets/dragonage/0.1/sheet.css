@@ -528,7 +528,7 @@ div.ds_dragonage {
   overflow: hidden;
 }
 
-.ds_dragonage .ranged_weapon_values span {
+.ds_dragonage .ranged_weapon_values div {
   display: block;
   float: left;
   text-align: center;
