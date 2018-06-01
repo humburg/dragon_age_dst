@@ -617,14 +617,15 @@ div.ds_dragonage {
 }
 
 .ds_dragonage .da_tab_spells .sub_header span,
-.ds_dragonage .da_tab_spells .da_content span {
+.ds_dragonage .da_tab_spells .da_content div.dsf {
   display: block;
   float: left;
   text-align: center;
   width: 173px;
 }
 
-.ds_dragonage .da_tab_spells span.da_narrow {
+.ds_dragonage .da_tab_spells span.da_narrow,
+.ds_dragonage .da_tab_spells div.dsf.da_narrow {
   width: 50px;
 }
 
