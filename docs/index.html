@@ -53,8 +53,8 @@
                 <span class="dsf dsf_name"></span>
             </div>
             <div class='player_campaign'>
-              <span>Played by </span><span class="dsf dsf_player"></span>
-              <span> in </span><span class="dsf dsf_campaign"></span>
+              <span>Played by </span><span class="dsf dsf_player readonly"></span>
+              <span> in </span><span class="dsf dsf_campaign readonly"></span>
             </div>
           </div>
         </div>
@@ -94,50 +94,50 @@
               <span class="ability_rating_header">Rating</span>
             </div>
             <div class="da_content">
-              <div class="ability_score communication">
+              <div class="ability_score communication row">
                 <span class="ability_score_name">Communication</span>
                 <span class="dsf ability_score_primary dsf_communication_primary checkbox readonly readonly"></span>
                 <span class="dsf ability_score_focuses dsf_communication_focuses"></span>
                 <span class="dsf ability_score_rating dsf_communication"></span>
               </div>
-              <div class="ability_score constitution">
+              <div class="ability_score constitution row">
                 <span class="ability_score_name">Constitution</span>
                 <span class="dsf ability_score_primary dsf_constitution_primary checkbox readonly"></span>
                 <span class="dsf ability_score_focuses dsf_constitution_focuses"></span>
                 <span class="dsf ability_score_rating dsf_constitution"></span>
               </div>
-              <div class="ability_score cunning">
+              <div class="ability_score cunning row">
                 <span class="ability_score_name">Cunning</span>
                 <span class="dsf ability_score_primary dsf_cunning_primary checkbox readonly"></span>
                 <span class="dsf ability_score_focuses dsf_cunning_focuses"></span>
                 <span class="dsf ability_score_rating dsf_cunning"></span>
               </div>
-              <div class="ability_score dexterity">
+              <div class="ability_score dexterity row">
                 <span class="ability_score_name">Dexterity</span>
                 <span class="dsf ability_score_primary dsf_dexterity_primary checkbox readonly"></span>
                 <span class="dsf ability_score_focuses dsf_dexterity_focuses"></span>
                 <span class="dsf ability_score_rating dsf_dexterity"></span>
                 <span class="dexterity_actual hidden"></span>
               </div>
-              <div class="ability_score magic">
+              <div class="ability_score magic row">
                 <span class="ability_score_name">Magic</span>
                 <span class="dsf ability_score_primary dsf_magic_primary checkbox readonly"></span>
                 <span class="dsf ability_score_focuses dsf_magic_focuses"></span>
                 <span class="dsf ability_score_rating dsf_magic"></span>
               </div>
-              <div class="ability_score perception">
+              <div class="ability_score perception row">
                 <span class="ability_score_name">Perception</span>
                 <span class="dsf ability_score_primary dsf_perception_primary checkbox readonly"></span>
                 <span class="dsf ability_score_focuses dsf_perception_focuses"></span>
                 <span class="dsf ability_score_rating dsf_perception"></span>
               </div>
-              <div class="ability_score strength">
+              <div class="ability_score strength row">
                 <span class="ability_score_name">Strength</span>
                 <span class="dsf ability_score_primary dsf_strength_primary checkbox readonly"></span>
                 <span class="dsf ability_score_focuses dsf_strength_focuses"></span>
                 <span class="dsf ability_score_rating dsf_strength"></span>
               </div>
-              <div class="ability_score willpower">
+              <div class="ability_score willpower row">
                 <span class="ability_score_name">Willpower</span>
                 <span class="dsf ability_score_primary dsf_willpower_primary checkbox readonly"></span>
                 <span class="dsf ability_score_focuses dsf_willpower_focuses"></span>
@@ -162,8 +162,10 @@
                 <span class="dsf dsf_race"></span>
                 <span class="dsf dsf_class"></span>
                 <span class="dsf dsf_background"></span>
-                <span class='level'><span class="dsf dsf_level"></span>
-                <span class="dsf dsf_xp"></span></span>
+                <div class='level'>
+                  <span class="dsf dsf_level"></span>
+                  <span class="dsf dsf_xp"></span>
+                </div>
             </div>
           </div>
 
@@ -250,7 +252,7 @@
               </div>
               <div class="da_content">
                 <div class="extendable extend_melee_weapon">
-                  <div class="melee_weapon_values">
+                  <div class="melee_weapon_values row">
                     <span class="dsf dsf_melee_weapon_name_1 melee_weapon_name"></span>
                     <span class="dsf dsf_melee_weapon_attack_1 melee_weapon_attack"></span>
                     <span class="dsf dsf_melee_weapon_damage_1 melee_weapon_damage"></span>
@@ -275,12 +277,12 @@
           <span>Long Range</span>
           <span>Reload Time</span>
           <span class="da_extend_button">
-            <button onclick="dragonage_add_entry('ranged_weapon')"><div></div></button>
+            <button onclick="dragonage_add_entry(event, 'ranged_weapon')"><div></div></button>
           </span>
         </div>
         <div class="da_content">
           <div class="extendable extend_ranged_weapon">
-            <div class="ranged_weapon_values">
+            <div class="ranged_weapon_values row">
                 <span class="dsf dsf_ranged_weapon_name_1 ranged_weapon_name"></span>
                 <span class="dsf dsf_ranged_weapon_attack_1 ranged_weapon_attack"></span>
                 <span class="dsf dsf_ranged_weapon_damage_1 ranged_weapon_damage"></span>
@@ -301,12 +303,12 @@
           <span class="da_narrow">M</span>
           <span class="da_wide">Description</span>
           <span class="da_extend_button">
-            <button onclick="dragonage_add_entry('specialization')"><div></div></button>
+            <button onclick="dragonage_add_entry(event, 'specialization')"><div></div></button>
           </span>
         </div>
         <div class="da_content">
           <div class="extendable extend_specialization">
-            <div class="specialization_values">
+            <div class="specialization_values row">
               <span class="dsf dsf_specialization_name_1 specialization_name"></span>
               <span class="dsf dsf_specialization_journeyman_1 specialization_journeyman checkbox readonly"></span>
               <span class="dsf dsf_specialization_master_1 specialization_master checkbox readonly"></span>
@@ -323,12 +325,12 @@
             <span class="da_narrow">M</span>
             <span class="da_wide">Description</span>
             <span class="da_extend_button">
-              <button onclick="dragonage_add_entry('talent')"><div></div></button>
+              <button onclick="dragonage_add_entry(event, 'talent')"><div></div></button>
             </span>
           </div>
           <div class="da_content">
             <div class="extendable extend_talent">
-              <div class="talent_values">
+              <div class="talent_values row">
                 <span class="dsf dsf_talent_name_1 talent_name"></span>
                 <span class="dsf dsf_talent_journeyman_1 talent_journeyman checkbox readonly"></span>
                 <span class="dsf dsf_talent_master_1 talent_master checkbox readonly"></span>
@@ -343,12 +345,12 @@
             <span>Name</span>
             <span class="da_wide">Description</span>
             <span class="da_extend_button">
-              <button onclick="dragonage_add_entry('power')"><div></div></button>
+              <button onclick="dragonage_add_entry(event, 'power')"><div></div></button>
             </span>
           </div>
           <div class="da_content">
             <div class="extendable">
-              <div class="power_values">
+              <div class="power_values row">
                 <span class="dsf dsf_power_name_1 power_name"></span>
                 <span class="dsf dsf_power_description_1 power_description da_wide"></span>
               </div>
@@ -380,12 +382,12 @@
             <span class="da_narrow">TN</span>
             <span>Test</span>
             <span class="da_extend_button">
-                <button onclick="dragonage_add_entry('blood_magic')"><div></div></button>
+                <button onclick="dragonage_add_entry(event, 'blood_magic')"><div></div></button>
             </span>
           </div>
           <div class="da_content">
             <div class="extendable">
-              <div class="blood_magic_values">
+              <div class="blood_magic_values row">
                 <span class="dsf dsf_blood_magic_name_1 blood_magic_name"></span>
                 <span class="dsf dsf_blood_magic_type_1 blood_magic_type"></span>
                 <span class="dsf dsf_blood_magic_cost_1 blood_magic_cost da_narrow"></span>
@@ -421,12 +423,12 @@
             <span class="da_narrow">TN</span>
             <span>Test</span>
             <span class="da_extend_button">
-                <button onclick="dragonage_add_entry('creation_magic')"><div></div></button>
+                <button onclick="dragonage_add_entry(event, 'creation_magic')"><div></div></button>
             </span>
           </div>
           <div class="da_content">
             <div class="extendable">
-              <div class="creation_magic_values">
+              <div class="creation_magic_values row">
                 <span class="dsf dsf_creation_magic_name_1 creation_magic_name"></span>
                 <span class="dsf dsf_creation_magic_type_1 creation_magic_type"></span>
                 <span class="dsf dsf_creation_magic_cost_1 creation_magic_cost da_narrow"></span>
@@ -462,12 +464,12 @@
             <span class="da_narrow">TN</span>
             <span>Test</span>
             <span class="da_extend_button">
-                <button onclick="dragonage_add_entry('entropy_magic')"><div></div></button>
+                <button onclick="dragonage_add_entry(event, 'entropy_magic')"><div></div></button>
             </span>
           </div>
           <div class="da_content">
             <div class="extendable">
-              <div class="entropy_magic_values">
+              <div class="entropy_magic_values row">
                 <span class="dsf dsf_entropy_magic_name_1 entropy_magic_name"></span>
                 <span class="dsf dsf_entropy_magic_type_1 entropy_magic_type"></span>
                 <span class="dsf dsf_entropy_magic_cost_1 entropy_magic_cost da_narrow"></span>
@@ -503,12 +505,12 @@
               <span class="da_narrow">TN</span>
               <span>Test</span>
               <span class="da_extend_button">
-                  <button onclick="dragonage_add_entry('primal_magic')"><div></div></button>
+                  <button onclick="dragonage_add_entry(event, 'primal_magic')"><div></div></button>
               </span>
             </div>
             <div class="da_content">
               <div class="extendable">
-                <div class="primal_magic_values">
+                <div class="primal_magic_values row">
                   <span class="dsf dsf_primal_magic_name_1 primal_magic_name"></span>
                   <span class="dsf dsf_primal_magic_type_1 primal_magic_type"></span>
                   <span class="dsf dsf_primal_magic_cost_1 primal_magic_cost da_narrow"></span>
@@ -544,12 +546,12 @@
                 <span class="da_narrow">TN</span>
                 <span>Test</span>
                 <span class="da_extend_button">
-                    <button onclick="dragonage_add_entry('spirit_magic')"><div></div></button>
+                    <button onclick="dragonage_add_entry(event, 'spirit_magic')"><div></div></button>
                 </span>
               </div>
               <div class="da_content">
                 <div class="extendable">
-                  <div class="spirit_magic_values">
+                  <div class="spirit_magic_values row">
                     <span class="dsf dsf_spirit_magic_name_1 spirit_magic_name"></span>
                     <span class="dsf dsf_spirit_magic_type_1 spirit_magic_type"></span>
                     <span class="dsf dsf_spirit_magic_cost_1 spirit_magic_cost da_narrow"></span>

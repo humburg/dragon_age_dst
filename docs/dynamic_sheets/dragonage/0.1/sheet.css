@@ -57,7 +57,7 @@ div.ds_dragonage {
   font-size: medium;
 }
 
-.ds_dragonage .section .da_content span,
+.ds_dragonage .section .da_content div.dsf,
 .ds_dragonage .section .sub_header span
 {
   display: block;
@@ -65,7 +65,7 @@ div.ds_dragonage {
   text-align: center;
 }
 
-.ds_dragonage .section .da_content div:nth-of-type(even){
+.ds_dragonage .section .da_content div.row:nth-of-type(even){
   background-color: #e0beb1;
 }
 
@@ -175,26 +175,6 @@ div.ds_dragonage {
   background-image: url(https://png.icons8.com/material/13/000000/checked-2.png);
 }
 
-/* text areas */
-.ds_dragonage .user_text textarea {
-  width: 396px;
-  height: 20em;
-}
-
-.ds_dragonage .nicEdit-main {
-  font-family: 'Crimson Text', serif;
-}
-
-.ds_dragonage .nicEdit-main h1,
-.ds_dragonage .nicEdit-main h2,
-.ds_dragonage .nicEdit-main h3,
-.ds_dragonage .nicEdit-main h4,
-.ds_dragonage .nicEdit-main h5,
-.ds_dragonage .nicEdit-main h6 {
-  font-family: Cinzel, serif;
-}
-
-
 /* links */
 .ds_dragonage a {
   color: black;
@@ -283,32 +263,38 @@ div.ds_dragonage {
   margin: 0 auto;
 }
 
-.ds_dragonage .appearance .da_content span,
+.ds_dragonage .appearance .da_content div.dsf,
 .ds_dragonage .appearance .sub_header span {
   width: 100px;
 }
 
-.ds_dragonage .appearance span.appearance_features {
+.ds_dragonage .appearance .da_content div.dsf.appearance_features,
+.ds_dragonage .appearance .sub_header span.appearance_features {
   width: 200px;
 }
 
 /****************************
 * Basic Info
 *****************************/
-.ds_dragonage .basic_info .da_content span,
-.ds_dragonage .basic_info .sub_header span
+.ds_dragonage .basic_info .da_content div.dsf,
+.ds_dragonage .basic_info .sub_header span,
+.ds_dragonage .basic_info .da_content div.level
 {
   width: 100px;
 }
 
-.ds_dragonage .basic_info .da_content span.dsf_xp
+.ds_dragonage .basic_info .da_content div.level {
+  text-align: center;
+}
+
+.ds_dragonage .basic_info .da_content div.dsf_xp
 {
   display: inline-block;
   float: none;
   width: auto;
 }
 
-.ds_dragonage .basic_info .da_content span.dsf_level {
+.ds_dragonage .basic_info .da_content div.dsf_level {
   display: inline-block;
   float: none;
   width: auto;
