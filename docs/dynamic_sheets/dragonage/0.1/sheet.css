@@ -356,16 +356,14 @@ div.ds_dragonage {
   width: 400px;
 }
 
-.ds_dragonage .combat_stats_header span {
+.ds_dragonage .combat_stats_header span,
+.ds_dragonage .combat_stats_values div {
   display: block;
   float: left;
   width: 100px;
 }
 
-.ds_dragonage .combat_stats_values span {
-  display: block;
-  float: left;
-  width: 100px;
+.ds_dragonage .combat_stats_values div {
   text-align: center;
 }
 
