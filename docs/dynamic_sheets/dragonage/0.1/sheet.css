@@ -436,28 +436,28 @@ div.ds_dragonage {
   overflow: hidden;
 }
 
-.ds_dragonage .movement_values_yrd span {
+.ds_dragonage .movement_values_yrd div.dsf {
   display: block;
   float: left;
   width: 130px;
   text-align: center;
 }
 
-.ds_dragonage .movement_values_yrd span:after {
+.ds_dragonage .movement_values_yrd div.dsf:after {
   content: " yrd"
 }
 .ds_dragonage .movement_values_sq {
   overflow: hidden;
 }
 
-.ds_dragonage .movement_values_sq span {
+.ds_dragonage .movement_values_sq div.dsf {
   display: block;
   float: left;
   width: 130px;
   text-align: center;
 }
 
-.ds_dragonage .movement_values_sq span:after {
+.ds_dragonage .movement_values_sq div.dsf:after {
   content: " squares"
 }
 
