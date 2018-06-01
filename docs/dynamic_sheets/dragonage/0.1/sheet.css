@@ -693,3 +693,33 @@ div.ds_dragonage {
   width: 820px;
   max-width: 820px;
 }
+
+/* Equipment */
+.ds_dragonage .da_tab_equipment .exchange_rate .da_content {
+  text-align: center;
+}
+
+.ds_dragonage .da_tab_equipment .money .sub_header span,
+.ds_dragonage .da_tab_equipment .money .da_content div.dsf {
+  width: 130px;
+}
+
+.ds_dragonage .da_tab_equipment div.equipment {
+  width: 820px;
+  max-width: 820px;
+}
+
+.ds_dragonage .da_tab_equipment .equipment .sub_header span,
+.ds_dragonage .da_tab_equipment .equipment .da_content div.dsf {
+  width: 130px;
+}
+
+.ds_dragonage .da_tab_equipment .equipment .sub_header span.da_narrow,
+.ds_dragonage .da_tab_equipment .equipment .da_content div.dsf.da_narrow {
+  width: 80px;
+}
+
+.ds_dragonage .da_tab_equipment .equipment .sub_header span.da_wide,
+.ds_dragonage .da_tab_equipment .equipment .da_content div.dsf.da_wide {
+  width: 294px;
+}
