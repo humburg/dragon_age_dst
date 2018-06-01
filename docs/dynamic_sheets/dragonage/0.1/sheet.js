@@ -71,7 +71,7 @@ function dragonage_dataPostLoad(options) {
         target_name = classes[j].replace('dsf_', 'extend_').replace('_storage', '');
         if($(storage[i]).text()){
           dom = parser.parseFromString($(storage[i]).text(), 'application/xml');
-          jQuery(options['context'] + ' .' + target_name).replaceWith(dom.children[0]);
+          jQuery(options['context'] + ' .' + target_name).replaceWith($(dom.children[0]).removeAttr('xmlns')[0]);
         }
       }
     }
