@@ -38,6 +38,7 @@ div.ds_dragonage {
   padding-left: 8px;
 }
 
+.ds_dragonage div.dsf,
 .ds_dragonage span {
   font-family: 'IM Fell English SC', serif;
 }
