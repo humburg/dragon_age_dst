@@ -309,6 +309,11 @@ div.ds_dragonage {
   content: " xp)"
 }
 
+.ds_dragonage .basic_info .language_header span,
+.ds_dragonage .basic_info .language_values div.dsf {
+  width: 400px;
+}
+
 /****************************
 * Ability Scores
 *****************************/
