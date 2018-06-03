@@ -498,9 +498,11 @@ div.ds_dragonage {
   float: right;
 }
 
+.ds_dragonage .melee_weapons .weapon_group_header span {
+  width: 100%;
+}
 .ds_dragonage .section .da_content div.weapon_groups {
   padding-top: 5px;
-  background-color: lightgray;
   display: inline-block;
   width: 400px;
 }
