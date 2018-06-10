@@ -12,7 +12,7 @@
 /* Global options for CHainsaw's modules */
 csx_opts = {
 	'setupCallback': function(context){chainsawxiv_module_setup(context);},
-	'defaultFieldValue':'',
+	'defaultFieldValue':'???',
 	'defaultContext': '',
 	'isEditable': false
 };
