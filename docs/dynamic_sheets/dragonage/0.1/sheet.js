@@ -17,23 +17,13 @@ csx_opts = {
 	'isEditable': false
 };
 
-// Import Chainsaw's javascript
-var includes = document.createElement('script');
-includes.type = 'text/javascript';
-includes.src = 'https://chainsawxiv.github.io/DST/common/js/csx_dd4e_common.js';
-includes.onload = function(){
-  // Callback to use what you just loaded
-  csx_opts.setupCallback();
-};
-document.body.appendChild(includes);
-
 function chainsawxiv_module_setup(context){
 	// Provide default context
 	if (context == undefined)
 		context = csx_opts.defaultContext;
 	// Do setup for interfaces
-  csx_edit(context);
   csx_list(context);
+  csx_edit(context);
 }
 
 function dragonage_dataPreLoad(options) {
@@ -70,6 +60,16 @@ function dragonage_dataPostLoad(options) {
   options['context'] = '#' + options['containerId'];
   csx_opts['defaultContext'] = document.getElementById(options.containerId);
   csx_opts['isEditable'] = options.isEditable;
+
+  // Import Chainsaw's javascript
+  var includes = document.createElement('script');
+  includes.type = 'text/javascript';
+  includes.src = 'https://chainsawxiv.github.io/DST/common/js/csx_dd4e_common.js';
+  includes.onload = function(){
+    // Callback to use what you just loaded
+    csx_opts.setupCallback();
+  };
+  document.body.appendChild(includes);
 
   // Populate extendable fields
   var target_name, classes, ext, dom;

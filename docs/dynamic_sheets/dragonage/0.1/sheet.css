@@ -39,11 +39,12 @@ div.ds_dragonage {
 }
 
 .ds_dragonage div.dsf,
+.ds_dragonage div.dslf,
 .ds_dragonage span {
   font-family: 'IM Fell English SC', serif;
 }
 
-.ds_dragonage .section {
+.ds_dragonage .da_section {
   margin-bottom: 10px;
   max-width: 400px;
   border: 1px solid #810207;
@@ -52,25 +53,25 @@ div.ds_dragonage {
   overflow: hidden;
 }
 
-.ds_dragonage .section .da_content div {
+.ds_dragonage .da_section .da_content div {
   overflow: hidden;
   font-weight: normal;
   font-size: medium;
 }
 
-.ds_dragonage .section .da_content div.dsf,
-.ds_dragonage .section .sub_header span
+.ds_dragonage .da_section .da_content div.dsf,
+.ds_dragonage .da_section .sub_header span
 {
   display: block;
   float: left;
   text-align: center;
 }
 
-.ds_dragonage .section .da_content div.row:nth-of-type(odd){
+.ds_dragonage .da_section .da_content div.row:nth-of-type(odd){
   background-color: #e0beb1;
 }
 
-.ds_dragonage span.section_title {
+.ds_dragonage span.da_section_title {
   display: block;
   width: 100%;
   height: 26px;
@@ -84,16 +85,29 @@ div.ds_dragonage {
   border-top-right-radius: 10px;
 }
 
-.ds_dragonage .section div.sub_header {
+.ds_dragonage .da_section div.sub_header {
   background-color: black;
   color: white;
-  font-size: large;
+  font-size: medium;
   font-weight: normal;
   text-align: center;
+  padding-top: 2px;
   overflow: hidden;
 }
 
+.ds_dragonage .da_section div.dsf {
+  font-size: small;
+}
+
 /* Buttons to extend lists */
+.ds_dragonage .sub_header span.add,
+.ds_dragonage .sub_header span.trash {
+  width: 15px;
+  height: 15px;
+  filter: brightness(150%);
+}
+
+
 .ds_dragonage span.da_extend_button {
   display: block;
   float: right!important;
@@ -149,6 +163,17 @@ div.ds_dragonage {
   background-image: url(https://png.icons8.com/ios/25/000000/plus-2-math.png);
 }
 
+
+/* Dynamic list elements */
+.ds_dragonage .list {
+  margin-top: 0;
+  width: 100%;
+  font-size: small;
+}
+
+.ds_dragonage .list li.item:nth-last-of-type(odd){
+  background-color: #e0beb1;
+}
 
 /* Styling checkboxes */
 .ds_dragonage input[type=checkbox] {
@@ -470,41 +495,34 @@ div.ds_dragonage {
 * Melee Weapons
 *****************************/
 
-.ds_dragonage .melee_header span {
-  display: block;
-  float: left;
-  width: 120px;
-}
-
-.ds_dragonage .melee_header span.da_extend_button {
-  float: right;
-  width: 25px;
-}
-
-
-.ds_dragonage .melee_weapon_values {
-  overflow: hidden;
-}
-
-.ds_dragonage .melee_weapon_values div.dsf {
-  display: block;
-  float: left;
+.ds_dragonage .melee_header span,
+.ds_dragonage .list_melee .item div.edit {
+  display: inline-block;
+  width: 70px;
   text-align: center;
-  width: 120px;
 }
 
-.ds_dragonage .melee_weapon_values span.da_remove_button {
-  width: 20px;
-  float: right;
+.ds_dragonage .list_melee .item div.edit{
+  padding-top: 2px;
+}
+
+.ds_dragonage .melee_header .da_wide {
+  width: 140px;
+  height: 1em;
+}
+
+.ds_dragonage .list_melee .item div.da_wide{
+  display: inline-block;
+  width: 124px;
 }
 
 .ds_dragonage .melee_weapons .weapon_group_header span {
   width: 100%;
 }
-.ds_dragonage .section .da_content div.weapon_groups {
+.ds_dragonage .da_section .da_content div.weapon_groups {
   padding-top: 5px;
   display: inline-block;
-  width: 400px;
+  width: 100%;
 }
 
 .ds_dragonage .weapon_groups div.dsf {
@@ -550,8 +568,8 @@ div.ds_dragonage {
 /****************************
 * Specializations & Talents
 *****************************/
-.ds_dragonage .da_tab_talents .section,
-.ds_dragonage .da_tab_talents .section span.section_title {
+.ds_dragonage .da_tab_talents .da_section,
+.ds_dragonage .da_tab_talents .da_section span.da_section_title {
   max-width: 820px;
   width: 820px;
 }
@@ -617,8 +635,8 @@ div.ds_dragonage {
   position: relative;
 }
 
-.ds_dragonage .da_tab_spells .section,
-.ds_dragonage .da_tab_spells .section span.section_title {
+.ds_dragonage .da_tab_spells .da_section,
+.ds_dragonage .da_tab_spells .da_section span.da_section_title {
   max-width: 820px;
   width: 820px;
 }

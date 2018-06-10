@@ -69,8 +69,8 @@
 
         <div class="da_tabcontent da_tab_main">
           <div class="da_left">
-            <div class="appearance section">
-                <span class="section_title">Appearance</span>
+            <div class="appearance da_section">
+                <span class="da_section_title">Appearance</span>
                 <div class="da_portrait"><span class="dsf dsf_avatar_image readonly"></span></div>
                 <div class="appearance_header sub_header">
                   <span>Height</span>
@@ -87,8 +87,8 @@
               </div>
 
           <!-- Ability scores and focuses -->
-          <div class="ability_scores section">
-            <span class="section_title">Ability Scores</span>
+          <div class="ability_scores da_section">
+            <span class="da_section_title">Ability Scores</span>
             <div class="ability_score_header sub_header">
               <span class="ability_ability_header">Ability</span>
               <span class="ability_primary_header">Primary</span>
@@ -152,8 +152,8 @@
         <!-- Start right column -->
         <div class="da_right">
           <!-- Basic character info -->
-          <div class="basic_info section">
-            <span class="section_title">Basic Info</span>
+          <div class="basic_info da_section">
+            <span class="da_section_title">Basic Info</span>
             <div class="basic_info_header sub_header">
               <span>Race</span>
               <span>Class</span>
@@ -182,8 +182,8 @@
           </div>
 
           <!-- Combat stats -->
-          <div class="combat_stats section">
-            <span class="section_title">Combat Stats</span>
+          <div class="combat_stats da_section">
+            <span class="da_section_title">Combat Stats</span>
             <div class="combat_stats_header sub_header">
               <span>Speed</span>
               <span>Defense</span>
@@ -199,8 +199,8 @@
           </div>
 
           <!-- Armor -->
-          <div class="armor section">
-            <span class="section_title">Armor &amp; Shield</span>
+          <div class="armor da_section">
+            <span class="da_section_title">Armor &amp; Shield</span>
             <div class="armor_header sub_header">
               <span>Armor Type</span>
               <span>AP</span>
@@ -230,8 +230,8 @@
           </div>
 
           <!-- Movement ranges -->
-          <div class="movement section">
-            <span class="section_title">Movement Ranges</span>
+          <div class="movement da_section">
+            <span class="da_section_title">Movement Ranges</span>
             <div class="movement_header sub_header">
               <span>Move</span>
               <span>Charge</span>
@@ -252,25 +252,33 @@
           </div>
 
           <!-- Melee weapons -->
-          <div class="melee_weapons section">
-              <span class="section_title">Melee Weapons</span>
+          <div class="melee_weapons da_section">
+              <span class="da_section_title">Melee Weapons</span>
               <div class="melee_header sub_header">
-                <span>Weapon</span>
+                <span class="da_wide">Weapon</span>
                 <span>Attack</span>
                 <span>Damage</span>
-                <span class="da_extend_button">
-                  <button onclick="dragonage_add_entry(event, 'melee_weapon')"><div></div></button>
+                <span class="trash"></span>
+					      <span class="add addto_melee" title="Add Melee Weapon"></span>
+              </div>
+              <ul class="group list list_melee">
+                <li class="proto item">
+                  <div class="handle"><div></div></div>
+                  <span class="edit dslf dslf_melee_weapon_name melee_weapon_name da_wide" defaultString="Weapon"></span>
+                  <span class="edit dslf dslf_melee_weapon_attack melee_weapon_attack"></span>
+                  <span class="edit dslf dslf_melee_weapon_damage melee_weapon_damage"></span>
+                </li>
+                <li class="item">
+                  <div class="handle"><div></div></div>
+                  <span class="edit dslf dslf_melee_weapon_name melee_weapon_name da_wide" defaultString="Weapon"></span>
+                  <span class="edit dslf dslf_melee_weapon_attack melee_weapon_attack"></span>
+                  <span class="edit dslf dslf_melee_weapon_damage melee_weapon_damage"></span>
+                  </li>
+                <span class="oldfields hidden">
+                  [{"melee_weapon_name":"melee_weapon_name"},{"melee_weapon_attack":"melee_weapon_attack"}, {"melee_weapon_damage":"melee_weapon_damage"}]
                 </span>
-              </div>
-              <div class="da_content">
-                <div class="extendable extend_melee_weapon">
-                  <div class="melee_weapon_values row">
-                    <span class="dsf dsf_melee_weapon_name_1 melee_weapon_name"></span>
-                    <span class="dsf dsf_melee_weapon_attack_1 melee_weapon_attack"></span>
-                    <span class="dsf dsf_melee_weapon_damage_1 melee_weapon_damage"></span>
-                  </div>
-                </div>
-              </div>
+                <span class="dsf dsf_melee hidden readonly"></span>
+              </ul>
               <div class="weapon_group_header sub_header">
                   <span>Weapon Groups</span>
               </div>
@@ -283,8 +291,8 @@
         </div> <!-- End right column -->
 
         <!-- Ranged weapons -->
-      <div class="ranged_weapons section">
-        <span class="section_title">Ranged Weapons</span>
+      <div class="ranged_weapons da_section">
+        <span class="da_section_title">Ranged Weapons</span>
         <div class="ranged_header sub_header">
           <span>Weapon</span>
           <span>Attack</span>
@@ -311,8 +319,8 @@
       </div>
     </div>
     <div class="da_tabcontent da_tab_talents">
-      <div class="specialization section">
-        <span class="section_title">Specializations</span>
+      <div class="specialization da_section">
+        <span class="da_section_title">Specializations</span>
         <div class="specialization_header sub_header">
           <span>Name</span>
           <span class="da_narrow">J</span>
@@ -333,8 +341,8 @@
           </div>
         </div>
       </div>
-      <div class="talent section">
-          <span class="section_title">Talents</span>
+      <div class="talent da_section">
+          <span class="da_section_title">Talents</span>
           <div class="talent_header sub_header">
             <span>Name</span>
             <span class="da_narrow">J</span>
@@ -355,8 +363,8 @@
             </div>
           </div>
         </div>
-        <div class="power section">
-          <span class="section_title">Powers</span>
+        <div class="power da_section">
+          <span class="da_section_title">Powers</span>
           <div class="power_header sub_header">
             <span>Name</span>
             <span class="da_wide">Description</span>
@@ -388,8 +396,8 @@
             <span class="dsf dsf_blood_magic_extra spell_power_extra checkbox readonly"></span>
           </div>
         </div>
-        <div class="blood_magic section">
-          <span class="section_title">Blood Magic Spells</span>
+        <div class="blood_magic da_section">
+          <span class="da_section_title">Blood Magic Spells</span>
           <div class="blood_magic_header sub_header">
             <span>Name</span>
             <span>Type</span>
@@ -429,8 +437,8 @@
             <span class="dsf dsf_creation_magic_extra spell_power_extra checkbox readonly"></span>
           </div>
         </div>
-        <div class="creation_magic section">
-          <span class="section_title">Creation Magic Spells</span>
+        <div class="creation_magic da_section">
+          <span class="da_section_title">Creation Magic Spells</span>
           <div class="creation_magic_header sub_header">
             <span>Name</span>
             <span>Type</span>
@@ -470,8 +478,8 @@
             <span class="dsf dsf_entropy_magic_extra spell_power_extra checkbox readonly"></span>
           </div>
         </div>
-        <div class="entropy_magic section">
-          <span class="section_title">Entropy Magic Spells</span>
+        <div class="entropy_magic da_section">
+          <span class="da_section_title">Entropy Magic Spells</span>
           <div class="entropy_magic_header sub_header">
             <span>Name</span>
             <span>Type</span>
@@ -511,8 +519,8 @@
               <span class="dsf dsf_primal_magic_extra spell_power_extra checkbox readonly"></span>
             </div>
           </div>
-          <div class="primal_magic section">
-            <span class="section_title">Primal Magic Spells</span>
+          <div class="primal_magic da_section">
+            <span class="da_section_title">Primal Magic Spells</span>
             <div class="primal_magic_header sub_header">
               <span>Name</span>
               <span>Type</span>
@@ -552,8 +560,8 @@
                 <span class="dsf dsf_spirit_magic_extra spell_power_extra checkbox readonly"></span>
               </div>
             </div>
-            <div class="spirit_magic section">
-              <span class="section_title">Spirit Magic Spells</span>
+            <div class="spirit_magic da_section">
+              <span class="da_section_title">Spirit Magic Spells</span>
               <div class="spirit_magic_header sub_header">
                 <span>Name</span>
                 <span>Type</span>
@@ -582,8 +590,8 @@
     </div>
     <div class="da_tabcontent da_tab_equipment">
       <div class="da_left">
-        <div class="money section">
-          <span  class="section_title">Money</span>
+        <div class="money da_section">
+          <span  class="da_section_title">Money</span>
           <div class="money_header sub_header">
             <span>Gold</span>
             <span>Silver</span>
@@ -597,16 +605,16 @@
         </div>
       </div>
       <div class="da_right">
-        <div class="exchange_rate section">
-          <span class="section_title">Exchange Rate</span>
+        <div class="exchange_rate da_section">
+          <span class="da_section_title">Exchange Rate</span>
           <div class="da_content">
             <span>1 gp = 100 sp = 10,000 cp</span>
           </div>
         </div>
       </div>
 
-      <div class="equipment section">
-        <span class="section_title">Equipment</span>
+      <div class="equipment da_section">
+        <span class="da_section_title">Equipment</span>
         <div class="equipment_header sub_header">
           <span>Item</span>
           <span>Location</span>
@@ -635,19 +643,19 @@
 
     <div class="da_tabcontent da_tab_background">
       <div class="da_left">
-        <div class="goals section">
-          <span class="section_title">Goals</span>
+        <div class="goals da_section">
+          <span class="da_section_title">Goals</span>
           <span class="dsf dsf_goals"></span>
         </div>
       </div>
       <div class="da_right">
-        <div class="ties section">
-            <span class="section_title">Ties</span>
+        <div class="ties da_section">
+            <span class="da_section_title">Ties</span>
             <span class="dsf dsf_ties"></span>
         </div>
       </div>
-      <div class="biography section">
-          <span class="section_title">Biography</span>
+      <div class="biography da_section">
+          <span class="da_section_title">Biography</span>
           <span class="dsf dsf_bio"></span>
       </div>
     </div>
