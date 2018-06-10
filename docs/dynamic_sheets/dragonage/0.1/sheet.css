@@ -169,11 +169,11 @@ div.ds_dragonage {
 }
 
 .ds_dragonage input[type=checkbox]:not(:checked) {
-  background-image: url(https://png.icons8.com/material/13/000000/unchecked-checkbox.png);
+  background-image: url(https://github.com/humburg/dragon_age_dst/blob/master/docs/img/icons9-unchecked-checkbox-13.png?raw=true);
 }
 
 .ds_dragonage input[type=checkbox]:checked {
-  background-image: url(https://png.icons8.com/material/13/000000/checked-2.png);
+  background-image: url(https://github.com/humburg/dragon_age_dst/blob/master/docs/img/icons8-tick-box-13.png?raw=true);
 }
 
 /* links */
