@@ -9,13 +9,23 @@
  * Copy and paste this directly into the javascript textarea on obsidianportal.com
  */
 
-/* Global options for CHainsaw's modules */
+/* Global options for Chainsaw's modules */
 csx_opts = {
 	'setupCallback': function(context){chainsawxiv_module_setup(context);},
 	'defaultFieldValue':'???',
 	'defaultContext': '',
 	'isEditable': false
 };
+
+// Import Chainsaw's javascript
+var includes = document.createElement('script');
+includes.type = 'text/javascript';
+includes.src = 'https://chainsawxiv.github.io/DST/common/js/csx_dd4e_common.js';
+includes.onload = function(){
+  // Callback to use what you just loaded
+  csx_opts.setupCallback();
+};
+document.body.appendChild(includes);
 
 function chainsawxiv_module_setup(context){
 	// Provide default context
@@ -93,7 +103,7 @@ function dragonage_dataPostLoad(options) {
     dragonage_update_magic(options);
   }
 
-  
+
   var includes = document.createElement('script');
   includes.type = 'text/javascript';
   includes.src = 'https://chainsawxiv.github.io/DST/common/js/csx_edit.js';
