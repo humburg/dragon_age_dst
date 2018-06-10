@@ -32,7 +32,8 @@ function chainsawxiv_module_setup(context){
 	if (context == undefined)
 		context = csx_opts.defaultContext;
 	// Do setup for interfaces
-	csx_edit(context);
+  csx_edit(context);
+  csx_list(context);
 }
 
 function dragonage_dataPreLoad(options) {
@@ -141,8 +142,14 @@ function dragonage_dataPreSave(options) {
 
   // Bake everything down to its field values
   var edits = context.querySelectorAll('.dsf:not(.readonly),.edit');
-  for (var i = 0; i < edits.length; i++)
+  for (var i = 0; i < edits.length; i++){
     edits[i].unrender();
+  }
+
+  var lists = context.querySelectorAll('.list');
+  for (var i = 0; i < lists.length; i++){
+    lists[i].unrender();
+  }
 }
 
 
