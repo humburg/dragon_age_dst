@@ -53,6 +53,7 @@
   overflow: hidden;
   font-weight: normal;
   font-size: medium;
+  vertical-align: middle;
 }
 
 .ds_dragonage .da_section .da_content div.dsf,
@@ -317,12 +318,12 @@
 
 .ds_dragonage .da_content div.ability_score_rating,
 .ds_dragonage span.ability_rating_header {
-  width: 55px;
+  width: 50px;
 }
 
 .ds_dragonage .da_content div.ability_score_focuses,
 .ds_dragonage span.ability_focuses_header {
-  width: 150px;
+  width: 120px;
 }
 
 .ds_dragonage .da_content div.ability_score_name {
