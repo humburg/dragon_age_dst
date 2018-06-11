@@ -361,7 +361,7 @@
 .ds_dragonage .armor_header span {
   display: block;
   float: left;
-  width: 110px;
+  width: 100px;
 }
 
 .ds_dragonage .shield_header span {
@@ -373,7 +373,7 @@
 .ds_dragonage .shield_header span.da_trained,
 .ds_dragonage .armor_header span.da_trained {
   float: right;
-  width: 65px;
+  width: 55px;
 }
 
 .ds_dragonage .shield_values,
@@ -383,7 +383,7 @@
 
 .ds_dragonage .armor_values div.dsf{
   display: block;
-  width: 110px;
+  width: 100px;
   float: left;
   text-align: center;
 }
@@ -397,7 +397,7 @@
 
 .ds_dragonage .shield_values span.checkbox,
 .ds_dragonage .armor_values span.checkbox {
-  width: 65px;
+  width: 55px;
   float: right;
   text-align: center;
  }
