@@ -227,9 +227,16 @@
 /****************************
 * Appearance
 *****************************/
-.ds_dragonage .da_portrait {
-  display: table;
-  margin: 0 auto;
+.ds_dragonage .da_portrait,
+.ds_dragonage .da_portrait img {
+  display: inline-block;
+  width: 150px;
+}
+
+.ds_dragonage .appearance_basics {
+  display: inline-block;
+  vertical-align: top;
+  width: 205px;
 }
 
 .ds_dragonage .appearance .da_content div.dsf,
@@ -242,6 +249,9 @@
   width: 200px;
 }
 
+.ds_dragonage .feature_header {
+  margin-top: 5px;
+}
 /****************************
 * Basic Info
 *****************************/
