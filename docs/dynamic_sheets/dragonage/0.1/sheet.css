@@ -103,63 +103,6 @@
   filter: brightness(150%);
 }
 
-
-.ds_dragonage span.da_extend_button {
-  display: block;
-  float: right!important;
-  overflow: hidden;
-}
-
-.ds_dragonage .da_extend_button button {
-  border: none;
-  padding: 0;
-  border-width: 0;
-  background-color: white;
-  float: right;
-  outline: none;
-}
-
-.ds_dragonage .da_remove_button button {
-  border: none;
-  padding: 0;
-  border-width: 0;
-  background-color: transparent;
-  outline: none;
-  float: right;
-}
-
-.ds_dragonage span.da_remove_button {
-  width: 20px!important;
-}
-
-.ds_dragonage .da_remove_button button > img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.2;
-  cursor: pointer;
-}
-
-.ds_dragonage .da_remove_button button > img:hover {
-  opacity: 1;
-}
-
-.ds_dragonage span.da_extend_button {
-  width: 25px!important;
-}
-
-.ds_dragonage .da_extend_button button > div{
-  width: 25px;
-  height: 25px;
-  box-sizing: border-box;
-  background-image: url(https://png.icons8.com/ios/25/000000/plus-2-math-filled.png);
-  cursor: pointer;
-}
-
-.ds_dragonage .da_extend_button button > div:active{
-  background-image: url(https://png.icons8.com/ios/25/000000/plus-2-math.png);
-}
-
-
 /* Dynamic list elements */
 .ds_dragonage .list {
   margin-top: 0;
