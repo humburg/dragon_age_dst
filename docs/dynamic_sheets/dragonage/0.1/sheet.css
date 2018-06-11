@@ -167,6 +167,10 @@
   font-size: small;
 }
 
+.ds_dragonage .list .item div.edit{
+  padding-top: 2px;
+}
+
 .ds_dragonage .list li.item:nth-last-of-type(odd){
   background-color: #e0beb1;
 }
@@ -496,10 +500,6 @@
   text-align: center;
 }
 
-.ds_dragonage .list_melee .item div.edit{
-  padding-top: 2px;
-}
-
 .ds_dragonage .melee_header .da_wide {
   width: 185px;
   height: 1em;
@@ -530,17 +530,25 @@
   width: 100%;
 }
 
-.ds_dragonage .ranged_header span {
-  display: block;
-  float: left;
-  width: 130px;
+.ds_dragonage .ranged_header span,
+.ds_dragonage .list_ranged .item div.edit {
+  display: inline-block;
+  width: 120px;
+  text-align: center;
 }
 
-.ds_dragonage .ranged_header span.da_extend_button {
-  float: right;
-  width: 25px;
+.ds_dragonage .ranged_header .da_wide {
+  width: 210px;
 }
 
+.ds_dragonage .list_ranged .item div.da_wide{
+  width: 194px;
+}
+
+.ds_dragonage .ranged_header .da_narrow,
+.ds_dragonage .list_ranged .item div.da_narrow {
+  width: 90px;
+}
 
 .ds_dragonage .ranged_weapon_values {
   overflow: hidden;

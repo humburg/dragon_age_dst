@@ -273,7 +273,7 @@
                   <span class="edit dslf dslf_melee_weapon_name melee_weapon_name da_wide" defaultString="Weapon"></span>
                   <span class="edit dslf dslf_melee_weapon_attack melee_weapon_attack"></span>
                   <span class="edit dslf dslf_melee_weapon_damage melee_weapon_damage"></span>
-                  </li>
+                </li>
                 <span class="oldfields hidden">
                   [{"melee_weapon_name":"melee_weapon_name"},{"melee_weapon_attack":"melee_weapon_attack"}, {"melee_weapon_damage":"melee_weapon_damage"}]
                 </span>
@@ -294,28 +294,44 @@
       <div class="ranged_weapons da_section">
         <span class="da_section_title">Ranged Weapons</span>
         <div class="ranged_header sub_header">
-          <span>Weapon</span>
-          <span>Attack</span>
-          <span>Damage</span>
-          <span>Short Range</span>
-          <span>Long Range</span>
+          <span class="da_wide">Weapon</span>
+          <span class="da_narrow">Attack</span>
+          <span class="da_narrow">Damage</span>
+          <span class="da_narrow">Short Range</span>
+          <span class="da_narrow">Long Range</span>
           <span>Reload Time</span>
-          <span class="da_extend_button">
-            <button onclick="dragonage_add_entry(event, 'ranged_weapon')"><div></div></button>
+          <span class="trash"></span>
+          <span class="add addto_ranged" title="Add Ranged Weapon"></span>
+        </div>
+        <ul class="group list list_ranged">
+          <li class="proto item">
+            <div class="handle"><div></div></div>
+            <span class="edit dslf dslf_ranged_weapon_name ranged_weapon_name da_wide" defaultString="Weapon"></span>
+            <span class="edit dslf dslf_ranged_weapon_attack ranged_weapon_attack da_narrow"></span>
+            <span class="edit dslf dslf_ranged_weapon_damage ranged_weapon_damage da_narrow"></span>
+            <span class="edit dslf dslf_ranged_weapon_short ranged_weapon_short da_narrow"></span>
+            <span class="edit dslf dslf_ranged_weapon_long ranged_weapon_long da_narrow"></span>
+            <span class="edit dslf dslf_ranged_weapon_reload ranged_weapon_reload"></span>
+          </li>
+          <li class="item">
+            <div class="handle"><div></div></div>
+            <span class="edit dslf dslf_ranged_weapon_name ranged_weapon_name da_wide" defaultString="Weapon"></span>
+            <span class="edit dslf dslf_ranged_weapon_attack ranged_weapon_attack da_narrow"></span>
+            <span class="edit dslf dslf_ranged_weapon_damage ranged_weapon_damage da_narrow"></span>
+            <span class="edit dslf dslf_ranged_weapon_short ranged_weapon_short da_narrow"></span>
+            <span class="edit dslf dslf_ranged_weapon_long ranged_weapon_long da_narrow"></span>
+            <span class="edit dslf dslf_ranged_weapon_reload ranged_weapon_reload"></span>
+          </li>
+          <span class="oldfields hidden">
+            [{"ranged_weapon_name":"ranged_weapon_name"},
+            {"ranged_weapon_attack":"ranged_weapon_attack"},
+            {"ranged_weapon_damage":"ranged_weapon_damage"},
+            {"ranged_weapon_short":"ranged_weapon_short"},
+            {"ranged_weapon_long":"ranged_weapon_long"},
+            {"ranged_weapon_reload":"ranged_weapon_reload"}]
           </span>
-        </div>
-        <div class="da_content">
-          <div class="extendable extend_ranged_weapon">
-            <div class="ranged_weapon_values row">
-                <span class="dsf dsf_ranged_weapon_name_1 ranged_weapon_name"></span>
-                <span class="dsf dsf_ranged_weapon_attack_1 ranged_weapon_attack"></span>
-                <span class="dsf dsf_ranged_weapon_damage_1 ranged_weapon_damage"></span>
-                <span class="dsf dsf_ranged_weapon_short_1 ranged_weapon_short"></span>
-                <span class="dsf dsf_ranged_weapon_long_1 ranged_weapon_long"></span>
-                <span class="dsf dsf_ranged_weapon_reload_1 ranged_weapon_reload"></span>
-            </div>
-          </div>
-        </div>
+          <span class="dsf dsf_ranged hidden readonly"></span>
+        </ul>
       </div>
     </div>
     <div class="da_tabcontent da_tab_talents">
