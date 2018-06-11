@@ -412,7 +412,7 @@
 .ds_dragonage .movement_header span {
   display: block;
   float: left;
-  width: 130px;
+  width: 119px;
 }
 
 .ds_dragonage .movement_values_yrd {
@@ -422,7 +422,7 @@
 .ds_dragonage .movement_values_yrd div.dsf {
   display: block;
   float: left;
-  width: 130px;
+  width: 119px;
   text-align: center;
 }
 
@@ -436,7 +436,7 @@
 .ds_dragonage .movement_values_sq div.dsf {
   display: block;
   float: left;
-  width: 130px;
+  width: 119px;
   text-align: center;
 }
 
