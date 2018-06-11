@@ -70,7 +70,7 @@
 .ds_dragonage span.da_section_title {
   display: block;
   width: 100%;
-  height: 26px;
+  height: 1.1em;
   font-weight: bold;
   text-align: center;
   font-family: 'Cinzel', serif;
@@ -79,6 +79,7 @@
   background-color: #810207;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  padding-top: 0.05em;
 }
 
 .ds_dragonage .da_section div.sub_header {
