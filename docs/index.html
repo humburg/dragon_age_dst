@@ -85,7 +85,6 @@
                     <span class="dsf dsf_weight"></span>
                   </div>
                 </div>
-
                 <div class="feature_header sub_header">
                   <span class="appearance_features">Features</span>
                 </div>
@@ -352,20 +351,25 @@
           <span class="da_narrow">J</span>
           <span class="da_narrow">M</span>
           <span class="da_wide">Description</span>
-          <span class="da_extend_button">
-            <button onclick="dragonage_add_entry(event, 'specialization')"><div></div></button>
+          <span class="trash"></span>
+          <span class="add addto_specialization" title="Add Specialization"></span>
+        </div>
+        <ul class="group list list_specialization">
+          <li class="proto item">
+              <div class="handle"><div></div></div>
+              <span class="edit dslf dslf_specialization_name specialization_name"></span>
+              <span class="edit dslf dslf_specialization_journeyman specialization_journeyman checkbox readonly"></span>
+              <span class="edit dslf dslf_specialization_master specialization_master checkbox readonly"></span>
+              <span class="edit dslf dslf_specialization_description specialization_description da_wide"></span>
+          </li>
+          <span class="oldfields hidden">
+            [{"specialization_name":"specialization_name"},
+            {"specialization_journeyman":"specialization_journeyman"},
+            {"specialization_master":"specialization_master"},
+            {"specialization_description":"specialization_description"}]
           </span>
-        </div>
-        <div class="da_content">
-          <div class="extendable extend_specialization">
-            <div class="specialization_values row">
-              <span class="dsf dsf_specialization_name_1 specialization_name"></span>
-              <span class="dsf dsf_specialization_journeyman_1 specialization_journeyman checkbox readonly"></span>
-              <span class="dsf dsf_specialization_master_1 specialization_master checkbox readonly"></span>
-              <span class="dsf dsf_specialization_description_1 specialization_description da_wide"></span>
-            </div>
-          </div>
-        </div>
+          <span class="dsf dsf_specialization hidden readonly"></span>
+        </ul>
       </div>
       <div class="talent da_section">
           <span class="da_section_title">Talents</span>
