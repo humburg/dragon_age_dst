@@ -136,6 +136,8 @@
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .ds_dragonage input[type=checkbox]:not(:checked) {
@@ -310,9 +312,13 @@
   float:none;
 }
 
-.ds_dragonage .da_content span.ability_score_primary,
 .ds_dragonage span.ability_primary_header {
   width: 60px;
+  text-align: center;
+}
+
+.ds_dragonage .da_content span.ability_score_primary {
+  width: 50px;
   text-align: center;
 }
 
