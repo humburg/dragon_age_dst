@@ -24,6 +24,18 @@ function chainsawxiv_module_setup(context){
 	// Do setup for interfaces
   csx_list(context);
   csx_edit(context);
+  csx_check(context);
+}
+
+function include_script(source){
+  var includes = document.createElement('script');
+  includes.type = 'text/javascript';
+  includes.src = source;
+  includes.onload = function(){
+    // Callback to use what you just loaded
+    csx_opts.setupCallback();
+  };
+  document.body.appendChild(includes);
 }
 
 function dragonage_dataPreLoad(options) {
@@ -34,6 +46,11 @@ function dragonage_dataPreLoad(options) {
   window.chars = aisleten.characters;
   window.chars.jeditablePlaceholder = csx_opts.defaultFieldValue;
 
+  // Import Chainsaw's javascript
+  include_script('https://chainsawxiv.github.io/DST/common/js/csx_list.js');
+  include_script('https://chainsawxiv.github.io/DST/common/js/csx_check.js');
+  include_script('https://chainsawxiv.github.io/DST/common/js/csx_edit.js'); 
+  
    // display main tab
    document.getElementsByClassName('da_tab_main')[0].style.display = "block";
 
@@ -60,16 +77,6 @@ function dragonage_dataPostLoad(options) {
   options['context'] = '#' + options['containerId'];
   csx_opts['defaultContext'] = document.getElementById(options.containerId);
   csx_opts['isEditable'] = options.isEditable;
-
-  // Import Chainsaw's javascript
-  var includes = document.createElement('script');
-  includes.type = 'text/javascript';
-  includes.src = 'https://chainsawxiv.github.io/DST/common/js/csx_dd4e_common.js';
-  includes.onload = function(){
-    // Callback to use what you just loaded
-    csx_opts.setupCallback();
-  };
-  document.body.appendChild(includes);
 
   // Populate extendable fields
   var target_name, classes, ext, dom;
@@ -103,16 +110,6 @@ function dragonage_dataPostLoad(options) {
   if(jQuery(options['context'] + ' .dsf_magic').html()){
     dragonage_update_magic(options);
   }
-
-
-  var includes = document.createElement('script');
-  includes.type = 'text/javascript';
-  includes.src = 'https://chainsawxiv.github.io/DST/common/js/csx_edit.js';
-  includes.onload = function(){
-    // Callback to use what you just loaded
-    csx_opts.setupCallback();
-  };
-  document.body.appendChild(includes);
 }
 
 function dragonage_dataPreSave(options) {
