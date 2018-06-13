@@ -706,8 +706,7 @@
 }
 
 .ds_dragonage .da_tab_background div.biography{
-  width: 820px;
-  max-width: 820px;
+  width: 100%;
 }
 
 /* Equipment */
