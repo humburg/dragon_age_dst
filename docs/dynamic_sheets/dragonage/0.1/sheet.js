@@ -67,23 +67,6 @@ function dragonage_dataPostLoad(options) {
   csx_opts['defaultContext'] = document.getElementById(options.containerId);
   csx_opts['isEditable'] = options.isEditable;
 
-  // Populate extendable fields
-  var target_name, classes, ext, dom;
-  var storage = jQuery(options['context'] + ' .extension_storage').children();
-  var parser = new DOMParser();
-  for(var i = 0; i < storage.length; i++){
-    classes = storage[i].classList;
-    for(var j=0; j < classes.length; j++){
-      if(classes[j].startsWith('dsf_') && classes[j].endsWith('_storage')){
-        target_name = classes[j].replace('dsf_', 'extend_').replace('_storage', '');
-        if($(storage[i]).text()){
-          dom = parser.parseFromString($(storage[i]).text(), 'application/xml');
-          jQuery(options['context'] + ' .' + target_name).replaceWith($(dom.children[0]).removeAttr('xmlns')[0]);
-        }
-      }
-    }
-  }
-
   // Ensure Dex based calculations are up to date
   if(jQuery(options['context'] + ' .dsf_dexterity').html()){
     dragonage_apply_armor_penalty(options);
