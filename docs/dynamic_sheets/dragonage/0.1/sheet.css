@@ -122,6 +122,39 @@
 }
 
 /* Styling checkboxes */
+.ds_dragonage .csx .check .checkBorder {
+  display: none;
+  background-image:none;  
+}
+
+.ds_dragonage .csx .check .checkOff {
+  background-image: url(https://github.com/humburg/dragon_age_dst/blob/master/docs/img/icons8-unchecked-checkbox-13.png?raw=true);
+  background-size: 13px;
+  background-position: 0;
+  background-repeat: no-repeat;
+}
+
+.ds_dragonage .csx .check .checkOff:hover {
+  background-image: url(https://github.com/humburg/dragon_age_dst/blob/master/docs/img/icons8-unchecked-checkbox-13.png?raw=true);
+  background-size: 13px;
+  background-position: 0;
+  background-repeat: no-repeat;
+}
+
+.ds_dragonage .csx .check .checkOn {
+  background-image: url(https://github.com/humburg/dragon_age_dst/blob/master/docs/img/icons8-tick-box-13.png?raw=true);
+  background-size: 13px;
+  background-position: 0;
+  background-repeat: no-repeat;
+}
+
+.ds_dragonage .csx .check .checkOn:hover {
+  background-image: url(https://github.com/humburg/dragon_age_dst/blob/master/docs/img/icons8-tick-box-13.png?raw=true);
+  background-size: 13px;
+  background-position: 0;
+  background-repeat: no-repeat;
+}
+
 .ds_dragonage input[type=checkbox] {
   display: inline-block;
   width: 13px;

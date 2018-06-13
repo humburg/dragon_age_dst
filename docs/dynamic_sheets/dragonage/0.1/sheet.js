@@ -22,9 +22,9 @@ function chainsawxiv_module_setup(context){
 	if (context == undefined)
 		context = csx_opts.defaultContext;
 	// Do setup for interfaces
-  csx_list(context);
   csx_edit(context);
   csx_check(context);
+  csx_list(context);
 }
 
 function include_script(source){
