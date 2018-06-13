@@ -758,22 +758,38 @@
           <span class="da_narrow">Value</span>
           <span class="da_narrow">Quantity</span>
           <span class="da_wide">Notes</span>
-          <span class="da_extend_button">
-              <button onclick="dragonage_add_entry(event, 'equipment')"><div></div></button>
+          <span class="trash"></span>
+          <span class="add addto_equipment" title="Add Equipment"></span>
+        </div>
+        <ul class="group list list_equipment">
+          <li class="proto item">
+            <div class="handle"><div></div></div>
+            <span class="edit dslf dslf_equipment_item equipment_item" defaultString="Item"></span>
+            <span class="edit dslf dslf_equipment_location equipment_location"></span>
+            <span class="edit dslf dslf_equipment_weight equipment_weight da_narrow"></span>
+            <span class="edit dslf dslf_equipment_value equipment_value da_narrow"></span>
+            <span class="edit dslf dslf_equipment_quantity equipment_quantity da_narrow"></span>
+            <span class="edit dslf dslf_equipment_notes equipment_notes da_wide"></span>
+          </li>
+          <li class="item">
+            <div class="handle"><div></div></div>
+            <span class="edit dslf dslf_equipment_item equipment_item" defaultString="Item"></span>
+            <span class="edit dslf dslf_equipment_location equipment_location"></span>
+            <span class="edit dslf dslf_equipment_weight equipment_weight da_narrow"></span>
+            <span class="edit dslf dslf_equipment_value equipment_value da_narrow"></span>
+            <span class="edit dslf dslf_equipment_quantity equipment_quantity da_narrow"></span>
+            <span class="edit dslf dslf_equipment_notes equipment_notes da_wide"></span>
+          </li>
+          <span class="oldfields hidden">
+            [{"equipment_item":"equipment_item"},
+            {"equipment_location":"equipment_location"},
+            {"equipment_weight":"equipment_weight"},
+            {"equipment_value":"equipment_value"},
+            {"equipment_quantity":"equipment_quantity"},
+            {"equipment_notes":"equipment_notes"}]
           </span>
-        </div>
-        <div class="da_content">
-          <div class="extendable extend_equipment">
-            <div class="equipment_values row">
-              <span class="dsf dsf_equipment_item_1 equipment_item"></span>
-              <span class="dsf dsf_equipment_location_1 equipment_location"></span>
-              <span class="dsf dsf_equipment_weight_1 equipment_weight da_narrow"></span>
-              <span class="dsf dsf_equipment_value_1 equipment_value da_narrow"></span>
-              <span class="dsf dsf_equipment_quantity_1 equipment_quantity da_narrow"></span>
-              <span class="dsf dsf_equipment_notes_1 equipment_notes da_wide"></span>
-            </div>
-          </div>
-        </div>
+          <span class="dsf dsf_equipment hidden readonly"></span>
+        </ul>
       </div>
     </div>
 
