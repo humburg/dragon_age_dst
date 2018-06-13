@@ -581,11 +581,18 @@
 }
 
 .ds_dragonage .specialization_header span.da_narrow,
-.ds_dragonage .specialization .list .item span.checkbox,
+.ds_dragonage .csx .specialization .list .item span.check,
 .ds_dragonage .talent_header span.da_narrow,
-.ds_dragonage .talent_values span.checkbox {
+.ds_dragonage .csx .talent_values span.check {
   width: 20px;
 }
+
+.ds_dragonage .csx .specialization .list .item span.check,
+.ds_dragonage .csx .talent_values span.check {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
 
 .ds_dragonage .specialization_header span.da_wide,
 .ds_dragonage .specialization .list .item div.dslf.da_wide,
