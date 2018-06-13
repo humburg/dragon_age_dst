@@ -52,24 +52,7 @@ function dragonage_dataPreLoad(options) {
   include_script('https://chainsawxiv.github.io/DST/common/js/csx_edit.js'); 
   
    // display main tab
-   document.getElementsByClassName('da_tab_main')[0].style.display = "block";
-
-   // prepare storage for extendable fields
-   var ext, target_name, classes;
-   var extendable = jQuery(options['context'] + ' .extendable');
-   var container = jQuery(options['context'] + ' div.extension_storage');
-   for(i = 0; i < extendable.length; i++) {
-    ext = extendable[i];
-    classes = ext.classList;
-    for(j=0; j < classes.length; j++){
-      if(classes[j].startsWith('extend_')){
-        target_name = classes[j].replace('extend_', '');
-        storage = document.createElement('span');
-        storage.className = "dsf dsf_" + target_name + "_storage readonly";
-        container.append(storage);
-      }
-    }
-  }
+  document.getElementsByClassName('da_tab_main')[0].style.display = "block";
 }
 
 function dragonage_dataPostLoad(options) {
@@ -148,7 +131,6 @@ function dragonage_dataPreSave(options) {
     lists[i].unrender();
   }
 }
-
 
 function dragonage_dataChange(options) {
   // Called immediately after a data value is changed.
