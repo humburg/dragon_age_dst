@@ -378,20 +378,25 @@
             <span class="da_narrow">J</span>
             <span class="da_narrow">M</span>
             <span class="da_wide">Description</span>
-            <span class="da_extend_button">
-              <button onclick="dragonage_add_entry(event, 'talent')"><div></div></button>
+            <span class="trash"></span>
+            <span class="add addto_talent" title="Add Talent"></span>
+          </div>
+          <ul class="group list list_talent">
+            <li class="proto item">
+              <div class="handle"><div></div></div>
+              <span class="edit dslf dslf_talent_name talent_name"></span>
+              <span class="edit dslf dslf_talent_journeyman talent_journeyman check readonly"></span>
+              <span class="edit dslf dslf_talent_master talent_master check readonly"></span>
+              <span class="edit dslf dslf_talent_description talent_description da_wide"></span>
+            </li>
+            <span class="oldfields hidden">
+              [{"talent_name":"talent_name"},
+              {"talent_journeyman":"talent_journeyman"},
+              {"talent_master":"talent_master"},
+              {"talent_description":"talent_description"}]
             </span>
-          </div>
-          <div class="da_content">
-            <div class="extendable extend_talent">
-              <div class="talent_values row">
-                <span class="dsf dsf_talent_name_1 talent_name"></span>
-                <span class="dsf dsf_talent_journeyman_1 talent_journeyman checkbox readonly"></span>
-                <span class="dsf dsf_talent_master_1 talent_master checkbox readonly"></span>
-                <span class="dsf dsf_talent_description_1 talent_description da_wide"></span>
-              </div>
-            </div>
-          </div>
+            <span class="dsf dsf_talent hidden readonly"></span>
+          </ul>
         </div>
         <div class="power da_section">
           <span class="da_section_title">Powers</span>
