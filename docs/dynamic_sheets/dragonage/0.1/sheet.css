@@ -132,13 +132,18 @@
   background-size: 13px;
   background-position: 0;
   background-repeat: no-repeat;
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
 }
 
-.ds_dragonage .csx .check .checkOff:hover {
+.ds_dragonage .csx .edit.check .checkOff:hover {
   background-image: url(https://github.com/humburg/dragon_age_dst/blob/master/docs/img/icons8-unchecked-checkbox-13.png?raw=true);
   background-size: 13px;
   background-position: 0;
   background-repeat: no-repeat;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
 }
 
 .ds_dragonage .csx .check .checkOn {
@@ -146,13 +151,18 @@
   background-size: 13px;
   background-position: 0;
   background-repeat: no-repeat;
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
 }
 
-.ds_dragonage .csx .check .checkOn:hover {
+.ds_dragonage .csx .edit.check .checkOn:hover {
   background-image: url(https://github.com/humburg/dragon_age_dst/blob/master/docs/img/icons8-tick-box-13.png?raw=true);
   background-size: 13px;
   background-position: 0;
   background-repeat: no-repeat;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
 }
 
 .ds_dragonage input[type=checkbox] {
