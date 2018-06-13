@@ -588,7 +588,7 @@
 }
 
 .ds_dragonage .csx .specialization .list .item span.check,
-.ds_dragonage .csx .talent_values .list .item span.check {
+.ds_dragonage .csx .talent .list .item span.check {
   margin-left: 4px;
   margin-right: 4px;
 }
@@ -606,8 +606,8 @@
 * Powers
 *****************************/
 .ds_dragonage .power span.da_wide,
-.ds_dragonage .power div.dsf.da_wide {
-  width: 584px;
+.ds_dragonage .power div.dslf.da_wide {
+  width: 480px;
 }
 
 /****************************

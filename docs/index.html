@@ -403,18 +403,21 @@
           <div class="power_header sub_header">
             <span>Name</span>
             <span class="da_wide">Description</span>
-            <span class="da_extend_button">
-              <button onclick="dragonage_add_entry(event, 'power')"><div></div></button>
+            <span class="trash"></span>
+            <span class="add addto_power" title="Add Power"></span>
+          </div>
+          <ul class="group list list_power">
+            <li class="proto item">
+              <div class="handle"><div></div></div>
+              <span class="edit dslf dslf_power_name power_name"></span>
+              <span class="edit dslf dslf_power_description power_description da_wide"></span>
+            </li>
+            <span class="oldfields hidden">
+              [{"power_name":"power_name"},
+              {"power_description":"power_description"}]
             </span>
-          </div>
-          <div class="da_content">
-            <div class="extendable">
-              <div class="power_values row">
-                <span class="dsf dsf_power_name_1 power_name"></span>
-                <span class="dsf dsf_power_description_1 power_description da_wide"></span>
-              </div>
-            </div>
-          </div>
+            <span class="dsf dsf_power hidden readonly"></span>
+          </ul>
         </div>
     </div>
     <div class="da_tabcontent da_tab_spells">
