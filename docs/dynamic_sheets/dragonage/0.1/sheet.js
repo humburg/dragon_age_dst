@@ -27,13 +27,24 @@ function chainsawxiv_module_setup(context){
   csx_list(context);
 }
 
-function include_script(source){
+function csx_callback(which, context){
+  // Provide default context
+	if (context == undefined)
+    context = csx_opts.defaultContext;
+  switch(which){
+    case 'edit': csx_edit(context);
+    case 'list': csx_list(context);
+    case 'check': csx_check(context);
+  }
+}
+
+function include_script(source, type){
   var includes = document.createElement('script');
   includes.type = 'text/javascript';
   includes.src = source;
   includes.onload = function(){
     // Callback to use what you just loaded
-    csx_opts.setupCallback();
+    csx_callback(type, csx_opts.defaultContext);
   };
   document.body.appendChild(includes);
 }
@@ -45,11 +56,6 @@ function dragonage_dataPreLoad(options) {
   csx_opts['isEditable'] = options.isEditable;
   window.chars = aisleten.characters;
   window.chars.jeditablePlaceholder = csx_opts.defaultFieldValue;
-
-  // Import Chainsaw's javascript
-  include_script('https://chainsawxiv.github.io/DST/common/js/csx_list.js');
-  include_script('https://chainsawxiv.github.io/DST/common/js/csx_check.js');
-  include_script('https://chainsawxiv.github.io/DST/common/js/csx_edit.js'); 
   
    // display main tab
   document.getElementsByClassName('da_tab_main')[0].style.display = "block";
@@ -93,6 +99,11 @@ function dragonage_dataPostLoad(options) {
   if(jQuery(options['context'] + ' .dsf_magic').html()){
     dragonage_update_magic(options);
   }
+
+   // Import Chainsaw's javascript
+   include_script('https://chainsawxiv.github.io/DST/common/js/csx_list.js', 'list');
+   include_script('https://chainsawxiv.github.io/DST/common/js/csx_check.js', 'check');
+   include_script('https://chainsawxiv.github.io/DST/common/js/csx_edit.js', 'edit'); 
 }
 
 function dragonage_dataPreSave(options) {
