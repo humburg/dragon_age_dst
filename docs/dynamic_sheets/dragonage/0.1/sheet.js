@@ -56,11 +56,6 @@ function csx_callback(which, context){
       break;
     case 'check': 
       csx_check(context);
-      // enable automatic updates
-      var check_boxes = csx_opts['defaultContext'].querySelectorAll('.check');
-      for (var i = 0; i < check_boxes.length; i++){
-        check_boxes[i].onUpdate = function(){dragonage_dataChange(options);};
-      }
       break;
   }
 }
