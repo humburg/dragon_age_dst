@@ -50,18 +50,17 @@
   overflow: hidden;
 }
 
-.ds_dragonage .da_section .da_content div {
-  overflow: hidden;
+.ds_dragonage .da_section .da_content {
+  display: inline-block;
   font-weight: normal;
-  font-size: medium;
+  font-size: small;
   vertical-align: middle;
 }
 
-.ds_dragonage .da_section .da_content div.dsf,
+.ds_dragonage .da_section .da_content .dsf,
 .ds_dragonage .da_section .sub_header span
 {
-  display: block;
-  float: left;
+  display: inline-block;
   text-align: center;
 }
 
@@ -94,7 +93,7 @@
   overflow: hidden;
 }
 
-.ds_dragonage .da_section div.dsf {
+.ds_dragonage .da_section .dsf {
   font-size: small;
 }
 
@@ -121,7 +120,7 @@
   background-color: #e0beb1;
 }
 
-.ds_dragonage .list .item .span {
+.ds_dragonage .list .item span {
   text-align: center;
 }
 
@@ -296,12 +295,12 @@
   width: 205px;
 }
 
-.ds_dragonage .appearance .da_content div.dsf,
+.ds_dragonage .appearance .da_content .dsf,
 .ds_dragonage .appearance .sub_header span {
   width: 100px;
 }
 
-.ds_dragonage .appearance .da_content div.dsf.appearance_features,
+.ds_dragonage .appearance .da_content .dsf.appearance_features,
 .ds_dragonage .appearance .sub_header span.appearance_features {
   width: 200px;
 }
@@ -312,27 +311,26 @@
 /****************************
 * Basic Info
 *****************************/
-.ds_dragonage .basic_info .da_content div.dsf,
+.ds_dragonage .basic_info .da_content .dsf,
 .ds_dragonage .basic_info .sub_header span,
-.ds_dragonage .basic_info .da_content div.level
+.ds_dragonage .basic_info .da_content .level
 {
-  width: 89px;
+  width: 85px;
 }
 
-.ds_dragonage .basic_info .da_content div.level {
+.ds_dragonage .basic_info .da_content .level {
+  float: right;
   text-align: center;
 }
 
-.ds_dragonage .basic_info .da_content div.dsf_xp
+.ds_dragonage .basic_info .da_content .dsf_xp
 {
   display: inline-block;
-  float: none;
   width: auto;
 }
 
-.ds_dragonage .basic_info .da_content div.dsf_level {
+.ds_dragonage .basic_info .da_content .dsf_level {
   display: inline-block;
-  float: none;
   width: auto;
   padding-right: 3px;
 }
@@ -345,7 +343,7 @@
 }
 
 .ds_dragonage .basic_info .language_header span,
-.ds_dragonage .basic_info .language_values div.dsf {
+.ds_dragonage .basic_info .language_values .dsf {
   width: 400px;
 }
 
@@ -356,36 +354,35 @@
 .ds_dragonage .ability_score_header {
   overflow: hidden;
 }
+.ds_dragonage .ability_scores .da_content .ability_score div,
+.ds_dragonage .ability_scores .da_content .ability_score span,
 .ds_dragonage .ability_score_header span {
-  width: 120px;
-}
-
-.ds_dragonage .ability_scores .da_content .ability_score  div {
   display: inline-block;
-  float:none;
+  width: 125px;
 }
 
-.ds_dragonage span.ability_primary_header {
-  width: 60px;
+.ds_dragonage .ability_scores .da_content .ability_score .row {
+  width: 100%;
+}
+
+.ds_dragonage .ability_scores .ability_primary_header,
+.ds_dragonage .da_content .ability_score_primary.dsf.checkbox {
+  width: 51px;
   text-align: center;
 }
 
-.ds_dragonage .da_content span.ability_score_primary {
-  width: 50px;
-  text-align: center;
-}
-
-.ds_dragonage .da_content div.ability_score_rating,
-.ds_dragonage span.ability_rating_header {
+.ds_dragonage .da_content div.ability_score_rating.dsf,
+.ds_dragonage .da_content span.ability_score_rating.dsf,
+.ds_dragonage .ability_scores .ability_rating_header {
   width: 50px;
 }
 
-.ds_dragonage .da_content div.ability_score_focuses,
+.ds_dragonage .da_content .ability_score_focuses,
 .ds_dragonage span.ability_focuses_header {
   width: 120px;
 }
 
-.ds_dragonage .da_content div.ability_score_name {
+.ds_dragonage .da_content .ability_score_name {
   width: 118px;
   padding-left: 2px;
   font-weight: normal;
@@ -400,13 +397,14 @@
 }
 
 .ds_dragonage .combat_stats_header span,
-.ds_dragonage .combat_stats_values div {
+.ds_dragonage .combat_stats_values div,
+.ds_dragonage .combat_stats_values span {
   display: block;
   float: left;
   width: 89px;
 }
 
-.ds_dragonage .combat_stats_values div {
+.ds_dragonage .combat_stats_values {
   text-align: center;
 }
 
@@ -440,22 +438,22 @@
   overflow: hidden;
 }
 
-.ds_dragonage .armor_values div.dsf{
+.ds_dragonage .armor_values .dsf{
   display: block;
   width: 100px;
   float: left;
   text-align: center;
 }
 
-.ds_dragonage .shield_values div.dsf{
+.ds_dragonage .shield_values .dsf{
   display: block;
   width: 150px;
   float: left;
   text-align: center;
 }
 
-.ds_dragonage .shield_values span.checkbox,
-.ds_dragonage .armor_values span.checkbox {
+.ds_dragonage .shield_values .checkbox,
+.ds_dragonage .armor_values .checkbox {
   width: 55px;
   float: right;
   text-align: center;
@@ -478,62 +476,65 @@
   overflow: hidden;
 }
 
-.ds_dragonage .movement_values_yrd div.dsf {
+.ds_dragonage .movement_values_yrd .dsf {
   display: block;
   float: left;
   width: 119px;
   text-align: center;
 }
 
-.ds_dragonage .movement_values_yrd div.dsf:after {
+.ds_dragonage .movement_values_yrd .dsf:after {
   content: " yrd"
 }
 .ds_dragonage .movement_values_sq {
   overflow: hidden;
 }
 
-.ds_dragonage .movement_values_sq div.dsf {
+.ds_dragonage .movement_values_sq .dsf {
   display: block;
   float: left;
   width: 119px;
   text-align: center;
 }
 
-.ds_dragonage .movement_values_sq div.dsf:after {
+.ds_dragonage .movement_values_sq .dsf:after {
   content: " squares"
 }
 
 /****************************
 * Melee Weapons
 *****************************/
+.ds_dragonage .melee_header {
+  padding-left: 14px;
+}
 
 .ds_dragonage .melee_header span,
-.ds_dragonage .list_melee .item div.edit {
+.ds_dragonage .list_melee .item .edit {
   display: inline-block;
   width: 70px;
   text-align: center;
 }
 
 .ds_dragonage .melee_header .da_wide {
-  width: 185px;
+  width: 165px;
   height: 1em;
 }
 
-.ds_dragonage .list_melee .item div.da_wide{
+.ds_dragonage .list_melee .item .da_wide{
   display: inline-block;
-  width: 170px;
+  width: 165px;
 }
 
-.ds_dragonage .melee_weapons .weapon_group_header span {
+.ds_dragonage .melee_weapons .weapon_group_header {
   width: 100%;
 }
-.ds_dragonage .da_section .da_content div.weapon_groups {
+.ds_dragonage .da_section .da_content .weapon_groups {
   padding-top: 5px;
   display: inline-block;
   width: 100%;
 }
 
-.ds_dragonage .weapon_groups div.dsf {
+.ds_dragonage .weapon_groups .dsf {
   width: 100%;
 }
 
@@ -544,23 +545,23 @@
   width: 100%;
 }
 
+.ds_dragonage .ranged_header {
+  padding-left: 14px;
+}
 .ds_dragonage .ranged_header span,
-.ds_dragonage .list_ranged .item div.edit {
+.ds_dragonage .list_ranged .item .edit {
   display: inline-block;
   width: 120px;
   text-align: center;
 }
 
-.ds_dragonage .ranged_header .da_wide {
-  width: 210px;
-}
-
-.ds_dragonage .list_ranged .item div.da_wide{
-  width: 194px;
+.ds_dragonage .ranged_header .da_wide,
+.ds_dragonage .list_ranged .item .da_wide {
+  width: 185px;
 }
 
 .ds_dragonage .ranged_header .da_narrow,
-.ds_dragonage .list_ranged .item div.da_narrow {
+.ds_dragonage .list_ranged .item .da_narrow {
   width: 90px;
 }
 
@@ -568,7 +569,7 @@
   overflow: hidden;
 }
 
-.ds_dragonage .ranged_weapon_values div {
+.ds_dragonage .ranged_weapon_values {
   display: block;
   float: left;
   text-align: center;
@@ -579,7 +580,7 @@
 * Specializations & Talents
 *****************************/
 .ds_dragonage .da_tab_talents .da_section,
-.ds_dragonage .da_tab_talents .da_section span.da_section_title {
+.ds_dragonage .da_tab_talents .da_section .da_section_title {
   width: 100%;
 }
 
@@ -592,7 +593,7 @@
 }
 
 .ds_dragonage .da_tab_talents .sub_header span,
-.ds_dragonage .da_tab_talents div.dslf {
+.ds_dragonage .da_tab_talents .dslf {
   display: inline-block;
   float: none;
   text-align: center;
@@ -618,7 +619,7 @@
 * Powers
 *****************************/
 .ds_dragonage .power span.da_wide,
-.ds_dragonage .power div.dslf.da_wide {
+.ds_dragonage .power .dslf.da_wide {
   width: 480px;
 }
 
@@ -638,7 +639,7 @@
   padding-left: 16px;
 }
 .ds_dragonage .da_tab_spells .sub_header span,
-.ds_dragonage .da_tab_spells div.dslf {
+.ds_dragonage .da_tab_spells .dslf {
   display: block;
   float: left;
   text-align: center;
@@ -646,7 +647,7 @@
 }
 
 .ds_dragonage .da_tab_spells span.da_narrow,
-.ds_dragonage .da_tab_spells div.dslf.da_narrow {
+.ds_dragonage .da_tab_spells .dslf.da_narrow {
   width: 50px;
 }
 
@@ -679,7 +680,7 @@
   vertical-align: middle;
 }
 
-.ds_dragonage div.spell_power_control {
+.ds_dragonage .spell_power_control {
   position: absolute;
   background-color: transparent;
   text-align: center;
@@ -688,24 +689,24 @@
   top: 12px;
 }
 
-.ds_dragonage div.spell_power_control_values {
+.ds_dragonage .spell_power_control_values {
   left: 690px;
   top: 13px;
   width: 50px;
 }
 
-.ds_dragonage div.spell_power_control_values input[type=checkbox] {
+.ds_dragonage .spell_power_control_values input[type=checkbox] {
   filter: invert(1);
 }
 
 
 /* Background */
-.ds_dragonage .da_tab_background div.dsf {
+.ds_dragonage .da_tab_background .dsf {
   width: 100%;
   min-height: 200px;
 }
 
-.ds_dragonage .da_tab_background div.biography{
+.ds_dragonage .da_tab_background .biography{
   width: 100%;
 }
 
@@ -715,31 +716,31 @@
 }
 
 .ds_dragonage .da_tab_equipment .money .sub_header span,
-.ds_dragonage .da_tab_equipment .money .da_content div.dsf {
-  width: 120px;
+.ds_dragonage .da_tab_equipment .money .da_content .dsf {
+  width: 118px;
 }
 
-.ds_dragonage .da_tab_equipment div.equipment {
+.ds_dragonage .da_tab_equipment .equipment {
   width: 100%;
 }
 
-.ds_dragonage .da_tab_equipment div.equipment .sub_header {
-  padding-left: 19px;
+.ds_dragonage .da_tab_equipment .equipment .sub_header {
+  padding-left: 14px;
 }
 
 
 .ds_dragonage .da_tab_equipment .equipment .sub_header span,
-.ds_dragonage .da_tab_equipment .equipment div.dslf {
+.ds_dragonage .da_tab_equipment .equipment .dslf {
   width: 130px;
   text-align: center;
 }
 
 .ds_dragonage .da_tab_equipment .equipment .sub_header span.da_narrow,
-.ds_dragonage .da_tab_equipment .equipment div.dslf.da_narrow {
+.ds_dragonage .da_tab_equipment .equipment .dslf.da_narrow {
   width: 60px;
 }
 
 .ds_dragonage .da_tab_equipment .equipment .sub_header span.da_wide,
-.ds_dragonage .da_tab_equipment .equipment div.dslf.da_wide {
-  width: 240px;
+.ds_dragonage .da_tab_equipment .equipment .dslf.da_wide {
+  width: 225px;
 }
