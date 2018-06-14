@@ -55,6 +55,7 @@
   font-weight: normal;
   font-size: small;
   vertical-align: middle;
+  width: 100%;
 }
 
 .ds_dragonage .da_section .da_content .dsf,
@@ -367,7 +368,7 @@
 
 .ds_dragonage .ability_scores .ability_primary_header,
 .ds_dragonage .da_content .ability_score_primary.dsf.checkbox {
-  width: 51px;
+  width: 50px;
   text-align: center;
 }
 
