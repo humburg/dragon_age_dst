@@ -95,21 +95,6 @@ function dragonage_dataPreSave(options) {
   csx_opts['defaultContext'] = document.getElementById(options.containerId);
   csx_opts['isEditable'] = options.isEditable;
 
-  // Collect data from extendable elements and store it in a single field for saving.
-  var ext, target_name, classes;
-  var extendables = jQuery('.extendable');
-  var serial = new XMLSerializer();
-  for(var i = 0; i < extendables.length; i++) {
-    ext = extendables[i];
-    classes = ext.classList;
-    for(var j=0; j < classes.length; j++){
-      if(classes[j].startsWith('extend_')){
-        target_name = classes[j].replace('extend_', '');
-        jQuery('span.dsf.dsf_'+target_name+'_storage').text(serial.serializeToString(ext))
-      }
-    }
-  }
-
   // Prepare Chainsaw's modules for saving
   // Default the context if not set
   var context = csx_opts.defaultContext;
