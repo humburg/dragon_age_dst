@@ -14,7 +14,7 @@
   display: none!important;
 }
 
-.ds_dragonage span.dsf {
+.ds_dragonage.editable span.dsf {
   cursor: pointer;
 }
 
@@ -74,7 +74,7 @@
   width: 100%;
   height: 1.1em;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   font-family: 'Cinzel', serif;
   font-size: larger;
   color: white;
@@ -101,6 +101,12 @@
 /* Buttons to extend lists */
 .ds_dragonage .sub_header span.add,
 .ds_dragonage .sub_header span.trash {
+  display: none!important;
+}
+
+.ds_dragonage.editable .sub_header span.add,
+.ds_dragonage.editable .sub_header span.trash {
+  display: inline-block!important;
   width: 15px!important;
   height: 15px!important;
   filter: brightness(150%);
@@ -145,7 +151,7 @@
   transition-duration: 0.3s;
 }
 
-.ds_dragonage .csx .edit.check .checkOff:hover {
+.ds_dragonage.editable .csx .edit.check .checkOff:hover {
   background-image: url(https://github.com/humburg/dragon_age_dst/blob/master/docs/img/icons8-unchecked-checkbox-13.png?raw=true);
   background-size: 13px;
   background-position: 0;
@@ -164,7 +170,7 @@
   transition-duration: 0.3s;
 }
 
-.ds_dragonage .csx .edit.check .checkOn:hover {
+.ds_dragonage.editable .csx .edit.check .checkOn:hover {
   background-image: url(https://github.com/humburg/dragon_age_dst/blob/master/docs/img/icons8-tick-box-13.png?raw=true);
   background-size: 13px;
   background-position: 0;
@@ -191,6 +197,8 @@
   cursor: pointer;
   margin-top: 1px;
   margin-bottom: 1px;
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
 }
 
 .ds_dragonage input[type=checkbox]:not(:checked) {
@@ -199,6 +207,12 @@
 
 .ds_dragonage input[type=checkbox]:checked {
   background-image: url(https://github.com/humburg/dragon_age_dst/blob/master/docs/img/icons8-tick-box-13.png?raw=true);
+}
+
+.ds_dragonage.editable input[type=checkbox]:hover{
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
 }
 
 /* links */
@@ -505,7 +519,7 @@
 /****************************
 * Melee Weapons
 *****************************/
-.ds_dragonage .melee_header {
+.ds_dragonage.editable .melee_header {
   padding-left: 14px;
 }
 
@@ -546,7 +560,7 @@
   width: 100%;
 }
 
-.ds_dragonage .ranged_header {
+.ds_dragonage.editable .ranged_header {
   padding-left: 14px;
 }
 .ds_dragonage .ranged_header span,
@@ -585,12 +599,13 @@
   width: 100%;
 }
 
+.ds_dragonage.editable .da_tab_talents .sub_header{
+  padding-left: 14px;
+}
+
 .ds_dragonage .da_tab_talents .sub_header {
   display: inline-block;
-  float: none;
-  text-align: left;
-  width: 714px;
-  padding-left: 16px;
+  width: 100%;
 }
 
 .ds_dragonage .da_tab_talents .sub_header span,
@@ -636,8 +651,8 @@
   width: 100%;
 }
 
-.ds_dragonage .da_tab_spells .sub_header {
-  padding-left: 16px;
+.ds_dragonage.editable .da_tab_spells .sub_header {
+  padding-left: 14px;
 }
 .ds_dragonage .da_tab_spells .sub_header span,
 .ds_dragonage .da_tab_spells .dslf {
@@ -725,7 +740,7 @@
   width: 100%;
 }
 
-.ds_dragonage .da_tab_equipment .equipment .sub_header {
+.ds_dragonage.editable .da_tab_equipment .equipment .sub_header {
   padding-left: 14px;
 }
 
