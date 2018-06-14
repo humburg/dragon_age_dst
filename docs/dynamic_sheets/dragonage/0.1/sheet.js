@@ -32,9 +32,36 @@ function csx_callback(which, context){
 	if (context == undefined)
     context = csx_opts.defaultContext;
   switch(which){
-    case 'edit': csx_edit(context);
-    case 'list': csx_list(context);
-    case 'check': csx_check(context);
+    case 'edit': 
+      csx_edit(context);
+      // Enable automatic updates
+      var edit_fields = csx_opts['defaultContext'].querySelectorAll('.dsf,.edit');
+      var classes;
+      var container_id;
+      for (var i = 0; i < edit_fields.length; i++){
+        classes = edit_fields[i].classList;
+        for(var j=0; j < classes.length; j++){
+          if(classes[j].startsWith('dsf_')){
+            edit_fields[i].field_name = classes[j].replace('dsf_', '');
+          }
+        }
+        container_id = $(edit_fields[i]).closest('.ds_dragonage')[0].id;
+        edit_fields[i].update = function(){dragonage_dataChange({'fieldValue':this.value(), 
+                                                                 'fieldName':this.field_name, 
+                                                                 'containerId':container_id});};
+      }
+      break;
+    case 'list': 
+      csx_list(context);
+      break;
+    case 'check': 
+      csx_check(context);
+      // enable automatic updates
+      var check_boxes = csx_opts['defaultContext'].querySelectorAll('.check');
+      for (var i = 0; i < check_boxes.length; i++){
+        check_boxes[i].onUpdate = function(){dragonage_dataChange(options);};
+      }
+      break;
   }
 }
 
@@ -83,10 +110,10 @@ function dragonage_dataPostLoad(options) {
     dragonage_update_magic(options);
   }
 
-   // Import Chainsaw's javascript
-   include_script('https://chainsawxiv.github.io/DST/common/js/csx_list.js', 'list');
-   include_script('https://chainsawxiv.github.io/DST/common/js/csx_check.js', 'check');
-   include_script('https://chainsawxiv.github.io/DST/common/js/csx_edit.js', 'edit'); 
+  // Import Chainsaw's javascript
+  include_script('https://chainsawxiv.github.io/DST/common/js/csx_list.js', 'list');
+  include_script('https://chainsawxiv.github.io/DST/common/js/csx_check.js', 'check');
+  include_script('https://humburg.github.io/DST/common/js/csx_edit.js', 'edit');
 }
 
 function dragonage_dataPreSave(options) {
