@@ -11,21 +11,10 @@
 
 /* Global options for Chainsaw's modules */
 csx_opts = {
-	'setupCallback': function(context){chainsawxiv_module_setup(context);},
 	'defaultFieldValue':'???',
 	'defaultContext': '',
 	'isEditable': false
 };
-
-function chainsawxiv_module_setup(context){
-	// Provide default context
-	if (context == undefined)
-		context = csx_opts.defaultContext;
-	// Do setup for interfaces
-  csx_edit(context);
-  csx_check(context);
-  csx_list(context);
-}
 
 function csx_callback(which, context){
   // Provide default context
@@ -57,6 +46,9 @@ function csx_callback(which, context){
     case 'check': 
       csx_check(context);
       break;
+    case 'tab':
+      csx_tab(context);
+      break;
   }
 }
 
@@ -78,9 +70,6 @@ function dragonage_dataPreLoad(options) {
   csx_opts['isEditable'] = options.isEditable;
   window.chars = aisleten.characters;
   window.chars.jeditablePlaceholder = csx_opts.defaultFieldValue;
-  
-   // display main tab
-  document.getElementsByClassName('da_tab_main')[0].style.display = "block";
 }
 
 function dragonage_dataPostLoad(options) {
@@ -109,6 +98,7 @@ function dragonage_dataPostLoad(options) {
   include_script('https://chainsawxiv.github.io/DST/common/js/csx_list.js', 'list');
   include_script('https://chainsawxiv.github.io/DST/common/js/csx_check.js', 'check');
   include_script('https://humburg.github.io/DST/common/js/csx_edit.js', 'edit');
+  include_script('https://humburg.github.io/DST/common/js/csx_tab.js', 'tab');
 }
 
 function dragonage_dataPreSave(options) {

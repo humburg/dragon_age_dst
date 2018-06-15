@@ -236,37 +236,43 @@
   overflow: hidden;
   background-color: black;
   width: 100%;
+  margin-bottom: 5px;
 }
 
 /* Style the buttons that are used to open the tab content */
-.ds_dragonage .da_tabs button {
+.ds_dragonage .da_tabs div,
+.ds_dragonage .da_tabs .tab.tab_crunch:not(.active) {
   background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
+  display: inline-block;
+  float: none;
   padding: 5px 16px;
   transition: 0.3s;
   color: white;
   font-family: 'IM Fell English SC', serif;
   font-size: large;
+  width: auto;
+  height: 1.2em;
+  position: relative;
 }
 
 /* Change background color of buttons on hover */
-.ds_dragonage .da_tabs button:hover {
+.ds_dragonage .da_tabs div:hover {
   background-color: #e0beb1;
   color: black;
+  width: auto;
+  height: 1.2em;
+  float: none;
 }
 
 /* Create an active/current tablink class */
-.ds_dragonage .da_tabs button.active {
+.ds_dragonage .da_tabs div.active {
   background-color: #810207;
   color: white;
-}
-
-.ds_dragonage .da_tabcontent {
-  padding-top: 10px;
-  display: none;
+  width: auto;
+  height: 1.2em;
+  float: none;
+  position: relative;
+  padding: 5px 16px;
 }
 
 /****************************
@@ -595,22 +601,22 @@
 /****************************
 * Specializations & Talents
 *****************************/
-.ds_dragonage .da_tab_talents .da_section,
-.ds_dragonage .da_tab_talents .da_section .da_section_title {
+.ds_dragonage .page_talents .da_section,
+.ds_dragonage .page_talents .da_section .da_section_title {
   width: 100%;
 }
 
-.ds_dragonage.editable .da_tab_talents .sub_header{
+.ds_dragonage.editable .page_talents .sub_header{
   padding-left: 14px;
 }
 
-.ds_dragonage .da_tab_talents .sub_header {
+.ds_dragonage .page_talents .sub_header {
   display: inline-block;
   width: 100%;
 }
 
-.ds_dragonage .da_tab_talents .sub_header span,
-.ds_dragonage .da_tab_talents .dslf {
+.ds_dragonage .page_talents .sub_header span,
+.ds_dragonage .page_talents .dslf {
   display: inline-block;
   float: none;
   text-align: center;
@@ -643,28 +649,28 @@
 /****************************
 * Spells
 *****************************/
-.ds_dragonage .da_tab_spells .spell_wrapper {
+.ds_dragonage .page_spells .spell_wrapper {
   position: relative;
 }
 
-.ds_dragonage .da_tab_spells .da_section,
-.ds_dragonage .da_tab_spells .da_section span.da_section_title {
+.ds_dragonage .page_spells .da_section,
+.ds_dragonage .page_spells .da_section span.da_section_title {
   width: 100%;
 }
 
-.ds_dragonage.editable .da_tab_spells .sub_header {
+.ds_dragonage.editable .page_spells .sub_header {
   padding-left: 14px;
 }
-.ds_dragonage .da_tab_spells .sub_header span,
-.ds_dragonage .da_tab_spells .dslf {
+.ds_dragonage .page_spells .sub_header span,
+.ds_dragonage .page_spells .dslf {
   display: block;
   float: left;
   text-align: center;
   width: 145px;
 }
 
-.ds_dragonage .da_tab_spells span.da_narrow,
-.ds_dragonage .da_tab_spells .dslf.da_narrow {
+.ds_dragonage .page_spells span.da_narrow,
+.ds_dragonage .page_spells .dslf.da_narrow {
   width: 50px;
 }
 
@@ -718,46 +724,46 @@
 
 
 /* Background */
-.ds_dragonage .da_tab_background .dsf {
+.ds_dragonage .page_background .dsf {
   width: 100%;
   min-height: 200px;
 }
 
-.ds_dragonage .da_tab_background .biography{
+.ds_dragonage .page_background .biography{
   width: 100%;
 }
 
 /* Equipment */
-.ds_dragonage .da_tab_equipment .exchange_rate .da_content {
+.ds_dragonage .page_equipment .exchange_rate .da_content {
   text-align: center;
 }
 
-.ds_dragonage .da_tab_equipment .money .sub_header span,
-.ds_dragonage .da_tab_equipment .money .da_content .dsf {
+.ds_dragonage .page_equipment .money .sub_header span,
+.ds_dragonage .page_equipment .money .da_content .dsf {
   width: 118px;
 }
 
-.ds_dragonage .da_tab_equipment .equipment {
+.ds_dragonage .page_equipment .equipment {
   width: 100%;
 }
 
-.ds_dragonage.editable .da_tab_equipment .equipment .sub_header {
+.ds_dragonage.editable .page_equipment .equipment .sub_header {
   padding-left: 14px;
 }
 
 
-.ds_dragonage .da_tab_equipment .equipment .sub_header span,
-.ds_dragonage .da_tab_equipment .equipment .dslf {
+.ds_dragonage .page_equipment .equipment .sub_header span,
+.ds_dragonage .page_equipment .equipment .dslf {
   width: 130px;
   text-align: center;
 }
 
-.ds_dragonage .da_tab_equipment .equipment .sub_header span.da_narrow,
-.ds_dragonage .da_tab_equipment .equipment .dslf.da_narrow {
+.ds_dragonage .page_equipment .equipment .sub_header span.da_narrow,
+.ds_dragonage .page_equipment .equipment .dslf.da_narrow {
   width: 60px;
 }
 
-.ds_dragonage .da_tab_equipment .equipment .sub_header span.da_wide,
-.ds_dragonage .da_tab_equipment .equipment .dslf.da_wide {
+.ds_dragonage .page_equipment .equipment .sub_header span.da_wide,
+.ds_dragonage .page_equipment .equipment .dslf.da_wide {
   width: 225px;
 }
