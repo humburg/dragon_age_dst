@@ -194,11 +194,14 @@
   background-size: contain;
   margin-left: auto;
   margin-right: auto;
-  cursor: pointer;
   margin-top: 1px;
   margin-bottom: 1px;
   transition-property: box-shadow;
   transition-duration: 0.3s;
+}
+
+.ds_dragonage.editable input[type=checkbox] {
+  cursor: pointer;
 }
 
 .ds_dragonage input[type=checkbox]:not(:checked) {
