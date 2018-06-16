@@ -21,7 +21,7 @@ function csx_callback(which, context){
 	if (context == undefined)
     context = csx_opts.defaultContext;
   switch(which){
-    case 'edit': 
+    case 'edit':
       csx_edit(context);
       // Enable automatic updates
       var edit_fields = csx_opts['defaultContext'].querySelectorAll('.dsf,.edit');
@@ -35,15 +35,15 @@ function csx_callback(which, context){
           }
         }
         container_id = $(edit_fields[i]).closest('.ds_dragonage')[0].id;
-        edit_fields[i].update = function(){dragonage_dataChange({'fieldValue':this.value(), 
-                                                                 'fieldName':this.field_name, 
+        edit_fields[i].update = function(){dragonage_dataChange({'fieldValue':this.value(),
+                                                                 'fieldName':this.field_name,
                                                                  'containerId':container_id});};
       }
       break;
-    case 'list': 
+    case 'list':
       csx_list(context);
       break;
-    case 'check': 
+    case 'check':
       csx_check(context);
       break;
     case 'tab':
@@ -160,27 +160,6 @@ function dragonage_dataChange(options) {
     jQuery('.dsf_defense').html(dragonage_defense(options))
   }
 
-}
-
-/* Tabbed navigation */
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  var context = $(evt.currentTarget).parents('div.dynamic_sheet.ds_dragonage')[0];
-  // Hide all tabs
-  tabcontent = context.getElementsByClassName("da_tabcontent");
-  for (var i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="da_tablinks" and remove the class "active"
-  tablinks = context.getElementsByClassName("da_tablinks");
-  for (var i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  context.getElementsByClassName('da_tab_' + tabName)[0].style.display = "block";
-  evt.currentTarget.className += " active";
 }
 
 /* Computing derived stats */
