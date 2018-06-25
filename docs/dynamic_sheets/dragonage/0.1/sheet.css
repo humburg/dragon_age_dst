@@ -421,11 +421,9 @@
 }
 
 .ds_dragonage .combat_stats_header span,
-.ds_dragonage .combat_stats_values div,
-.ds_dragonage .combat_stats_values span {
-  display: block;
-  float: left;
-  width: 89px;
+.ds_dragonage .combat_stats_values .dsf {
+  display: inline-block;
+  width: 85px;
 }
 
 .ds_dragonage .combat_stats_values {
