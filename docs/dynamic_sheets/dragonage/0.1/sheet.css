@@ -65,6 +65,10 @@
   text-align: center;
 }
 
+.ds_dragonage .da_section {
+  background-color: #ffffff;
+}
+
 .ds_dragonage .da_section .da_content div.row:nth-of-type(odd){
   background-color: #e0beb1;
 }
